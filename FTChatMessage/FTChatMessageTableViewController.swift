@@ -60,12 +60,12 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         self.view.addSubview(messageInputView)
 
         messageRecordView = NSBundle.mainBundle().loadNibNamed("FTChatMessageRecorderView", owner: nil, options: nil)[0] as! FTChatMessageRecorderView
-        messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+        messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
         messageRecordView.recorderDelegate = self
         self.view.addSubview(messageRecordView)
         
         messageAccessoryView = NSBundle.mainBundle().loadNibNamed("FTChatMessageAccessoryView", owner: nil, options: nil)[0] as! FTChatMessageAccessoryView
-        messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+        messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
         messageAccessoryView.setupWithDataSource(self , accessoryViewDelegate : self)
         self.view.addSubview(messageAccessoryView)
         
@@ -189,7 +189,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
                 
                 self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight + FTDefaultInputViewHeight )
                 self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight, FTScreenWidth, inputViewFrameHeight)
-                self.messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+                self.messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
                 self.scrollToBottom(true)
                 }, completion: { (finished) in
             })
@@ -205,9 +205,9 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
             messageInputMode = FTChatMessageInputMode.Record
 
             UIView.animateWithDuration(FTDefaultMessageDefaultAnimationDuration, animations: {
-                self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight - FTDefaultRecordViewHeight + FTDefaultInputViewHeight )
-                self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight - FTDefaultRecordViewHeight, FTScreenWidth, inputViewFrameHeight)
-                self.messageRecordView.frame = CGRectMake(0, FTScreenHeight - FTDefaultRecordViewHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+                self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight - FTDefaultAccessoryViewHeight + FTDefaultInputViewHeight )
+                self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight - FTDefaultAccessoryViewHeight, FTScreenWidth, inputViewFrameHeight)
+                self.messageRecordView.frame = CGRectMake(0, FTScreenHeight - FTDefaultAccessoryViewHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
                 self.scrollToBottom(true)
                 }, completion: { (finished) in
 
@@ -227,7 +227,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
                 
                 self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight + FTDefaultInputViewHeight )
                 self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight, FTScreenWidth, inputViewFrameHeight)
-                self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+                self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
                 self.scrollToBottom(true)
                 }, completion: { (finished) in
 
@@ -245,10 +245,10 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
 
             UIView.animateWithDuration(FTDefaultMessageDefaultAnimationDuration, animations: {
                 
-                self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight - FTDefaultRecordViewHeight + FTDefaultInputViewHeight )
+                self.messageTableView.frame = CGRectMake(0, 0, FTScreenWidth, FTScreenHeight - inputViewFrameHeight - FTDefaultAccessoryViewHeight + FTDefaultInputViewHeight )
                 
-                self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight - FTDefaultRecordViewHeight, FTScreenWidth, inputViewFrameHeight)
-                self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight - FTDefaultRecordViewHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+                self.messageInputView.frame = CGRectMake(0, FTScreenHeight - inputViewFrameHeight - FTDefaultAccessoryViewHeight, FTScreenWidth, inputViewFrameHeight)
+                self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight - FTDefaultAccessoryViewHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
                 self.scrollToBottom(true)
                 }, completion: { (finished) in
 
@@ -260,7 +260,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
 
     func dismissInputRecordView(){
         UIView.animateWithDuration(FTDefaultMessageDefaultAnimationDuration, animations: {
-            self.messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+            self.messageRecordView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
             })
     }
 
@@ -269,7 +269,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
 
     func dismissInputAccessoryView(){
         UIView.animateWithDuration(FTDefaultMessageDefaultAnimationDuration, animations: {
-            self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultRecordViewHeight)
+            self.messageAccessoryView.frame = CGRectMake(0, FTScreenHeight, FTScreenWidth, FTDefaultAccessoryViewHeight)
         })
     }
     
@@ -398,7 +398,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     }
     
     func getAccessoryItemTitle() -> [String] {
-        return ["Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather"]
+        return ["Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather","Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather"]
     }
 
     

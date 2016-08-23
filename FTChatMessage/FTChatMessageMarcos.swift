@@ -55,7 +55,9 @@ let FTDefaultInputViewMaxHeight : CGFloat = 150.0
 let FTDefaultInputTextViewEdgeInset: UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
 let FTDefaultInputViewBackgroundColor : UIColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 
-let FTDefaultRecordViewHeight : CGFloat = 216.0
+let FTDefaultAccessoryViewHeight : CGFloat = 216.0
+let FTDefaultAccessoryViewTopMargin : CGFloat = 25.0
+let FTDefaultAccessoryViewBottomMargin : CGFloat = 25.0
 
 let FTDefaultMessageBubbleWidth : CGFloat = FTScreenWidth*0.52
 let FTDefaultMessageBubbleHeight : CGFloat = FTScreenWidth*0.32
