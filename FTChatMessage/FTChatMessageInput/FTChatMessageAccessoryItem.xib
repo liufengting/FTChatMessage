@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FTChatMessageAccessoryItem" customModule="ChatMessageDemoProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEV-9J-bLp">
+                    <rect key="frame" x="15" y="15" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="c4V-cm-wuo"/>
+                        <constraint firstAttribute="height" constant="50" id="kK3-ss-mC4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="function" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdd-cP-LbF">
+                    <rect key="frame" x="0.0" y="70" width="80" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pdd-cP-LbF" firstAttribute="top" secondItem="aEV-9J-bLp" secondAttribute="bottom" constant="5" id="6gT-Ti-yOu"/>
+                <constraint firstItem="aEV-9J-bLp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="6qU-bk-EYr"/>
+                <constraint firstAttribute="bottom" secondItem="pdd-cP-LbF" secondAttribute="bottom" id="SIj-TI-oYa"/>
+                <constraint firstItem="pdd-cP-LbF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SMN-ut-LAc"/>
+                <constraint firstAttribute="trailing" secondItem="pdd-cP-LbF" secondAttribute="trailing" id="a3f-Qz-vzW"/>
+                <constraint firstItem="aEV-9J-bLp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xFa-uR-1OY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="SIj-TI-oYa"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="accessoryImageView" destination="aEV-9J-bLp" id="evZ-SF-YyB"/>
+                <outlet property="accessoryNameLabel" destination="pdd-cP-LbF" id="RS5-N2-cWq"/>
+            </connections>
+            <point key="canvasLocation" x="80" y="21"/>
+        </view>
+    </objects>
+</document>
