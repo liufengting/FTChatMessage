@@ -4,7 +4,7 @@
 
 [![Twitter](https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat)](http://twitter.com/liufengting) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liufengting/FTChatMessage/master/LICENSE)
-ss[![GitHub stars](https://img.shields.io/github/stars/liufengting/FTChatMessage.svg)](https://github.com/liufengting/FTChatMessage/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/liufengting/FTChatMessage.svg)](https://github.com/liufengting/FTChatMessage/stargazers)
 
 
 # Working in progress
