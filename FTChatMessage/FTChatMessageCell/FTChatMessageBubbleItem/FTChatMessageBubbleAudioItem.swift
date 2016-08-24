@@ -13,7 +13,7 @@ class FTChatMessageBubbleAudioItem: FTChatMessageBubbleItem {
     var playImageView : UIImageView!
     var mediaInfoLabel : UILabel!
     
-    convenience init(frame: CGRect, aMessage : FTChatMessageModel ) {
+    convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
         self.backgroundColor = UIColor.clearColor()
         message = aMessage

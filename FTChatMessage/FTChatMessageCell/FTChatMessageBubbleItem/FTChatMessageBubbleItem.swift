@@ -7,11 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
-
-extension FTChatMessageBubbleItem {
-    
-}
 
 class FTChatMessageBubbleItem: UIButton {
     
@@ -19,13 +14,11 @@ class FTChatMessageBubbleItem: UIButton {
     var messageBubblePath = UIBezierPath()
     var messageLabel : UILabel!
 
-    convenience init(frame: CGRect, aMessage : FTChatMessageModel , image : UIImage?) {
+    convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame: frame)
-        NSException(name: "SubClassing", reason: "Subclass must impliment this ethod", userInfo: nil).raise()
+        NSException(name: "SubClassing", reason: "Subclass must impliment this method", userInfo: nil).raise()
     }
-    
-    
-    
+
 
     /**
      getBubbleShapePathWithSize
@@ -82,6 +75,65 @@ class FTChatMessageBubbleItem: UIButton {
 }
 
 
+extension FTChatMessageBubbleItem {
+    
+    internal class func getBubbleItemWithFrame(bubbleFrame: CGRect,aMessage: FTChatMessageModel) -> FTChatMessageBubbleItem {
+        var messageBubbleItem : FTChatMessageBubbleItem! = FTChatMessageBubbleItem()
+        switch aMessage.messageType {
+        case .Text:
+            messageBubbleItem = FTChatMessageBubbleTextItem(frame: bubbleFrame, aMessage: aMessage)
+        case .Image:
+            messageBubbleItem = FTChatMessageBubbleImageItem(frame: bubbleFrame, aMessage: aMessage)
+        case .Audio:
+            messageBubbleItem = FTChatMessageBubbleAudioItem(frame: bubbleFrame, aMessage: aMessage)
+        case .Location:
+            messageBubbleItem = FTChatMessageBubbleLocationItem(frame: bubbleFrame, aMessage: aMessage)
+        case .Video:
+            messageBubbleItem = FTChatMessageBubbleVideoItem(frame: bubbleFrame, aMessage: aMessage)
+        }
+        return messageBubbleItem
+    }
+    
+    
+    internal class func getMessageBubbleWidthForMessage(aMessage: FTChatMessageModel) -> CGFloat {
+        var bubbleWidth : CGFloat = 0
+        switch aMessage.messageType {
+        case .Text:
+            let att = NSString(string: aMessage.messageText)
+            let rect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
+            bubbleWidth = rect.width + FTDefaultTextMargin*2 + FTDefaultAngleWidth
+        case .Image:
+            bubbleWidth = FTDefaultMessageBubbleWidth
+        case .Audio:
+            bubbleWidth = FTDefaultMessageBubbleWidth
+        case .Location:
+            bubbleWidth = FTDefaultMessageBubbleMapViewWidth
+        case .Video:
+            bubbleWidth = FTDefaultMessageBubbleWidth
+        }
+        return bubbleWidth
+    }
+    
+    internal class func getMessageBubbleHeightForMessage(aMessage : FTChatMessageModel) -> CGFloat {
+        var bubbleHeight : CGFloat = 0
+        switch aMessage.messageType {
+        case .Text:
+            let att = NSString(string: aMessage.messageText)
+            let textRect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
+            bubbleHeight += textRect.height + FTDefaultTextMargin*2
+        case .Image:
+            bubbleHeight += FTDefaultMessageBubbleHeight
+        case .Audio:
+            bubbleHeight += FTDefaultMessageBubbleAudioHeight
+        case .Location:
+            bubbleHeight += FTDefaultMessageBubbleMapViewHeight
+        case .Video:
+            bubbleHeight += FTDefaultMessageBubbleHeight
+        }
+        return bubbleHeight
+    }
+    
 
+}
 
 

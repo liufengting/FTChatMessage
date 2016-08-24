@@ -13,7 +13,7 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
     var mediaPlayImageView : UIImageView!
     
     
-    convenience init(frame: CGRect, aMessage : FTChatMessageModel ) {
+    convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
         self.backgroundColor = UIColor.clearColor()
         message = aMessage
@@ -47,7 +47,6 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
         let xx = isUserSelf ?
             (self.frame.size.width - FTDefaultAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2 :
             FTDefaultAngleWidth + (self.frame.size.width - FTDefaultAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2
-        
         let yy = (self.frame.size.height - FTDefaultMessageBubbleMediaIconHeight)/2
         return CGRectMake(xx, yy, FTDefaultMessageBubbleMediaIconHeight, FTDefaultMessageBubbleMediaIconHeight)
     }

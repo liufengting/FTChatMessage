@@ -12,8 +12,6 @@ class FTChatMessageCell: UITableViewCell {
 
     var message : FTChatMessageModel!
     
-    var messageTimeLabel: UILabel!
-    var messageSenderLabel: UILabel!
     var messageBubbleItem: FTChatMessageBubbleItem!
     var messageDeliverStatusView : FTChatMessageDeliverStatusView?
     
@@ -61,65 +59,21 @@ class FTChatMessageCell: UITableViewCell {
         }
         
         let y : CGFloat = nameLabelRect.origin.y + nameLabelRect.height + FTDefaultMargin
-        var bubbleWidth : CGFloat = 0
-        var bubbleHeight : CGFloat = 0
-        
-        switch message.messageType {
-        case .Text:
-            let att = NSString(string: message.messageText)
-            let rect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
-            bubbleWidth = rect.width + FTDefaultTextMargin*2 + FTDefaultAngleWidth
-            bubbleHeight = rect.height + FTDefaultTextMargin*2
-        case .Image:
-            bubbleWidth = FTDefaultMessageBubbleWidth
-            bubbleHeight = FTDefaultMessageBubbleHeight
-        case .Audio:
-            bubbleWidth = FTDefaultMessageBubbleWidth
-            bubbleHeight = FTDefaultMessageBubbleAudioHeight
-        case .Location:
-            bubbleWidth = FTDefaultMessageBubbleMapViewWidth
-            bubbleHeight = FTDefaultMessageBubbleMapViewHeight
-        case .Video:
-            bubbleWidth = FTDefaultMessageBubbleWidth
-            bubbleHeight = FTDefaultMessageBubbleHeight
-            
-            
-        }
-        
+        let bubbleWidth : CGFloat = FTChatMessageBubbleItem.getMessageBubbleWidthForMessage(theMessage)
+        let bubbleHeight : CGFloat = FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
+
         let x = theMessage.isUserSelf ? FTScreenWidth - (FTDefaultIconSize + FTDefaultMargin + FTDefaultIconToMessageMargin) - bubbleWidth : FTDefaultIconSize + FTDefaultMargin + FTDefaultIconToMessageMargin
         
         bubbleRect = CGRectMake(x, y, bubbleWidth, bubbleHeight)
 
-        
         self.setupCellBubbleItem(bubbleRect)
 
     }
     
     func setupCellBubbleItem(bubbleFrame: CGRect) {
-    
-        switch message.messageType {
-        case .Text:
-            messageBubbleItem = FTChatMessageBubbleTextItem(frame: bubbleFrame, aMessage: message)
         
-        case .Image:
-            messageBubbleItem = FTChatMessageBubbleImageItem(frame: bubbleFrame, aMessage: message)
-        
-        case .Audio:
+        messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message)
 
-            messageBubbleItem = FTChatMessageBubbleAudioItem(frame: bubbleFrame, aMessage: message)
-
-        case .Location:
-
-            messageBubbleItem = FTChatMessageBubbleLocationItem(frame: bubbleFrame, aMessage: message)
-
-        case .Video:
-        
-            messageBubbleItem = FTChatMessageBubbleVideoItem(frame: bubbleFrame, aMessage: message)
-
-        }
-        
-        
-        
         if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.Succeeded{
             if messageDeliverStatusView == nil {
                 messageDeliverStatusView = FTChatMessageDeliverStatusView(frame: CGRectZero)
@@ -129,16 +83,32 @@ class FTChatMessageCell: UITableViewCell {
             messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
             self.addSubview(messageDeliverStatusView!)
         }
-        
-        
-        
 
         self.addSubview(messageBubbleItem)
 
     }
     
+    var messageTimeLabel: UILabel! = {
+        
+        
+        return UILabel()
+    }()
+    
 
-    class func getCellHeightWithMessage(theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
+    var messageSenderLabel: UILabel! = {
+        
+        
+        return UILabel()
+    }()
+
+ 
+    
+    
+    
+}
+extension FTChatMessageCell {
+
+    internal class func getCellHeightWithMessage(theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
         var cellDesiredHeight : CGFloat = 0;
         if shouldShowSendTime {
             cellDesiredHeight = FTDefaultTimeLabelHeight
@@ -147,29 +117,14 @@ class FTChatMessageCell: UITableViewCell {
             cellDesiredHeight = (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2 + FTDefaultNameLabelHeight
         }
         cellDesiredHeight += FTDefaultMargin
-        switch theMessage.messageType {
-        case .Text:
-            let att = NSString(string: theMessage.messageText)
-            let textRect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
-            cellDesiredHeight += textRect.height + FTDefaultTextMargin*2
-        case .Image:
-            cellDesiredHeight += FTDefaultMessageBubbleHeight
-        case .Audio:
-            cellDesiredHeight += FTDefaultMessageBubbleAudioHeight
-        case .Location:
-            cellDesiredHeight += FTDefaultMessageBubbleMapViewHeight
-        case .Video:
-            cellDesiredHeight += FTDefaultMessageBubbleHeight
-        }
+        cellDesiredHeight += FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
         cellDesiredHeight += FTDefaultMargin*2 - FTDefaultSectionHeight
-
+        
         return cellDesiredHeight
     }
-    
-    
-    
-    
 }
+
+
 class FTChatMessageDeliverStatusView: UIView {
 
     lazy var activityIndicator : UIActivityIndicatorView = {
