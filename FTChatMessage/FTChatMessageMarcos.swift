@@ -27,10 +27,11 @@ enum FTChatMessageType {
 //    case More
 }
 
-
-let FTChatMessageCellReuseIndentifier = "FTChatMessageCellReuseIndentifier"
 let FTScreenWidth = UIScreen.mainScreen().bounds.size.width
 let FTScreenHeight = UIScreen.mainScreen().bounds.size.height
+
+let FTChatMessageCellReuseIndentifier = "FTChatMessageCellReuseIndentifier"
+
 let FTDefaultMargin : CGFloat = 5.0
 let FTDefaultTextInViewMaxWidth : CGFloat = FTScreenWidth*0.65
 let FTDefaultIconToMessageMargin : CGFloat = 2.0
@@ -66,6 +67,7 @@ let FTDefaultMessageBubbleMapViewHeight : CGFloat = FTScreenWidth*0.40
 let FTDefaultMessageBubbleAudioHeight : CGFloat = 36.0
 let FTDefaultMessageBubbleAudioIconHeight : CGFloat = 24.0
 let FTDefaultMessageBubbleMediaIconHeight : CGFloat = 30.0
+let FTDefaultMessageSendStatusViewSize : CGFloat = 20.0
 
 
 let FTDefaultMessageDefaultAnimationDuration : Double = 0.3

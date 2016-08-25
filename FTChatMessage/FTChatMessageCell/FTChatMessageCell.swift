@@ -11,54 +11,47 @@ import UIKit
 class FTChatMessageCell: UITableViewCell {
 
     var message : FTChatMessageModel!
-    
     var messageBubbleItem: FTChatMessageBubbleItem!
-    var messageDeliverStatusView : FTChatMessageDeliverStatusView?
     
+    var messageTimeLabel: UILabel! = {
+        let label = UILabel(frame: CGRectZero)
+        label.font = FTDefaultTimeLabelFont
+        label.textAlignment = .Center
+        label.textColor = UIColor.lightGrayColor()
+        return label
+    }()
+    
+    var messageSenderLabel: UILabel! = {
+        let label = UILabel(frame: CGRectZero)
+        label.font = FTDefaultTimeLabelFont
+        label.textAlignment = .Center
+        label.textColor = UIColor.lightGrayColor()
+        return label
+    }()
+    
+    var messageDeliverStatusView : FTChatMessageDeliverStatusView? = {
+        return FTChatMessageDeliverStatusView(frame: CGRectZero)
+    }()
     
     convenience init(style: UITableViewCellStyle, reuseIdentifier: String?, theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) {
         self.init(style: style, reuseIdentifier: reuseIdentifier)
 
         message = theMessage
 
-        var timeLabelRect = CGRectZero
-        var nameLabelRect = CGRectZero
+        var heightSoFar = -FTDefaultSectionHeight
         var bubbleRect = CGRectZero
-        
+
         if shouldShowSendTime {
-            timeLabelRect = CGRectMake(0, -FTDefaultSectionHeight ,FTScreenWidth, FTDefaultTimeLabelHeight);
-            nameLabelRect = CGRectMake(0, FTDefaultTimeLabelHeight - FTDefaultSectionHeight, FTScreenWidth, 0);
-
-            messageTimeLabel = UILabel(frame: timeLabelRect);
-            messageTimeLabel.text = "\(message.messageTimeStamp)"
-            messageTimeLabel.textAlignment = .Center
-            messageTimeLabel.textColor = UIColor.lightGrayColor()
-            messageTimeLabel.font = FTDefaultTimeLabelFont
-            self.addSubview(messageTimeLabel)
-        }else{
-            nameLabelRect = CGRectMake(0, -FTDefaultSectionHeight, FTScreenWidth, 0);
+            self.addTimeLabel()
+            heightSoFar += FTDefaultTimeLabelHeight
         }
-
 
         if shouldShowSenderName {
-            var nameLabelTextAlignment : NSTextAlignment = .Left
-            
-            if theMessage.isUserSelf {
-                nameLabelRect = CGRectMake( 0, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth), FTDefaultNameLabelHeight)
-                nameLabelTextAlignment =  .Right
-            }else{
-                nameLabelRect = CGRectMake(FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight ,FTScreenWidth, FTDefaultNameLabelHeight)
-                nameLabelTextAlignment = .Left
-            }
-            messageSenderLabel = UILabel(frame: nameLabelRect);
-            messageSenderLabel.text = "\(message.messageSender.senderName)"
-            messageSenderLabel.textAlignment = nameLabelTextAlignment
-            messageSenderLabel.textColor = UIColor.lightGrayColor()
-            messageSenderLabel.font = FTDefaultTimeLabelFont
-            self.addSubview(messageSenderLabel)
+            self.addSenderLabel()
+            heightSoFar = (FTDefaultNameLabelHeight - FTDefaultSectionHeight)/2
         }
         
-        let y : CGFloat = nameLabelRect.origin.y + nameLabelRect.height + FTDefaultMargin
+        let y : CGFloat = heightSoFar + FTDefaultMargin
         let bubbleWidth : CGFloat = FTChatMessageBubbleItem.getMessageBubbleWidthForMessage(theMessage)
         let bubbleHeight : CGFloat = FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
 
@@ -73,39 +66,46 @@ class FTChatMessageCell: UITableViewCell {
     func setupCellBubbleItem(bubbleFrame: CGRect) {
         
         messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message)
-
-        if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.Succeeded{
-            if messageDeliverStatusView == nil {
-                messageDeliverStatusView = FTChatMessageDeliverStatusView(frame: CGRectZero)
-            }
-            let statusViewRect = CGRectMake(bubbleFrame.origin.x - 20 - FTDefaultMargin, (bubbleFrame.origin.y + bubbleFrame.size.height - 20)/2, 20, 20)
-            messageDeliverStatusView?.frame = statusViewRect
-            messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
-            self.addSubview(messageDeliverStatusView!)
-        }
-
         self.addSubview(messageBubbleItem)
-
+        
+        if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.Succeeded{
+            self.addSendStatusView(bubbleFrame)
+        }
     }
     
-    var messageTimeLabel: UILabel! = {
-        
-        
-        return UILabel()
-    }()
+    func addTimeLabel() {
+        let timeLabelRect = CGRectMake(0, -FTDefaultSectionHeight ,FTScreenWidth, FTDefaultTimeLabelHeight);
+        messageTimeLabel.frame = timeLabelRect
+        messageTimeLabel.text = "\(message.messageTimeStamp)"
+        self.addSubview(messageTimeLabel)
+    }
     
-
-    var messageSenderLabel: UILabel! = {
-        
-        
-        return UILabel()
-    }()
-
+    
+    func addSenderLabel() {
+        var nameLabelTextAlignment : NSTextAlignment = .Right
+        var nameLabelRect = CGRectMake( 0, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth), FTDefaultNameLabelHeight)
  
+        if message.isUserSelf == false {
+            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth
+            nameLabelTextAlignment =  .Left
+        }
+        
+        messageSenderLabel.frame = nameLabelRect
+        messageSenderLabel.text = "\(message.messageSender.senderName)"
+        messageSenderLabel.textAlignment = nameLabelTextAlignment
+        self.addSubview(messageSenderLabel)
+    }
     
-    
-    
+    func addSendStatusView(bubbleFrame: CGRect) {
+        let statusViewRect = CGRectMake(bubbleFrame.origin.x - FTDefaultMessageSendStatusViewSize - FTDefaultMargin, (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageSendStatusViewSize)/2, FTDefaultMessageSendStatusViewSize, FTDefaultMessageSendStatusViewSize)
+        messageDeliverStatusView?.frame = statusViewRect
+        messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
+        self.addSubview(messageDeliverStatusView!)
+    }
 }
+
+
+
 extension FTChatMessageCell {
 
     internal class func getCellHeightWithMessage(theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
@@ -125,40 +125,31 @@ extension FTChatMessageCell {
 }
 
 
-class FTChatMessageDeliverStatusView: UIView {
+class FTChatMessageDeliverStatusView: UIButton {
 
     lazy var activityIndicator : UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         activity.frame = self.bounds
+        activity.hidesWhenStopped = true
         return activity
     }()
     
-    lazy var failedImageView : UIImageView = {
-        let imageView = UIImageView.init(frame: CGRectMake(0, 0, 20, 20))
-        imageView.backgroundColor = UIColor.clearColor();
-        imageView.image = UIImage(named: "FT_Add")
-        return imageView
-    }()
+
     
     func setupWithDeliverStatus(status : FTChatMessageDeliverStatus) {
         self.backgroundColor = UIColor.clearColor()
-        
+        self.addSubview(activityIndicator)
         switch status {
         case .Sending:
             activityIndicator.startAnimating()
-            self.addSubview(activityIndicator)
-            failedImageView.hidden = true
+            self.setBackgroundImage(nil, forState: UIControlState.Normal)
         case .Succeeded:
             activityIndicator.stopAnimating()
-            activityIndicator.hidden = true
-            failedImageView.hidden = true
+            self.setBackgroundImage(nil, forState: UIControlState.Normal)
         case .failed:
             activityIndicator.stopAnimating()
-            activityIndicator.hidden = true
-            self.addSubview(failedImageView)
-            failedImageView.hidden = false
+            self.setBackgroundImage(UIImage(named: "FT_Error"), forState: UIControlState.Normal)
         }
-        
     }
     
     
