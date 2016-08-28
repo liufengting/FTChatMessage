@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 //MARK: - FTChatMessageAccessoryViewDataSource -
 @objc protocol FTChatMessageAccessoryViewDataSource : NSObjectProtocol {
 
@@ -15,13 +16,14 @@ import UIKit
     func ftChatMessageAccessoryViewTitleForItemAtIndex(index : NSInteger) -> String
  
 }
+
 //MARK: - FTChatMessageAccessoryViewDelegate -
 @objc protocol FTChatMessageAccessoryViewDelegate : NSObjectProtocol {
     
     func ftChatMessageAccessoryViewDidTappedOnItemAtIndex(index : NSInteger)
     
 }
-
+//MARK: - FTChatMessageAccessoryView -
 class FTChatMessageAccessoryView: UIView, UIScrollViewDelegate{
     
     @IBOutlet weak var scrollView: UIScrollView!

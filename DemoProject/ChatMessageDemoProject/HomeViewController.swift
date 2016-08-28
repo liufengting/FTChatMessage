@@ -29,7 +29,6 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
 
-        
     }
     
     /* UITableViewDelegate,UITableViewDataSource */
@@ -53,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let chat : FTChatMessageTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FTChatMessageTableViewController") as! FTChatMessageTableViewController
+        let chat : FTChatMessageTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DemoTableViewController") as! FTChatMessageTableViewController
         self.navigationController?.pushViewController(chat, animated: true)
         
     }

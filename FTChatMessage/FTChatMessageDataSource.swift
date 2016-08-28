@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol FTChatMessageDataSource : NSObjectProtocol {
     
+    func ftChatMessageMessageArray() -> [FTChatMessageModel]
     
     
     

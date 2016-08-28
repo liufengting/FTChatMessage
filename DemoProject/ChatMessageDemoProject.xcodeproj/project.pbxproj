@@ -240,8 +240,8 @@
 			children = (
 				5AC1B7CD1C71AC2900232C1C /* AppDelegate.swift */,
 				5AC1B7CF1C71AC2900232C1C /* HomeViewController.swift */,
-				5AC509A41C82BC090040F2A7 /* DemoTableViewController.swift */,
 				5A9230611CA82891008DC3CB /* ChatListTableViewCell.swift */,
+				5AC509A41C82BC090040F2A7 /* DemoTableViewController.swift */,
 				5A565A071D67304F00819E8C /* FTChatMessage */,
 				5A324F6D1D5A1C0400E57CE3 /* demoImages */,
 				5AC1B7D11C71AC2900232C1C /* Main.storyboard */,

@@ -11,7 +11,7 @@ import AlamofireImage
 
 protocol FTChatMessageHeaderDelegate {
 
-    func fTChatMessageHeaderDidTappedOnIcon(messageSenderModel : FTChatMessageUserModel)
+    func ft_chatMessageHeaderDidTappedOnIcon(messageSenderModel : FTChatMessageUserModel)
     
 }
 
@@ -52,7 +52,7 @@ class FTChatMessageHeader: UIView {
 
     func iconTapped() {
         if (headerViewDelegate != nil) {
-            headerViewDelegate?.fTChatMessageHeaderDidTappedOnIcon(messageSenderModel)
+            headerViewDelegate?.ft_chatMessageHeaderDidTappedOnIcon(messageSenderModel)
         }
     }
     
