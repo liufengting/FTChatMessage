@@ -1,4 +1,4 @@
-
+![FTChatMessage](https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTChatMessage/FTChatMessage.jpg)
 
 # FTChatMessage
 
