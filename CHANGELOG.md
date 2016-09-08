@@ -17,6 +17,7 @@
 | 2016.08.21 | rewriting some module |
 | 2016.08.22 | rewriting some module, make some of the view with xib |
 | 2016.08.23 | Move repo |
+| 2016.09.08 | simplify some methods |
 
 
 

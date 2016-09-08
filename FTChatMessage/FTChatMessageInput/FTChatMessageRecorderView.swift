@@ -22,7 +22,6 @@ class FTChatMessageRecorderView: UIView {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     var recorderTimer : NSTimer!
-    
     var recorderDelegate : FTChatMessageRecorderViewDelegate!
  
     

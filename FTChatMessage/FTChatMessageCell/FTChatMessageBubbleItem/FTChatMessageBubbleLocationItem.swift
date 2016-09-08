@@ -41,7 +41,7 @@ class FTChatMessageBubbleLocationItem: FTChatMessageBubbleItem {
     
     
     private func getMapSize(isUserSelf : Bool) -> CGRect {
-        let bubbleRect = CGRectMake(isUserSelf ? 0 : FTDefaultAngleWidth, 0, self.bounds.size.width - FTDefaultAngleWidth , self.bounds.size.height)
+        let bubbleRect = CGRectMake(isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth, 0, self.bounds.size.width - FTDefaultMessageBubbleAngleWidth , self.bounds.size.height)
         return bubbleRect;
     }
     

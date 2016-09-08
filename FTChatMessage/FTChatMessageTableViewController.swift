@@ -24,40 +24,24 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         }
     }
     
-    var messageArray : NSMutableArray = [] {
-        didSet {
-//            messageTableView.reloadData()
-        }
-    }
+    var messageArray : [FTChatMessageModel] = []
     var shouldShowSendTime : Bool = true
     var shouldShowSenderName : Bool = true
-    
     var delegete : FTChatMessageDelegate?
     var dataSource : FTChatMessageDataSource?
-    
-    
-    
 
-    
     let sender1 = FTChatMessageUserModel.init(id: "1", name: "Someone", icon_url: "http://ww3.sinaimg.cn/mw600/6cca1403jw1f3lrknzxczj20gj0g0t96.jpg", extra_data: nil, isSelf: false)
     let sender2 = FTChatMessageUserModel.init(id: "2", name: "LiuFengting", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: true)
     let sender3 = FTChatMessageUserModel.init(id: "3", name: "Someone else", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-       
-        
-
-
-        
         messageTableView = UITableView(frame: CGRectMake(0, 0, FTScreenWidth, FTScreenHeight), style: .Plain)
         messageTableView.delegate = self
         messageTableView.dataSource = self
         messageTableView.separatorStyle = .None
         messageTableView.allowsSelection = false
-        messageTableView.scrollsToTop = true
         messageTableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
         messageTableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, FTDefaultInputViewHeight, 0)
         self.view.addSubview(messageTableView)
@@ -277,27 +261,12 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     
     internal func addNewMessage(message : FTChatMessageModel) {
         
-//        message.messageDeliverStatus = FTChatMessageDeliverStatus.Sending
-        messageArray.addObject(message);
+        messageArray.append(message);
         
         messageTableView.insertSections(NSIndexSet.init(indexesInRange: NSMakeRange(messageArray.count-1, 1)), withRowAnimation: UITableViewRowAnimation.Bottom)
         
         self.scrollToBottom(true)
-        
 
-        
-
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-//
-//            
-//            message.messageDeliverStatus = FTChatMessageDeliverStatus.Succeeded
-//            
-//            self.messageTableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: self.messageArray.indexOfObject(message))], withRowAnimation: UITableViewRowAnimation.None)
-//            
-//            
-//        })
-
-        
     }
     
     //MARK: - scrollToBottom -
@@ -328,7 +297,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         return 1;
     }
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let message = messageArray[section] as! FTChatMessageModel
+        let message = messageArray[section]
         let header = FTChatMessageHeader.init(frame: CGRectMake(0,0,FTScreenWidth,40), senderModel: message.messageSender)
         header.headerViewDelegate = self
         return header
@@ -341,16 +310,16 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         return 0
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let message = messageArray[indexPath.section] as! FTChatMessageModel
+        let message = messageArray[indexPath.section]
 
         return FTChatMessageCell.getCellHeightWithMessage(message, shouldShowSendTime: shouldShowSendTime, shouldShowSenderName: shouldShowSenderName)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let message = messageArray[indexPath.section] as! FTChatMessageModel
+        let message = messageArray[indexPath.section]
         
-        let cell = FTChatMessageCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: FTChatMessageCellReuseIndentifier, theMessage: message, shouldShowSendTime: shouldShowSendTime , shouldShowSenderName: shouldShowSenderName );
+        let cell = FTChatMessageCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: FTDefaultMessageCellReuseIndentifier, theMessage: message, shouldShowSendTime: shouldShowSendTime , shouldShowSenderName: shouldShowSenderName );
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

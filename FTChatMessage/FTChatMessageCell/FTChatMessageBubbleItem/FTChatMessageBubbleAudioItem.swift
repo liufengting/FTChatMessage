@@ -42,7 +42,7 @@ class FTChatMessageBubbleAudioItem: FTChatMessageBubbleItem {
     }
     
     private func getAudioBubblePath(size:CGSize , isUserSelf : Bool) -> UIBezierPath {
-        let bubbleRect = CGRectMake(isUserSelf ? 0 : FTDefaultAngleWidth, 0, size.width - FTDefaultAngleWidth , size.height)
+        let bubbleRect = CGRectMake(isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth, 0, size.width - FTDefaultMessageBubbleAngleWidth , size.height)
         let path = UIBezierPath.init(roundedRect: bubbleRect, cornerRadius:  size.height/2)
         return path;
     }
@@ -57,8 +57,8 @@ class FTChatMessageBubbleAudioItem: FTChatMessageBubbleItem {
     private func getMediaInfoLabelFrame(isUserSelf : Bool) -> CGRect {
         let margin = (FTDefaultMessageBubbleAudioHeight - FTDefaultMessageBubbleAudioIconHeight)/2
         return isUserSelf ?
-            CGRectMake(FTDefaultMessageBubbleAudioHeight, margin, self.frame.size.width - FTDefaultMessageBubbleAudioHeight - FTDefaultAngleWidth - margin, FTDefaultMessageBubbleAudioIconHeight) :
-            CGRectMake( FTDefaultAngleWidth + margin, margin, self.frame.size.width - FTDefaultMessageBubbleAudioHeight - FTDefaultAngleWidth - margin, FTDefaultMessageBubbleAudioIconHeight)
+            CGRectMake(FTDefaultMessageBubbleAudioHeight, margin, self.frame.size.width - FTDefaultMessageBubbleAudioHeight - FTDefaultMessageBubbleAngleWidth - margin, FTDefaultMessageBubbleAudioIconHeight) :
+            CGRectMake( FTDefaultMessageBubbleAngleWidth + margin, margin, self.frame.size.width - FTDefaultMessageBubbleAudioHeight - FTDefaultMessageBubbleAngleWidth - margin, FTDefaultMessageBubbleAudioIconHeight)
     }
     
 }

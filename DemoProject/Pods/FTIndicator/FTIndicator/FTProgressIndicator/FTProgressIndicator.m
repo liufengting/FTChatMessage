@@ -331,7 +331,7 @@
 -(UIImage *)getImageWithStyle:(UIBlurEffectStyle)style messageType:(FTProgressIndicatorMessageType )type
 {
     UIImage *image;
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"ImageAsserts" ofType:@"bundle"];
+    NSString *bundlePath = [[NSBundle bundleForClass:[FTProgressIndicator class]] pathForResource:@"ImageAsserts" ofType:@"bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     switch (type) {
         case FTProgressIndicatorMessageTypeInfo:

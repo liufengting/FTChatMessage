@@ -55,7 +55,7 @@ class FTChatMessageCell: UITableViewCell {
         let bubbleWidth : CGFloat = FTChatMessageBubbleItem.getMessageBubbleWidthForMessage(theMessage)
         let bubbleHeight : CGFloat = FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
 
-        let x = theMessage.isUserSelf ? FTScreenWidth - (FTDefaultIconSize + FTDefaultMargin + FTDefaultIconToMessageMargin) - bubbleWidth : FTDefaultIconSize + FTDefaultMargin + FTDefaultIconToMessageMargin
+        let x = theMessage.isUserSelf ? FTScreenWidth - (FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin) - bubbleWidth : FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin
         
         bubbleRect = CGRectMake(x, y, bubbleWidth, bubbleHeight)
 
@@ -83,10 +83,10 @@ class FTChatMessageCell: UITableViewCell {
     
     func addSenderLabel() {
         var nameLabelTextAlignment : NSTextAlignment = .Right
-        var nameLabelRect = CGRectMake( 0, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth), FTDefaultNameLabelHeight)
+        var nameLabelRect = CGRectMake( 0, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), FTDefaultNameLabelHeight)
  
         if message.isUserSelf == false {
-            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultAngleWidth
+            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth
             nameLabelTextAlignment =  .Left
         }
         
@@ -97,7 +97,7 @@ class FTChatMessageCell: UITableViewCell {
     }
     
     func addSendStatusView(bubbleFrame: CGRect) {
-        let statusViewRect = CGRectMake(bubbleFrame.origin.x - FTDefaultMessageSendStatusViewSize - FTDefaultMargin, (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageSendStatusViewSize)/2, FTDefaultMessageSendStatusViewSize, FTDefaultMessageSendStatusViewSize)
+        let statusViewRect = CGRectMake(bubbleFrame.origin.x - FTDefaultMessageCellSendStatusViewSize - FTDefaultMargin, (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageCellSendStatusViewSize)/2, FTDefaultMessageCellSendStatusViewSize, FTDefaultMessageCellSendStatusViewSize)
         messageDeliverStatusView?.frame = statusViewRect
         messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
         self.addSubview(messageDeliverStatusView!)

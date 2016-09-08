@@ -45,8 +45,8 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
     
     private func getMediaImageViewFrame(isUserSelf : Bool) -> CGRect {
         let xx = isUserSelf ?
-            (self.frame.size.width - FTDefaultAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2 :
-            FTDefaultAngleWidth + (self.frame.size.width - FTDefaultAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2
+            (self.frame.size.width - FTDefaultMessageBubbleAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2 :
+            FTDefaultMessageBubbleAngleWidth + (self.frame.size.width - FTDefaultMessageBubbleAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2
         let yy = (self.frame.size.height - FTDefaultMessageBubbleMediaIconHeight)/2
         return CGRectMake(xx, yy, FTDefaultMessageBubbleMediaIconHeight, FTDefaultMessageBubbleMediaIconHeight)
     }

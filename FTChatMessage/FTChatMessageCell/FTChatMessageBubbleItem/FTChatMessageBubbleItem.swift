@@ -31,7 +31,7 @@ class FTChatMessageBubbleItem: UIButton {
     func getBubbleShapePathWithSize(size:CGSize , isUserSelf : Bool) -> UIBezierPath {
         let path = UIBezierPath()
         
-        let bubbleWidth = size.width - FTDefaultAngleWidth
+        let bubbleWidth = size.width - FTDefaultMessageBubbleAngleWidth
         let bubbleHeight = size.height
         let y : CGFloat = 0
         
@@ -47,13 +47,13 @@ class FTChatMessageBubbleItem: UIButton {
             path.addArcWithCenter(CGPointMake(x+bubbleWidth-FTDefaultMessageRoundCorner, y+bubbleHeight-FTDefaultMessageRoundCorner), radius: FTDefaultMessageRoundCorner, startAngle: CGFloat(M_PI_2), endAngle: 0, clockwise: false);
             path.addLineToPoint(CGPointMake(x+bubbleWidth, y+FTDefaultMessageRoundCorner*2+8))
             
-            path.addQuadCurveToPoint(CGPointMake(x+bubbleWidth+FTDefaultAngleWidth, y+FTDefaultMessageRoundCorner-2), controlPoint: CGPointMake(x+bubbleWidth+2.5, y+FTDefaultMessageRoundCorner+2))
+            path.addQuadCurveToPoint(CGPointMake(x+bubbleWidth+FTDefaultMessageBubbleAngleWidth, y+FTDefaultMessageRoundCorner-2), controlPoint: CGPointMake(x+bubbleWidth+2.5, y+FTDefaultMessageRoundCorner+2))
             path.addQuadCurveToPoint(CGPointMake(x+bubbleWidth, y+FTDefaultMessageRoundCorner), controlPoint: CGPointMake(x+bubbleWidth+4, y+FTDefaultMessageRoundCorner-1))
 
             path.addArcWithCenter(CGPointMake(x+bubbleWidth-FTDefaultMessageRoundCorner, y+FTDefaultMessageRoundCorner), radius: FTDefaultMessageRoundCorner, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI_2), clockwise: false);
             path.closePath()
         }else{
-            let x = FTDefaultAngleWidth
+            let x = FTDefaultMessageBubbleAngleWidth
             path.moveToPoint(CGPointMake(x+FTDefaultMessageRoundCorner, y))
             path.addLineToPoint(CGPointMake(x+bubbleWidth-FTDefaultMessageRoundCorner, y))
             path.addArcWithCenter(CGPointMake(x+bubbleWidth-FTDefaultMessageRoundCorner, y+FTDefaultMessageRoundCorner), radius: FTDefaultMessageRoundCorner, startAngle: CGFloat(-M_PI_2), endAngle: 0, clockwise: true);
@@ -63,7 +63,7 @@ class FTChatMessageBubbleItem: UIButton {
             path.addArcWithCenter(CGPointMake(x+FTDefaultMessageRoundCorner, y+bubbleHeight-FTDefaultMessageRoundCorner), radius: FTDefaultMessageRoundCorner, startAngle: CGFloat(M_PI_2), endAngle: CGFloat(M_PI), clockwise: true);
             path.addLineToPoint(CGPointMake(x, y+FTDefaultMessageRoundCorner*2+8))
             
-            path.addQuadCurveToPoint(CGPointMake(x-FTDefaultAngleWidth, y+FTDefaultMessageRoundCorner-2), controlPoint: CGPointMake(x-2.5, y+FTDefaultMessageRoundCorner+2))
+            path.addQuadCurveToPoint(CGPointMake(x-FTDefaultMessageBubbleAngleWidth, y+FTDefaultMessageRoundCorner-2), controlPoint: CGPointMake(x-2.5, y+FTDefaultMessageRoundCorner+2))
             path.addQuadCurveToPoint(CGPointMake(x, y+FTDefaultMessageRoundCorner), controlPoint: CGPointMake(x-4, y+FTDefaultMessageRoundCorner-1))
             
             path.addArcWithCenter(CGPointMake(x+FTDefaultMessageRoundCorner, y+FTDefaultMessageRoundCorner), radius: FTDefaultMessageRoundCorner, startAngle: CGFloat(M_PI), endAngle: CGFloat(-M_PI_2), clockwise: true);
@@ -100,8 +100,11 @@ extension FTChatMessageBubbleItem {
         switch aMessage.messageType {
         case .Text:
             let att = NSString(string: aMessage.messageText)
-            let rect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
-            bubbleWidth = rect.width + FTDefaultTextMargin*2 + FTDefaultAngleWidth
+            let rect = att.boundingRectWithSize(CGSizeMake(FTDefaultMessageBubbleTextInViewMaxWidth,CGFloat(MAXFLOAT)),
+                                                options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                                                attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
+                                                context: nil)
+            bubbleWidth = rect.width + FTDefaultTextMargin*2 + FTDefaultMessageBubbleAngleWidth
         case .Image:
             bubbleWidth = FTDefaultMessageBubbleWidth
         case .Audio:
@@ -119,7 +122,10 @@ extension FTChatMessageBubbleItem {
         switch aMessage.messageType {
         case .Text:
             let att = NSString(string: aMessage.messageText)
-            let textRect = att.boundingRectWithSize(CGSizeMake(FTDefaultTextInViewMaxWidth,CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], context: nil)
+            let textRect = att.boundingRectWithSize(CGSizeMake(FTDefaultMessageBubbleTextInViewMaxWidth,CGFloat(MAXFLOAT)),
+                                                    options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                                                    attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
+                                                    context: nil)
             bubbleHeight += textRect.height + FTDefaultTextMargin*2
         case .Image:
             bubbleHeight += FTDefaultMessageBubbleHeight

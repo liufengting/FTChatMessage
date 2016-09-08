@@ -20,7 +20,7 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         messageAccessoryView.setupWithDataSource(self , accessoryViewDelegate : self)
         
         
-        messageArray = NSMutableArray(array: self.loadDefaultMessages())
+        messageArray = self.loadDefaultMessages()
     }
     
     
@@ -28,16 +28,9 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     
     func addNewIncomingMessage() {
         
-        let message8 = FTChatMessageModel(data: "New Message", time: "4.12 22:42", from: sender1, type: .Image)
-//        messageArray.addObject(message8)
-//        messageTableView.insertSections(NSIndexSet.init(indexesInRange: NSMakeRange(messageArray.count-1, 1)), withRowAnimation: UITableViewRowAnimation.Bottom)
+        let message8 = FTChatMessageModel(data: "New Message added, try something else.", time: "4.12 22:42", from: sender1, type: .Text)
         self.addNewMessage(message8)
-        
-        
-//        messageArray.addObjectsFromArray(self.loadDefaultMessages());
-//        messageTableView.reloadData()
-//        self.scrollToBottom(true)
-        
+
     }
 
     func loadDefaultMessages() -> [FTChatMessageModel] {
@@ -57,32 +50,28 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     }
     
     
-    func getAccessoryItemTitle() -> [String] {
-        return ["Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather","Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather"]
+    func getAccessoryItemTitleArray() -> [String] {
+        return ["Alarm","Camera","Contacts","Mail","Messages","Music","Phone","Photos","Settings","VideoChat","Videos","Weather"]
     }
-    
-    
-    
-    
-    
+
     
     //MARK: - FTChatMessageAccessoryViewDataSource -
     
-    func ftChatMessageAccessoryViewItemCount() -> NSInteger {
-        return self.getAccessoryItemTitle().count
+    func ftChatMessageAccessoryViewModelArray() -> [FTChatMessageAccessoryViewModel] {
+        var array : [FTChatMessageAccessoryViewModel] = []
+        let titleArray = self.getAccessoryItemTitleArray()
+        for i in 0...titleArray.count-1 {
+            let string = titleArray[i]
+            array.append(FTChatMessageAccessoryViewModel.init(title: string, iconImage: UIImage(named: string)!))
+        }
+        return array
     }
-    func ftChatMessageAccessoryViewImageForItemAtIndex(index : NSInteger) -> UIImage {
-        return UIImage(named: self.getAccessoryItemTitle()[index])!
-    }
-    func ftChatMessageAccessoryViewTitleForItemAtIndex(index : NSInteger) -> String {
-        return self.getAccessoryItemTitle()[index]
-    }
-    
 
     //MARK: - FTChatMessageAccessoryViewDelegate -
     
     func ftChatMessageAccessoryViewDidTappedOnItemAtIndex(index: NSInteger) {
         print("tapped at accessory view at index : \(index)")
+        FTIndicator.showInfoWithMessage("you tapped index: \(index)")
     }
     
     
@@ -94,13 +83,16 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     //MARK: - FTChatMessageRecorderViewDelegate -
     
     func ft_chatMessageRecordViewDidStartRecording(){
+        print("Start recording...")
         FTIndicator.showProgressWithmessage("Recording...")
     }
     func ft_chatMessageRecordViewDidCancelRecording(){
+        print("Recording canceled.")
         FTIndicator.dismissProgress()
     }
     func ft_chatMessageRecordViewDidStopRecording(duriation: NSTimeInterval, file: NSData?){
-        FTIndicator.dismissProgress()
+        print("Recording ended!")
+        FTIndicator.showSuccessWithMessage("Record done.")
     }
     
     
