@@ -125,35 +125,7 @@ extension FTChatMessageCell {
 }
 
 
-class FTChatMessageDeliverStatusView: UIButton {
 
-    lazy var activityIndicator : UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        activity.frame = self.bounds
-        activity.hidesWhenStopped = true
-        return activity
-    }()
-    
-
-    
-    func setupWithDeliverStatus(status : FTChatMessageDeliverStatus) {
-        self.backgroundColor = UIColor.clearColor()
-        self.addSubview(activityIndicator)
-        switch status {
-        case .Sending:
-            activityIndicator.startAnimating()
-            self.setBackgroundImage(nil, forState: UIControlState.Normal)
-        case .Succeeded:
-            activityIndicator.stopAnimating()
-            self.setBackgroundImage(nil, forState: UIControlState.Normal)
-        case .failed:
-            activityIndicator.stopAnimating()
-            self.setBackgroundImage(UIImage(named: "FT_Error"), forState: UIControlState.Normal)
-        }
-    }
-    
-    
-}
 
 
 

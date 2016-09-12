@@ -18,12 +18,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     var messageInputView : FTChatMessageInputView!
     var messageRecordView : FTChatMessageRecorderView!
     var messageAccessoryView : FTChatMessageAccessoryView!
-    var messageInputMode : FTChatMessageInputMode = FTChatMessageInputMode.None{
-        didSet {
-            
-        }
-    }
-    
+    var messageInputMode : FTChatMessageInputMode = FTChatMessageInputMode.None
     var messageArray : [FTChatMessageModel] = []
     var shouldShowSendTime : Bool = true
     var shouldShowSenderName : Bool = true

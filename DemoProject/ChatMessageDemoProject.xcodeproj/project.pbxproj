@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A25682B1D86DFB000549AA3 /* FTChatMessageDeliverStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25682A1D86DFB000549AA3 /* FTChatMessageDeliverStatusView.swift */; };
 		5A324F721D5A1C0400E57CE3 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A324F6E1D5A1C0400E57CE3 /* dog.jpg */; };
 		5A565A1B1D67304F00819E8C /* FTChatMessageBubbleAudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A565A0A1D67304F00819E8C /* FTChatMessageBubbleAudioItem.swift */; };
 		5A565A1C1D67304F00819E8C /* FTChatMessageBubbleImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A565A0B1D67304F00819E8C /* FTChatMessageBubbleImageItem.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		1874552D0980D4FC4FBBAEF8 /* Pods-ChatMessageDemoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatMessageDemoProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatMessageDemoProject/Pods-ChatMessageDemoProject.release.xcconfig"; sourceTree = "<group>"; };
+		5A25682A1D86DFB000549AA3 /* FTChatMessageDeliverStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageDeliverStatusView.swift; sourceTree = "<group>"; };
 		5A324F6E1D5A1C0400E57CE3 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		5A565A0A1D67304F00819E8C /* FTChatMessageBubbleAudioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageBubbleAudioItem.swift; sourceTree = "<group>"; };
 		5A565A0B1D67304F00819E8C /* FTChatMessageBubbleImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageBubbleImageItem.swift; sourceTree = "<group>"; };
@@ -169,8 +171,9 @@
 		5A565A081D67304F00819E8C /* FTChatMessageCell */ = {
 			isa = PBXGroup;
 			children = (
-				5A565A091D67304F00819E8C /* FTChatMessageBubbleItem */,
 				5A565A101D67304F00819E8C /* FTChatMessageCell.swift */,
+				5A25682A1D86DFB000549AA3 /* FTChatMessageDeliverStatusView.swift */,
+				5A565A091D67304F00819E8C /* FTChatMessageBubbleItem */,
 			);
 			path = FTChatMessageCell;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				5A565A231D67304F00819E8C /* FTChatMessageAccessoryView.swift in Sources */,
 				5A565A271D67304F00819E8C /* FTChatMessageMarcos.swift in Sources */,
 				5A565A1B1D67304F00819E8C /* FTChatMessageBubbleAudioItem.swift in Sources */,
+				5A25682B1D86DFB000549AA3 /* FTChatMessageDeliverStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
