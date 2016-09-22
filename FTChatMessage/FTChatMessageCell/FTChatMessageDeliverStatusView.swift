@@ -11,25 +11,25 @@ import UIKit
 class FTChatMessageDeliverStatusView: UIButton {
     
     lazy var activityIndicator : UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         activity.frame = self.bounds
         activity.hidesWhenStopped = true
         return activity
     }()
     
-    func setupWithDeliverStatus(status : FTChatMessageDeliverStatus) {
-        self.backgroundColor = UIColor.clearColor()
+    func setupWithDeliverStatus(_ status : FTChatMessageDeliverStatus) {
+        self.backgroundColor = UIColor.clear
         self.addSubview(activityIndicator)
         switch status {
-        case .Sending:
+        case .sending:
             activityIndicator.startAnimating()
-            self.setBackgroundImage(nil, forState: UIControlState.Normal)
-        case .Succeeded:
+            self.setBackgroundImage(nil, for: UIControlState())
+        case .succeeded:
             activityIndicator.stopAnimating()
-            self.setBackgroundImage(nil, forState: UIControlState.Normal)
+            self.setBackgroundImage(nil, for: UIControlState())
         case .failed:
             activityIndicator.stopAnimating()
-            self.setBackgroundImage(UIImage(named: "FT_Error"), forState: UIControlState.Normal)
+            self.setBackgroundImage(UIImage(named: "FT_Error"), for: UIControlState())
         }
     }
 }

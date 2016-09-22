@@ -13,24 +13,24 @@ class FTChatMessageCell: UITableViewCell {
     var message : FTChatMessageModel!
     var messageBubbleItem: FTChatMessageBubbleItem!
     
-    var messageTimeLabel: UILabel! = {
-        let label = UILabel(frame: CGRectZero)
+    lazy var messageTimeLabel: UILabel! = {
+        let label = UILabel(frame: CGRect.zero)
         label.font = FTDefaultTimeLabelFont
-        label.textAlignment = .Center
-        label.textColor = UIColor.lightGrayColor()
+        label.textAlignment = .center
+        label.textColor = UIColor.lightGray
         return label
     }()
     
-    var messageSenderLabel: UILabel! = {
-        let label = UILabel(frame: CGRectZero)
+    lazy var messageSenderNameLabel: UILabel! = {
+        let label = UILabel(frame: CGRect.zero)
         label.font = FTDefaultTimeLabelFont
-        label.textAlignment = .Center
-        label.textColor = UIColor.lightGrayColor()
+        label.textAlignment = .center
+        label.textColor = UIColor.lightGray
         return label
     }()
     
     var messageDeliverStatusView : FTChatMessageDeliverStatusView? = {
-        return FTChatMessageDeliverStatusView(frame: CGRectZero)
+        return FTChatMessageDeliverStatusView(frame: CGRect.zero)
     }()
     
     convenience init(style: UITableViewCellStyle, reuseIdentifier: String?, theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) {
@@ -39,7 +39,7 @@ class FTChatMessageCell: UITableViewCell {
         message = theMessage
 
         var heightSoFar = -FTDefaultSectionHeight
-        var bubbleRect = CGRectZero
+        var bubbleRect = CGRect.zero
 
         if shouldShowSendTime {
             self.addTimeLabel()
@@ -57,47 +57,47 @@ class FTChatMessageCell: UITableViewCell {
 
         let x = theMessage.isUserSelf ? FTScreenWidth - (FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin) - bubbleWidth : FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin
         
-        bubbleRect = CGRectMake(x, y, bubbleWidth, bubbleHeight)
+        bubbleRect = CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight)
 
         self.setupCellBubbleItem(bubbleRect)
 
     }
     
-    func setupCellBubbleItem(bubbleFrame: CGRect) {
+    func setupCellBubbleItem(_ bubbleFrame: CGRect) {
         
         messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message)
         self.addSubview(messageBubbleItem)
         
-        if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.Succeeded{
+        if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.succeeded{
             self.addSendStatusView(bubbleFrame)
         }
     }
     
     func addTimeLabel() {
-        let timeLabelRect = CGRectMake(0, -FTDefaultSectionHeight ,FTScreenWidth, FTDefaultTimeLabelHeight);
+        let timeLabelRect = CGRect(x: 0, y: -FTDefaultSectionHeight ,width: FTScreenWidth, height: FTDefaultTimeLabelHeight);
         messageTimeLabel.frame = timeLabelRect
-        messageTimeLabel.text = "\(message.messageTimeStamp)"
+        messageTimeLabel.text = message.messageTimeStamp
         self.addSubview(messageTimeLabel)
     }
     
     
     func addSenderLabel() {
-        var nameLabelTextAlignment : NSTextAlignment = .Right
-        var nameLabelRect = CGRectMake( 0, (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), FTDefaultNameLabelHeight)
+        var nameLabelTextAlignment : NSTextAlignment = .right
+        var nameLabelRect = CGRect( x: 0, y: (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultNameLabelHeight)
  
         if message.isUserSelf == false {
             nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth
-            nameLabelTextAlignment =  .Left
+            nameLabelTextAlignment =  .left
         }
         
-        messageSenderLabel.frame = nameLabelRect
-        messageSenderLabel.text = "\(message.messageSender.senderName)"
-        messageSenderLabel.textAlignment = nameLabelTextAlignment
-        self.addSubview(messageSenderLabel)
+        messageSenderNameLabel.frame = nameLabelRect
+        messageSenderNameLabel.text = message.messageSender.senderName
+        messageSenderNameLabel.textAlignment = nameLabelTextAlignment
+        self.addSubview(messageSenderNameLabel)
     }
     
-    func addSendStatusView(bubbleFrame: CGRect) {
-        let statusViewRect = CGRectMake(bubbleFrame.origin.x - FTDefaultMessageCellSendStatusViewSize - FTDefaultMargin, (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageCellSendStatusViewSize)/2, FTDefaultMessageCellSendStatusViewSize, FTDefaultMessageCellSendStatusViewSize)
+    func addSendStatusView(_ bubbleFrame: CGRect) {
+        let statusViewRect = CGRect(x: bubbleFrame.origin.x - FTDefaultMessageCellSendStatusViewSize - FTDefaultMargin, y: (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageCellSendStatusViewSize)/2, width: FTDefaultMessageCellSendStatusViewSize, height: FTDefaultMessageCellSendStatusViewSize)
         messageDeliverStatusView?.frame = statusViewRect
         messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
         self.addSubview(messageDeliverStatusView!)
@@ -108,7 +108,7 @@ class FTChatMessageCell: UITableViewCell {
 
 extension FTChatMessageCell {
 
-    internal class func getCellHeightWithMessage(theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
+    internal class func getCellHeightWithMessage(_ theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
         var cellDesiredHeight : CGFloat = 0;
         if shouldShowSendTime {
             cellDesiredHeight = FTDefaultTimeLabelHeight

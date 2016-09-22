@@ -1,8 +1,0 @@
-
-target 'ChatMessageDemoProject' do
-
-use_frameworks!
-pod 'AlamofireImage'
-pod 'FTIndicator'
-
-end

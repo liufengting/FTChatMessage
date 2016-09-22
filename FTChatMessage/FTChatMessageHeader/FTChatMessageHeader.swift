@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import AlamofireImage
+//import AlamofireImage
 
 protocol FTChatMessageHeaderDelegate {
 
-    func ft_chatMessageHeaderDidTappedOnIcon(messageSenderModel : FTChatMessageUserModel)
+    func ft_chatMessageHeaderDidTappedOnIcon(_ messageSenderModel : FTChatMessageUserModel)
     
 }
 
@@ -28,25 +28,23 @@ class FTChatMessageHeader: UIView {
         
         messageSenderModel = senderModel;
         
-        self.setupHeader(NSURL(string: senderModel.senderIconUrl), isSender: senderModel.isUserSelf)
+        self.setupHeader(URL(string: senderModel.senderIconUrl), isSender: senderModel.isUserSelf)
 
     }
     
-    private func setupHeader(imageUrl : NSURL?, isSender: Bool){
-        self.backgroundColor = UIColor.clearColor()
+    fileprivate func setupHeader(_ imageUrl : URL?, isSender: Bool){
+        self.backgroundColor = UIColor.clear
         
-        let iconRect = isSender ? CGRectMake(self.frame.width-FTDefaultMargin-FTDefaultIconSize, FTDefaultMargin, FTDefaultIconSize, FTDefaultIconSize) : CGRectMake(FTDefaultMargin, FTDefaultMargin, FTDefaultIconSize, FTDefaultIconSize)
+        let iconRect = isSender ? CGRect(x: self.frame.width-FTDefaultMargin-FTDefaultIconSize, y: FTDefaultMargin, width: FTDefaultIconSize, height: FTDefaultIconSize) : CGRect(x: FTDefaultMargin, y: FTDefaultMargin, width: FTDefaultIconSize, height: FTDefaultIconSize)
         iconButton = UIButton(frame: iconRect)
         iconButton.backgroundColor = isSender ? FTDefaultOutgoingColor : FTDefaultIncomingColor
         iconButton.layer.cornerRadius = FTDefaultIconSize/2;
         iconButton.clipsToBounds = true
-        iconButton.addTarget(self, action: #selector(self.iconTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        iconButton.addTarget(self, action: #selector(self.iconTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(iconButton)
         
         if (imageUrl != nil){
-//            iconButton.sd_setImageWithURL(imageUrl!, forState: UIControlState.Normal)
-//            iconButton.af_setImageForState(UIControlState.Normal, URL: imageUrl!)
-            iconButton.af_setImageForState(UIControlState.Normal, URL: imageUrl!)
+//            iconButton.af_setImageForState(UIControlState(), URL: imageUrl!)
         }
     }
 

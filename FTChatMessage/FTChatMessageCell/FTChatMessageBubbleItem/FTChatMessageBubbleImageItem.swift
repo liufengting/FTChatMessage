@@ -12,15 +12,15 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
     
     convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         message = aMessage
         messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
         
         
         let maskLayer = CAShapeLayer()
-        maskLayer.path = messageBubblePath.CGPath
+        maskLayer.path = messageBubblePath.cgPath
         maskLayer.frame = self.bounds
-        maskLayer.contentsScale = UIScreen.mainScreen().scale;
+        maskLayer.contentsScale = UIScreen.main.scale;
         
         let layer = CAShapeLayer()
         layer.mask = maskLayer
@@ -28,7 +28,7 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
         self.layer.addSublayer(layer)
         
         if let image = UIImage(named : "dog.jpg") {
-            layer.contents = image.CGImage
+            layer.contents = image.cgImage
         }
         //
         //        SDWebImageManager.sharedManager().downloadWithURL(NSURL(string : message.messageText),

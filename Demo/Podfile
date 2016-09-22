@@ -1,0 +1,7 @@
+target 'Demo' do
+
+use_frameworks!
+#pod 'AlamofireImage'
+pod 'FTIndicator'
+
+end

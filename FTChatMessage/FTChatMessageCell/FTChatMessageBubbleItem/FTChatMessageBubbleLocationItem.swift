@@ -15,15 +15,15 @@ class FTChatMessageBubbleLocationItem: FTChatMessageBubbleItem {
     
     convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         message = aMessage
         
         let mapRect = self.getMapSize(aMessage.isUserSelf)
         mapView = MKMapView(frame : mapRect)
-        mapView.scrollEnabled = false
-        mapView.userInteractionEnabled = false
+        mapView.isScrollEnabled = false
+        mapView.isUserInteractionEnabled = false
         mapView.layer.cornerRadius = FTDefaultMessageRoundCorner
-        mapView.layer.borderColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.CGColor : FTDefaultIncomingColor.CGColor
+        mapView.layer.borderColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
         mapView.layer.borderWidth = 0.8
         self.addSubview(mapView)
         
@@ -40,8 +40,8 @@ class FTChatMessageBubbleLocationItem: FTChatMessageBubbleItem {
     }
     
     
-    private func getMapSize(isUserSelf : Bool) -> CGRect {
-        let bubbleRect = CGRectMake(isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth, 0, self.bounds.size.width - FTDefaultMessageBubbleAngleWidth , self.bounds.size.height)
+    fileprivate func getMapSize(_ isUserSelf : Bool) -> CGRect {
+        let bubbleRect = CGRect(x: isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth, y: 0, width: self.bounds.size.width - FTDefaultMessageBubbleAngleWidth , height: self.bounds.size.height)
         return bubbleRect;
     }
     

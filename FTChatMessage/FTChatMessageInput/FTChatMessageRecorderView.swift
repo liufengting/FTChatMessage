@@ -12,7 +12,7 @@ import UIKit
     
     func ft_chatMessageRecordViewDidStartRecording()
     func ft_chatMessageRecordViewDidCancelRecording()
-    func ft_chatMessageRecordViewDidStopRecording(duriation: NSTimeInterval, file: NSData?)
+    func ft_chatMessageRecordViewDidStopRecording(_ duriation: TimeInterval, file: Data?)
 
 }
 
@@ -21,31 +21,31 @@ class FTChatMessageRecorderView: UIView {
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
-    var recorderTimer : NSTimer!
+    var recorderTimer : Timer!
     var recorderDelegate : FTChatMessageRecorderViewDelegate!
  
     
-    @IBAction func buttonTouchDown(sender: UIButton) {
+    @IBAction func buttonTouchDown(_ sender: UIButton) {
         self.startRecording()
         if recorderDelegate != nil {
             recorderDelegate.ft_chatMessageRecordViewDidStartRecording()
         }
     }
     
-    @IBAction func buttonTouchUpInside(sender: UIButton) {
+    @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         if recorderDelegate != nil {
             recorderDelegate.ft_chatMessageRecordViewDidStopRecording(10, file: nil)
         }
     }
     
-    @IBAction func buttonTouchUpOutside(sender: UIButton) {
+    @IBAction func buttonTouchUpOutside(_ sender: UIButton) {
         if recorderDelegate != nil {
             recorderDelegate.ft_chatMessageRecordViewDidCancelRecording()
         }
     }
 
     
-    @IBAction func buttonTouchCancel(sender: UIButton) {
+    @IBAction func buttonTouchCancel(_ sender: UIButton) {
        
         if recorderDelegate != nil {
             recorderDelegate.ft_chatMessageRecordViewDidCancelRecording()

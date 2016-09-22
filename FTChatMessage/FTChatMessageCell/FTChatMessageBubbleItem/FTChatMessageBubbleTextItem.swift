@@ -12,14 +12,14 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
     
     convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         message = aMessage
         
         messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
         
         let layer = CAShapeLayer()
-        layer.path = messageBubblePath.CGPath
-        layer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.CGColor : FTDefaultIncomingColor.CGColor
+        layer.path = messageBubblePath.cgPath
+        layer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
         self.layer.addSublayer(layer)
         
         
@@ -27,7 +27,7 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
         messageLabel = UILabel(frame: self.getTextRectWithSize(frame.size, isUserSelf: aMessage.isUserSelf));
         messageLabel.text = message.messageText
         messageLabel.numberOfLines = 0
-        messageLabel.textColor = aMessage.messageSender.isUserSelf ? UIColor.whiteColor() : UIColor.blackColor()
+        messageLabel.textColor = aMessage.messageSender.isUserSelf ? UIColor.white : UIColor.black
         messageLabel.font = FTDefaultFontSize
         self.addSubview(messageLabel)
         let attributeString = NSMutableAttributedString(attributedString: messageLabel.attributedText!)
@@ -36,12 +36,12 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
         
     }
     
-    private func getTextRectWithSize(size:CGSize , isUserSelf : Bool) -> CGRect {
+    fileprivate func getTextRectWithSize(_ size:CGSize , isUserSelf : Bool) -> CGRect {
         let bubbleWidth = size.width - FTDefaultMessageBubbleAngleWidth  - FTDefaultTextMargin*2
         let bubbleHeight = size.height - FTDefaultTextMargin*2
         let y = FTDefaultTextMargin
         let x : CGFloat = isUserSelf ? FTDefaultTextMargin : FTDefaultMessageBubbleAngleWidth + FTDefaultTextMargin
-        return CGRectMake(x,y,bubbleWidth,bubbleHeight);
+        return CGRect(x: x,y: y,width: bubbleWidth,height: bubbleHeight);
     }
     
     

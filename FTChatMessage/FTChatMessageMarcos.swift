@@ -18,26 +18,26 @@ import UIKit
  - Location: Location message
  */
 enum FTChatMessageType {
-    case Text
-    case Image
-    case Audio
-    case Video
-    case Location
+    case text
+    case image
+    case audio
+    case video
+    case location
 //    case Share
 //    case More
 }
 
-let FTScreenWidth = UIScreen.mainScreen().bounds.size.width
-let FTScreenHeight = UIScreen.mainScreen().bounds.size.height
+let FTScreenWidth = UIScreen.main.bounds.size.width
+let FTScreenHeight = UIScreen.main.bounds.size.height
 
 
 let FTDefaultMargin : CGFloat = 5.0
 //MARK: - TimeLabel -
 let FTDefaultTimeLabelHeight : CGFloat = 10.0
-let FTDefaultTimeLabelFont : UIFont = UIFont.systemFontOfSize(10)
+let FTDefaultTimeLabelFont : UIFont = UIFont.systemFont(ofSize: 10)
 //MARK: - NameLabel -
 let FTDefaultNameLabelHeight : CGFloat = 20.0
-let FTDefaultNameLabelFont : UIFont = UIFont.systemFontOfSize(12)
+let FTDefaultNameLabelFont : UIFont = UIFont.systemFont(ofSize: 12)
 //MARK: - Input -
 let FTDefaultInputViewHeight : CGFloat = 44.0
 let FTDefaultInputViewMargin : CGFloat = 8.0
@@ -49,7 +49,8 @@ let FTDefaultInputViewBackgroundColor : UIColor = UIColor(red: 230/255, green: 2
 let FTDefaultAccessoryViewHeight : CGFloat = 216.0
 let FTDefaultAccessoryViewItemWidth : CGFloat = 60.0
 let FTDefaultAccessoryViewItemHeight : CGFloat = 80.0
-let FTDefaultAccessoryViewTopMargin : CGFloat = 20.0
+let FTDefaultAccessoryViewTopMargin : CGFloat = 15.0
+let FTDefaultAccessoryViewLeftMargin : CGFloat = 25.0
 let FTDefaultAccessoryViewBottomMargin : CGFloat = 30.0
 //MARK: - MessageBubble -
 let FTDefaultMessageBubbleTextInViewMaxWidth : CGFloat = FTScreenWidth*0.65
@@ -72,7 +73,7 @@ let FTDefaultLineSpacing : CGFloat = 2.0
 let FTDefaultSectionHeight : CGFloat = 40.0
 let FTDefaultIconSize : CGFloat = 30.0
 let FTDefaultMessageRoundCorner : CGFloat = 12.0
-let FTDefaultFontSize : UIFont = UIFont.systemFontOfSize(16)
+let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 16)
 let FTDefaultOutgoingColor : UIColor = UIColor(red: 1/255, green: 123/255, blue: 225/255, alpha: 1)
 let FTDefaultIncomingColor : UIColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 //MARK: - Animation -

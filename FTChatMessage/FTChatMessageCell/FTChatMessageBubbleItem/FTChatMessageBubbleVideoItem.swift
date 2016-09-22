@@ -15,15 +15,15 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
     
     convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
         self.init(frame:frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         message = aMessage
         messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
         
         
         let maskLayer = CAShapeLayer()
-        maskLayer.path = messageBubblePath.CGPath
+        maskLayer.path = messageBubblePath.cgPath
         maskLayer.frame = self.bounds
-        maskLayer.contentsScale = UIScreen.mainScreen().scale;
+        maskLayer.contentsScale = UIScreen.main.scale;
         
         let layer = CAShapeLayer()
         layer.mask = maskLayer
@@ -31,23 +31,23 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
         self.layer.addSublayer(layer)
         
         if let image = UIImage(named : "dog.jpg") {
-            layer.contents = image.CGImage
+            layer.contents = image.cgImage
         }
 
         
         let mediaImageRect = self.getMediaImageViewFrame(aMessage.isUserSelf)
         
         mediaPlayImageView = UIImageView(frame : mediaImageRect)
-        mediaPlayImageView.backgroundColor = UIColor.clearColor()
+        mediaPlayImageView.backgroundColor = UIColor.clear
         mediaPlayImageView.image = UIImage(named: "Media_Play")
         self.addSubview(mediaPlayImageView)
     }
     
-    private func getMediaImageViewFrame(isUserSelf : Bool) -> CGRect {
+    fileprivate func getMediaImageViewFrame(_ isUserSelf : Bool) -> CGRect {
         let xx = isUserSelf ?
             (self.frame.size.width - FTDefaultMessageBubbleAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2 :
             FTDefaultMessageBubbleAngleWidth + (self.frame.size.width - FTDefaultMessageBubbleAngleWidth - FTDefaultMessageBubbleMediaIconHeight)/2
         let yy = (self.frame.size.height - FTDefaultMessageBubbleMediaIconHeight)/2
-        return CGRectMake(xx, yy, FTDefaultMessageBubbleMediaIconHeight, FTDefaultMessageBubbleMediaIconHeight)
+        return CGRect(x: xx, y: yy, width: FTDefaultMessageBubbleMediaIconHeight, height: FTDefaultMessageBubbleMediaIconHeight)
     }
 }

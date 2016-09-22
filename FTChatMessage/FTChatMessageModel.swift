@@ -11,8 +11,8 @@ import UIKit
 // MARK: - FTChatMessageDeliverStatus
 
 enum FTChatMessageDeliverStatus {
-    case Sending
-    case Succeeded
+    case sending
+    case succeeded
     case failed
 }
 
@@ -24,10 +24,10 @@ class FTChatMessageModel: NSObject {
     var isUserSelf : Bool = false;
     var messageText : String!
     var messageTimeStamp : String!
-    var messageType : FTChatMessageType = .Text
+    var messageType : FTChatMessageType = .text
     var messageSender : FTChatMessageUserModel!
     var messageExtraData : NSDictionary?
-    var messageDeliverStatus : FTChatMessageDeliverStatus = FTChatMessageDeliverStatus.Succeeded
+    var messageDeliverStatus : FTChatMessageDeliverStatus = FTChatMessageDeliverStatus.succeeded
 
     // MARK: - convenience init
     convenience init(data : String? ,time : String?, from : FTChatMessageUserModel, type : FTChatMessageType){
@@ -41,7 +41,7 @@ class FTChatMessageModel: NSObject {
     }
     
     // MARK: - transformMessage
-    private func transformMessage(data : String? ,time : String?, extraDic : NSDictionary?, from : FTChatMessageUserModel, type : FTChatMessageType){
+    fileprivate func transformMessage(_ data : String? ,time : String?, extraDic : NSDictionary?, from : FTChatMessageUserModel, type : FTChatMessageType){
         messageType = type
         messageText = data
         messageTimeStamp = time
