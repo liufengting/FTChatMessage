@@ -8,11 +8,14 @@
 
 import UIKit
 
+//MARK: - FTChatMessageCell
+
 class FTChatMessageCell: UITableViewCell {
 
     var message : FTChatMessageModel!
     var messageBubbleItem: FTChatMessageBubbleItem!
     
+    //MARK: - messageTimeLabel
     lazy var messageTimeLabel: UILabel! = {
         let label = UILabel(frame: CGRect.zero)
         label.font = FTDefaultTimeLabelFont
@@ -21,6 +24,7 @@ class FTChatMessageCell: UITableViewCell {
         return label
     }()
     
+    //MARK: - messageSenderNameLabel
     lazy var messageSenderNameLabel: UILabel! = {
         let label = UILabel(frame: CGRect.zero)
         label.font = FTDefaultTimeLabelFont
@@ -29,10 +33,12 @@ class FTChatMessageCell: UITableViewCell {
         return label
     }()
     
+    //MARK: - messageDeliverStatusView
     var messageDeliverStatusView : FTChatMessageDeliverStatusView? = {
         return FTChatMessageDeliverStatusView(frame: CGRect.zero)
     }()
     
+    //MARK: - convenience init
     convenience init(style: UITableViewCellStyle, reuseIdentifier: String?, theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) {
         self.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -63,9 +69,11 @@ class FTChatMessageCell: UITableViewCell {
 
     }
     
+    //MARK: - setupCellBubbleItem
     func setupCellBubbleItem(_ bubbleFrame: CGRect) {
         
         messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message)
+        messageBubbleItem.addTarget(self, action: #selector(self.itemTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(messageBubbleItem)
         
         if message.isUserSelf  && message.messageDeliverStatus != FTChatMessageDeliverStatus.succeeded{
@@ -73,6 +81,7 @@ class FTChatMessageCell: UITableViewCell {
         }
     }
     
+    //MARK: - addTimeLabel
     func addTimeLabel() {
         let timeLabelRect = CGRect(x: 0, y: -FTDefaultSectionHeight ,width: FTScreenWidth, height: FTDefaultTimeLabelHeight);
         messageTimeLabel.frame = timeLabelRect
@@ -80,7 +89,7 @@ class FTChatMessageCell: UITableViewCell {
         self.addSubview(messageTimeLabel)
     }
     
-    
+    //MARK: - addSenderLabel
     func addSenderLabel() {
         var nameLabelTextAlignment : NSTextAlignment = .right
         var nameLabelRect = CGRect( x: 0, y: (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultNameLabelHeight)
@@ -96,15 +105,21 @@ class FTChatMessageCell: UITableViewCell {
         self.addSubview(messageSenderNameLabel)
     }
     
+    //MARK: - addSendStatusView
     func addSendStatusView(_ bubbleFrame: CGRect) {
         let statusViewRect = CGRect(x: bubbleFrame.origin.x - FTDefaultMessageCellSendStatusViewSize - FTDefaultMargin, y: (bubbleFrame.origin.y + bubbleFrame.size.height - FTDefaultMessageCellSendStatusViewSize)/2, width: FTDefaultMessageCellSendStatusViewSize, height: FTDefaultMessageCellSendStatusViewSize)
         messageDeliverStatusView?.frame = statusViewRect
         messageDeliverStatusView?.setupWithDeliverStatus(message.messageDeliverStatus)
         self.addSubview(messageDeliverStatusView!)
     }
+    
+    @objc func itemTapped() {
+        print("message item tapped");
+    }
 }
 
 
+//MARK: - FTChatMessageCell extension
 
 extension FTChatMessageCell {
 

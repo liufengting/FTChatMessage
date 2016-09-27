@@ -30,6 +30,7 @@ class FTChatMessageModel: NSObject {
     var messageDeliverStatus : FTChatMessageDeliverStatus = FTChatMessageDeliverStatus.succeeded
 
     // MARK: - convenience init
+    
     convenience init(data : String? ,time : String?, from : FTChatMessageUserModel, type : FTChatMessageType){
         self.init()
         self.transformMessage(data,time : time,extraDic: nil,from: from,type: type)
@@ -37,10 +38,11 @@ class FTChatMessageModel: NSObject {
     
     convenience init(data : String?,time : String?, extraDic : NSDictionary?, from : FTChatMessageUserModel, type : FTChatMessageType){
         self.init()
-        self.transformMessage(data,time : time,extraDic: nil,from: from,type: type)
+        self.transformMessage(data,time : time,extraDic: extraDic,from: from,type: type)
     }
     
     // MARK: - transformMessage
+    
     fileprivate func transformMessage(_ data : String? ,time : String?, extraDic : NSDictionary?, from : FTChatMessageUserModel, type : FTChatMessageType){
         messageType = type
         messageText = data

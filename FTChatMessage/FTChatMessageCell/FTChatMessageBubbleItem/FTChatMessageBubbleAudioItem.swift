@@ -17,12 +17,11 @@ class FTChatMessageBubbleAudioItem: FTChatMessageBubbleItem {
         self.init(frame:frame)
         self.backgroundColor = UIColor.clear
         message = aMessage
-        messageBubblePath = self.getAudioBubblePath(frame.size, isUserSelf: aMessage.isUserSelf)
+        let messageBubblePath = self.getAudioBubblePath(frame.size, isUserSelf: aMessage.isUserSelf)
         
-        let layer = CAShapeLayer()
-        layer.path = messageBubblePath.cgPath
-        layer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
-        self.layer.addSublayer(layer)
+        messageBubbleLayer.path = messageBubblePath.cgPath
+        messageBubbleLayer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
+        self.layer.addSublayer(messageBubbleLayer)
         
         let mediaImageRect = self.getPlayImageViewFrame(aMessage.isUserSelf)
         playImageView = UIImageView(frame : mediaImageRect)

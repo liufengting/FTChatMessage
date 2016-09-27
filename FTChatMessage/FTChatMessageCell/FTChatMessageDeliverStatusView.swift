@@ -10,6 +10,7 @@ import UIKit
 
 class FTChatMessageDeliverStatusView: UIButton {
     
+    //MARK: - activityIndicator
     lazy var activityIndicator : UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         activity.frame = self.bounds
@@ -17,6 +18,7 @@ class FTChatMessageDeliverStatusView: UIButton {
         return activity
     }()
     
+    //MARK: - setupWithDeliverStatus
     func setupWithDeliverStatus(_ status : FTChatMessageDeliverStatus) {
         self.backgroundColor = UIColor.clear
         self.addSubview(activityIndicator)

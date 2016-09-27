@@ -68,14 +68,15 @@ let FTDefaultMessageCellIconToMessageMargin : CGFloat = 2.0
 let FTDefaultMessageCellReuseIndentifier = "FTDefaultMessageCellReuseIndentifier"
 
 
-let FTDefaultTextMargin : CGFloat = 10.0
+let FTDefaultTextTopMargin : CGFloat = 10.0
+let FTDefaultTextLeftMargin : CGFloat = 15.0
 let FTDefaultLineSpacing : CGFloat = 2.0
 let FTDefaultSectionHeight : CGFloat = 40.0
 let FTDefaultIconSize : CGFloat = 30.0
-let FTDefaultMessageRoundCorner : CGFloat = 12.0
-let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 13)
+let FTDefaultMessageRoundCorner : CGFloat = 15.0
+let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 14)
 let FTDefaultOutgoingColor : UIColor = UIColor(red: 1/255, green: 123/255, blue: 225/255, alpha: 1)
-let FTDefaultIncomingColor : UIColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+let FTDefaultIncomingColor : UIColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1)
 //MARK: - Animation -
 let FTDefaultMessageDefaultAnimationDuration : Double = 0.3
 

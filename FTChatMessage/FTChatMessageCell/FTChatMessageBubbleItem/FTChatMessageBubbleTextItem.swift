@@ -15,12 +15,11 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
         self.backgroundColor = UIColor.clear
         message = aMessage
         
-        messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
+        let messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
         
-        let layer = CAShapeLayer()
-        layer.path = messageBubblePath.cgPath
-        layer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
-        self.layer.addSublayer(layer)
+        messageBubbleLayer.path = messageBubblePath.cgPath
+        messageBubbleLayer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor
+        self.layer.addSublayer(messageBubbleLayer)
         
         
         //text
@@ -37,10 +36,10 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
     }
     
     fileprivate func getTextRectWithSize(_ size:CGSize , isUserSelf : Bool) -> CGRect {
-        let bubbleWidth = size.width - FTDefaultMessageBubbleAngleWidth  - FTDefaultTextMargin*2
-        let bubbleHeight = size.height - FTDefaultTextMargin*2
-        let y = FTDefaultTextMargin
-        let x : CGFloat = isUserSelf ? FTDefaultTextMargin : FTDefaultMessageBubbleAngleWidth + FTDefaultTextMargin
+        let bubbleWidth = size.width - FTDefaultMessageBubbleAngleWidth  - FTDefaultTextLeftMargin*2
+        let bubbleHeight = size.height - FTDefaultTextTopMargin*2
+        let y = FTDefaultTextTopMargin
+        let x : CGFloat = isUserSelf ? FTDefaultTextLeftMargin : FTDefaultMessageBubbleAngleWidth + FTDefaultTextLeftMargin
         return CGRect(x: x,y: y,width: bubbleWidth,height: bubbleHeight);
     }
     

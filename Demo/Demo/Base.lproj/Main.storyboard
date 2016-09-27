@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FTChatMessageDemo-->
+        <!--Demo-->
         <scene sceneID="U4z-W8-ALu">
             <objects>
                 <viewController id="fPI-dH-F6x" customClass="HomeViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,10 +23,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatListTableViewCellIndentifier" rowHeight="70" id="uMr-xT-o6A" customClass="ChatListTableViewCell" customModule="Demo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="1000" height="70"/>
+                                        <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMr-xT-o6A" id="fr7-8m-hBD" userLabel="contentView">
-                                            <frame key="frameInset" width="1000" height="70"/>
+                                            <frame key="frameInset" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-Q2-9U7">
@@ -108,7 +108,7 @@
                             <constraint firstItem="OAh-CC-wFl" firstAttribute="top" secondItem="mU5-Db-lRS" secondAttribute="bottom" id="xT6-dW-37o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="FTChatMessageDemo" id="blF-yx-7HT"/>
+                    <navigationItem key="navigationItem" title="Demo" id="blF-yx-7HT"/>
                     <connections>
                         <outlet property="chatListTableView" destination="mU5-Db-lRS" id="pfZ-OJ-zEX"/>
                         <segue destination="yp7-sx-RoE" kind="show" identifier="ToChat" id="15c-Yg-2mv"/>

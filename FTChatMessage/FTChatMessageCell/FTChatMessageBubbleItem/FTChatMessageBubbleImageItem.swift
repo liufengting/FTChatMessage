@@ -14,7 +14,7 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
         self.init(frame:frame)
         self.backgroundColor = UIColor.clear
         message = aMessage
-        messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
+        let messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
         
         
         let maskLayer = CAShapeLayer()
