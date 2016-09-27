@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A34E7D81D9A370500EC5A34 /* FTChatMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34E7D71D9A370500EC5A34 /* FTChatMessageConfiguration.swift */; };
 		2A54C4D31D94024B00D0B904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4D21D94024B00D0B904 /* AppDelegate.swift */; };
 		2A54C4DA1D94024B00D0B904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C4D91D94024B00D0B904 /* Assets.xcassets */; };
 		2A54C4DD1D94024B00D0B904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C4DB1D94024B00D0B904 /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0AF7488B03447E888C7B3D2D /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A34E7D71D9A370500EC5A34 /* FTChatMessageConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageConfiguration.swift; sourceTree = "<group>"; };
 		2A54C4CF1D94024B00D0B904 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A54C4D21D94024B00D0B904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A54C4D91D94024B00D0B904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2A54C5071D9402B800D0B904 /* FTChatMessageMarcos.swift */,
+				2A34E7D71D9A370500EC5A34 /* FTChatMessageConfiguration.swift */,
 				2A54C5081D9402B800D0B904 /* FTChatMessageModel.swift */,
 				2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */,
 				2A54C4FA1D9402B800D0B904 /* FTChatMessageDelegate.swift */,
@@ -354,6 +357,7 @@
 				2A54C5111D9402B800D0B904 /* FTChatMessageCell.swift in Sources */,
 				2A54C5171D9402B800D0B904 /* FTChatMessageAccessoryItem.swift in Sources */,
 				2A54C50C1D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift in Sources */,
+				2A34E7D81D9A370500EC5A34 /* FTChatMessageConfiguration.swift in Sources */,
 				2A54C51F1D9402B800D0B904 /* FTChatMessageMarcos.swift in Sources */,
 				2A54C50B1D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift in Sources */,
 				2A54C50E1D9402B800D0B904 /* FTChatMessageBubbleLocationItem.swift in Sources */,

@@ -73,7 +73,7 @@ let FTDefaultLineSpacing : CGFloat = 2.0
 let FTDefaultSectionHeight : CGFloat = 40.0
 let FTDefaultIconSize : CGFloat = 30.0
 let FTDefaultMessageRoundCorner : CGFloat = 12.0
-let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 16)
+let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 13)
 let FTDefaultOutgoingColor : UIColor = UIColor(red: 1/255, green: 123/255, blue: 225/255, alpha: 1)
 let FTDefaultIncomingColor : UIColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 //MARK: - Animation -
