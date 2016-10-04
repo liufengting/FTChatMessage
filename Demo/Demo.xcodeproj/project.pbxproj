@@ -40,6 +40,7 @@
 		2A54C5221D9402B800D0B904 /* FTChatMessageUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */; };
 		2A54C5251D9403E800D0B904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5231D9403E800D0B904 /* Main.storyboard */; };
 		2A54C5271D940AF300D0B904 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5261D940AF300D0B904 /* dog.jpg */; };
+		2AA8BA7E1DA4254700DD118F /* lost.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA8BA7D1DA4254700DD118F /* lost.jpg */; };
 		2AD6125C1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */; };
 		36E8EED2F4874F3AEE8A6EF7 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF7488B03447E888C7B3D2D /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageUserModel.swift; sourceTree = "<group>"; };
 		2A54C5241D9403E800D0B904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A54C5261D940AF300D0B904 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		2AA8BA7D1DA4254700DD118F /* lost.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lost.jpg; sourceTree = "<group>"; };
 		2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FTChatMessageTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		598B6FECD64EED72578E196D /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		7D3792E37FADAE9B75A2E1B2 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				2A54C4DB1D94024B00D0B904 /* LaunchScreen.storyboard */,
 				2A54C4DE1D94024B00D0B904 /* Info.plist */,
 				2A54C5261D940AF300D0B904 /* dog.jpg */,
+				2AA8BA7D1DA4254700DD118F /* lost.jpg */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				2A54C5251D9403E800D0B904 /* Main.storyboard in Resources */,
 				2A54C51A1D9402B800D0B904 /* FTChatMessageAccessoryView.xib in Resources */,
 				2A54C5181D9402B800D0B904 /* FTChatMessageAccessoryItem.xib in Resources */,
+				2AA8BA7E1DA4254700DD118F /* lost.jpg in Resources */,
 				2A54C51E1D9402B800D0B904 /* FTChatMessageRecorderView.xib in Resources */,
 				2A54C51C1D9402B800D0B904 /* FTChatMessageInputView.xib in Resources */,
 				2A54C4DD1D94024B00D0B904 /* LaunchScreen.storyboard in Resources */,

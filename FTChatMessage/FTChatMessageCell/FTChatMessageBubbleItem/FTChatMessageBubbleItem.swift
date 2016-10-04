@@ -31,25 +31,39 @@ class FTChatMessageBubbleItem: UIButton {
     func getBubbleShapePathWithSize(_ size:CGSize , isUserSelf : Bool) -> UIBezierPath {
         var path = UIBezierPath()
         
-        let bubbleWidth = size.width - FTDefaultMessageBubbleAngleWidth
-        let bubbleHeight = size.height
-        let y : CGFloat = 0
         let x : CGFloat = isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth
+        let y : CGFloat = 0
+        let bubbleWidth : CGFloat = size.width - FTDefaultMessageBubbleAngleWidth
+        let bubbleHeight : CGFloat = size.height
+        let magicNumber : CGFloat = FTDefaultMessageBubbleAngleWidth/4
+        let distance : CGFloat = FTDefaultMessageRoundCorner/sqrt(2);
+
+        path = UIBezierPath(roundedRect: CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight),
+                            byRoundingCorners: .allCorners,
+                            cornerRadii: CGSize(width: FTDefaultMessageRoundCorner, height: FTDefaultMessageRoundCorner));
         
-        path = UIBezierPath(roundedRect: CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight), byRoundingCorners: .allCorners, cornerRadii: CGSize(width: FTDefaultMessageRoundCorner, height: FTDefaultMessageRoundCorner));
+        if isUserSelf {
+            
+            path.move(to: CGPoint(x: x+bubbleWidth-FTDefaultMessageRoundCorner+distance, y: y+FTDefaultMessageRoundCorner-distance))
 
-//        if isUserSelf {
-//            path.move(to: CGPoint(x: x+bubbleWidth, y: y + FTDefaultMessageRoundCorner))
-//            path.addLine(to: CGPoint(x: x+bubbleWidth+FTDefaultMessageBubbleAngleWidth, y: y + FTDefaultMessageRoundCorner + 3))
-//            path.addLine(to: CGPoint(x: x+bubbleWidth, y: y + FTDefaultMessageRoundCorner + 6))
-//        }else{
-//            path.move(to: CGPoint(x: x, y: y + FTDefaultMessageRoundCorner))
-//            path.addLine(to: CGPoint(x: 0, y: y + FTDefaultMessageRoundCorner + 3))
-//            path.addLine(to: CGPoint(x: x, y: y + FTDefaultMessageRoundCorner + 6))
-//        }
+            path.addQuadCurve(to: CGPoint(x: x+bubbleWidth+FTDefaultMessageBubbleAngleWidth, y: y),
+                              controlPoint: CGPoint(x: x+bubbleWidth ,y: y))
+            
+            path.addQuadCurve(to: CGPoint(x: x+bubbleWidth, y: y+FTDefaultMessageRoundCorner),
+                              controlPoint: CGPoint(x: x+bubbleWidth+magicNumber ,y: y))
+            
+        }else{
+            path.move(to: CGPoint(x: x, y: y + FTDefaultMessageRoundCorner))
+            
+            path.addQuadCurve(to: CGPoint(x: x - FTDefaultMessageBubbleAngleWidth ,y: y),
+                              controlPoint: CGPoint(x: x-magicNumber ,y: y))
 
- 
-
+            path.addQuadCurve(to: CGPoint(x: x+FTDefaultMessageRoundCorner-distance, y: y+FTDefaultMessageRoundCorner-distance),
+                              controlPoint: CGPoint(x: x ,y: y))
+        }
+        
+        
+        
         return path;
     }
     

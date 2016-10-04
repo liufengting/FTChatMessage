@@ -17,6 +17,9 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     var shouldShowSenderName : Bool = true
     var messageInputMode : FTChatMessageInputMode = FTChatMessageInputMode.none
 
+    let sender2 = FTChatMessageUserModel.init(id: "2", name: "LiuFengting", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: true)
+
+    
     lazy var messageTableView : UITableView! = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: FTScreenWidth, height: FTScreenHeight), style: .plain)
         tableView.separatorStyle = .none
@@ -55,16 +58,12 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     }()
 
 
-    let sender1 = FTChatMessageUserModel.init(id: "1", name: "Someone", icon_url: "http://ww3.sinaimg.cn/mw600/6cca1403jw1f3lrknzxczj20gj0g0t96.jpg", extra_data: nil, isSelf: false)
-    let sender2 = FTChatMessageUserModel.init(id: "2", name: "LiuFengting", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: true)
-    let sender3 = FTChatMessageUserModel.init(id: "3", name: "Someone else", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: false)
-    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.addSubview(messageTableView)
 
         self.view.addSubview(messageInputView)
@@ -98,7 +97,6 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
 
     }
     
-   
 
     
 

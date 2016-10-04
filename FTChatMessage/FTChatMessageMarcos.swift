@@ -54,7 +54,7 @@ let FTDefaultAccessoryViewLeftMargin : CGFloat = 25.0
 let FTDefaultAccessoryViewBottomMargin : CGFloat = 30.0
 //MARK: - MessageBubble -
 let FTDefaultMessageBubbleTextInViewMaxWidth : CGFloat = FTScreenWidth*0.65
-let FTDefaultMessageBubbleAngleWidth : CGFloat = 8.0
+let FTDefaultMessageBubbleAngleWidth : CGFloat = 6.0
 let FTDefaultMessageBubbleWidth : CGFloat = FTScreenWidth*0.52
 let FTDefaultMessageBubbleHeight : CGFloat = FTScreenWidth*0.32
 let FTDefaultMessageBubbleMapViewWidth : CGFloat = FTScreenWidth*0.62
@@ -73,7 +73,7 @@ let FTDefaultTextLeftMargin : CGFloat = 15.0
 let FTDefaultLineSpacing : CGFloat = 2.0
 let FTDefaultSectionHeight : CGFloat = 40.0
 let FTDefaultIconSize : CGFloat = 30.0
-let FTDefaultMessageRoundCorner : CGFloat = 15.0
+let FTDefaultMessageRoundCorner : CGFloat = 16.0
 let FTDefaultFontSize : UIFont = UIFont.systemFont(ofSize: 14)
 let FTDefaultOutgoingColor : UIColor = UIColor(red: 1/255, green: 123/255, blue: 225/255, alpha: 1)
 let FTDefaultIncomingColor : UIColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1)

@@ -27,7 +27,7 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
         layer.frame = self.bounds
         self.layer.addSublayer(layer)
         
-        if let image = UIImage(named : "dog.jpg") {
+        if let image = UIImage(named : "lost.jpg") {
             layer.contents = image.cgImage
         }
         //

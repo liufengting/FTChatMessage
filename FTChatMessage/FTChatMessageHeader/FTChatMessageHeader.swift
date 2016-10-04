@@ -15,7 +15,7 @@ protocol FTChatMessageHeaderDelegate {
     
 }
 
-class FTChatMessageHeader: UIView {
+class FTChatMessageHeader: UILabel {
     
     var iconButton : UIButton!
     var messageSenderModel : FTChatMessageUserModel!

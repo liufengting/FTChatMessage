@@ -213,7 +213,7 @@ extension FTChatMessageTableViewController{
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let message = messageArray[section]
-        let header = FTChatMessageHeader.init(frame: CGRect(x: 0,y: 0,width: FTScreenWidth,height: 40), senderModel: message.messageSender)
+        let header = FTChatMessageHeader(frame: CGRect(x: 0,y: 0,width: tableView.frame.width,height: 40), senderModel: message.messageSender)
         header.headerViewDelegate = self
         return header
     }
