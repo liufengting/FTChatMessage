@@ -26,14 +26,17 @@ class FTChatMessageBubbleAudioItem: FTChatMessageBubbleItem {
         let mediaImageRect = self.getPlayImageViewFrame(aMessage.isUserSelf)
         playImageView = UIImageView(frame : mediaImageRect)
         playImageView.backgroundColor = UIColor.clear
-        playImageView.image = UIImage(named: "Media_Play")
+        playImageView.tintColor = aMessage.messageSender.isUserSelf ? UIColor.white : UIColor.black
+        if let image = UIImage(named: "Media_Play") {
+            playImageView.image = image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }
         self.addSubview(playImageView)
         
         let mediaInfoLabelRect = self.getMediaInfoLabelFrame(aMessage.isUserSelf)
         mediaInfoLabel = UILabel(frame : mediaInfoLabelRect)
         mediaInfoLabel.backgroundColor = UIColor.clear
         mediaInfoLabel.font = FTDefaultFontSize
-        mediaInfoLabel.textColor = UIColor.white
+        mediaInfoLabel.textColor = aMessage.messageSender.isUserSelf ? UIColor.white : UIColor.black
         mediaInfoLabel.textAlignment = aMessage.isUserSelf ? NSTextAlignment.left : NSTextAlignment.right
         mediaInfoLabel.text = "1′ 22″"
         self.addSubview(mediaInfoLabel)

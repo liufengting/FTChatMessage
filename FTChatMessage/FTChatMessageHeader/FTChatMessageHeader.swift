@@ -15,7 +15,7 @@ protocol FTChatMessageHeaderDelegate {
     
 }
 
-class FTChatMessageHeader: UILabel {
+class FTChatMessageHeader: UIControl {
     
     var iconButton : UIButton!
     var messageSenderModel : FTChatMessageUserModel!
@@ -26,6 +26,7 @@ class FTChatMessageHeader: UILabel {
     convenience init(frame: CGRect, senderModel: FTChatMessageUserModel ) {
         self.init(frame : frame)
         
+//        self.isUserInteractionEnabled = false;
         messageSenderModel = senderModel;
         
         self.setupHeader(URL(string: senderModel.senderIconUrl), isSender: senderModel.isUserSelf)
@@ -40,6 +41,7 @@ class FTChatMessageHeader: UILabel {
         iconButton.backgroundColor = isSender ? FTDefaultOutgoingColor : FTDefaultIncomingColor
         iconButton.layer.cornerRadius = FTDefaultIconSize/2;
         iconButton.clipsToBounds = true
+//        iconButton.isUserInteractionEnabled = true
         iconButton.addTarget(self, action: #selector(self.iconTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(iconButton)
         

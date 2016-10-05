@@ -36,7 +36,7 @@ class FTChatMessageBubbleItem: UIButton {
         let bubbleWidth : CGFloat = size.width - FTDefaultMessageBubbleAngleWidth
         let bubbleHeight : CGFloat = size.height
         let magicNumber : CGFloat = FTDefaultMessageBubbleAngleWidth/4
-        let distance : CGFloat = FTDefaultMessageRoundCorner/sqrt(2);
+        let distance : CGFloat = (FTDefaultMessageRoundCorner-magicNumber)/sqrt(2);
 
         path = UIBezierPath(roundedRect: CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight),
                             byRoundingCorners: .allCorners,
@@ -121,7 +121,7 @@ extension FTChatMessageBubbleItem {
                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                                     attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
                                                     context: nil)
-            bubbleHeight += textRect.height + FTDefaultTextTopMargin*2
+            bubbleHeight += max(textRect.height + FTDefaultTextTopMargin*2, FTDefaultMessageRoundCorner*2)
         case .image:
             bubbleHeight += FTDefaultMessageBubbleHeight
         case .audio:
