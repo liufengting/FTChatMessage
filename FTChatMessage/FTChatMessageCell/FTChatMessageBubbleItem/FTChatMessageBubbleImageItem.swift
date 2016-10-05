@@ -20,16 +20,31 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
         let maskLayer = CAShapeLayer()
         maskLayer.path = messageBubblePath.cgPath
         maskLayer.frame = self.bounds
-        maskLayer.contentsScale = UIScreen.main.scale;
+//        maskLayer.borderColor = UIColor.black.cgColor
+//        maskLayer.borderWidth = 0.8
+//        maskLayer.contentsScale = UIScreen.main.scale;
         
-        let layer = CAShapeLayer()
+        let layer = CALayer()
         layer.mask = maskLayer
         layer.frame = self.bounds
+        layer.contentsScale = UIScreen.main.scale
+        layer.contentsGravity = kCAGravityResizeAspectFill
+
         self.layer.addSublayer(layer)
         
-        if let image = UIImage(named : "lost.jpg") {
-            layer.contents = image.cgImage
+//        self.layer.contentsScale = UIScreen.main.scale
+        
+        if aMessage.isKind(of: FTChatMessageImageModel.classForCoder()) {
+            if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
+                layer.contents = image.withRenderingMode(.alwaysOriginal).cgImage
+            }
+        }else{
+            if let image = UIImage(named : "dog.jpg") {
+                layer.contents = image.cgImage
+            }
         }
+        
+
         //
         //        SDWebImageManager.sharedManager().downloadWithURL(NSURL(string : message.messageText),
         //                                                          options: .ProgressiveDownload,

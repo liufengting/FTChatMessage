@@ -12,6 +12,4 @@ import UIKit
     
     func ftChatMessageMessageArray() -> [FTChatMessageModel]
     
-    
-    
 }

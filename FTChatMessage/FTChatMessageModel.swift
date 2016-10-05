@@ -56,6 +56,11 @@ class FTChatMessageModel: NSObject {
 
 }
 
+class FTChatMessageImageModel: FTChatMessageModel {
+    
+    var image : UIImage!
+    
 
+}
 
 

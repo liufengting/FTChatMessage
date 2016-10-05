@@ -9,7 +9,7 @@
 import UIKit
 import FTIndicator
 
-class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAccessoryViewDelegate,FTChatMessageAccessoryViewDataSource,FTChatMessageRecorderViewDelegate{
+class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAccessoryViewDelegate,FTChatMessageAccessoryViewDataSource,FTChatMessageRecorderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
     let sender1 = FTChatMessageUserModel.init(id: "1", name: "Someone", icon_url: "http://ww3.sinaimg.cn/mw600/6cca1403jw1f3lrknzxczj20gj0g0t96.jpg", extra_data: nil, isSelf: false)
@@ -76,17 +76,28 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     
     func ftChatMessageAccessoryViewDidTappedOnItemAtIndex(_ index: NSInteger) {
         
-        let string = "I just tapped at accessory view at index : \(index)"
-        
-        print(string)
-        
-//        FTIndicator.showInfo(withMessage: string)
+        if index == 0 {
+            
+            let imagePicker : UIImagePickerController = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: { 
+                
+            })
+            
 
-        let message2 = FTChatMessageModel(data: string, time: "4.12 21:09:51", from: sender2, type: .text)
-        
-        self.addNewMessage(message2)
-        
-        
+            
+        }else{
+            let string = "I just tapped at accessory view at index : \(index)"
+            
+            print(string)
+            
+            //        FTIndicator.showInfo(withMessage: string)
+            
+            let message2 = FTChatMessageModel(data: string, time: "4.12 21:09:51", from: sender2, type: .text)
+            
+            self.addNewMessage(message2)
+        }
     }
     
     //MARK: - FTChatMessageRecorderViewDelegate -
@@ -110,7 +121,23 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     }
     
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        picker.dismiss(animated: true) {
+            
+            
+            let image : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let message2 = FTChatMessageImageModel(data: "", time: "4.12 21:09:51", from: self.sender2, type: .image)
+            message2.image = image;
+            self.addNewMessage(message2)
+        }
+    }
     
+    func saveImageToDisk(image: UIImage) -> String {
+        
+        
+        return ""
+    }
     
 
 }

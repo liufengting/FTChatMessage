@@ -10,7 +10,4 @@ import UIKit
 
 @objc protocol FTChatMessageDelegate : NSObjectProtocol {
     
-    
-    
-    
 }
