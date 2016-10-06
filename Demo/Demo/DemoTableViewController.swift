@@ -40,16 +40,23 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     func loadDefaultMessages() -> [FTChatMessageModel] {
         
         let message1 = FTChatMessageModel(data: "最近有点无聊，抽点时间写了这个聊天的UI框架。", time: "4.12 21:09:50", from: sender1, type: .text)
-        let message2 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:51", from: sender1, type: .audio)
-        let message3 = FTChatMessageModel(data: "纯Swift编写，目前只写了纯文本消息，后续会有更多功能，图片视频语音定位等。这一版本还有很多需要优化，希望可以改成一个易拓展的方便大家使用，哈哈哈哈", time: "4.12 21:09:52", from: sender1, type: .image)
-        let message4 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:53", from: sender2, type: .video)
+        let message2 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:51", from: sender1, type: .video)
+        let message3 = FTChatMessageImageModel(data: "http://ww2.sinaimg.cn/mw600/6aa09e8fgw1f8iquoznw2j20dw0bv0uk.jpg", time: "4.12 21:09:52", from: sender1, type: .image)
+        message3.imageUrl = "http://ww2.sinaimg.cn/mw600/6aa09e8fgw1f8iquoznw2j20dw0bv0uk.jpg"
+
+        
+        let message4 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:53", from: sender2, type: .text)
         let message5 = FTChatMessageModel(data: "文字背景不是图片，是用贝塞尔曲线画的，效率应该不高，后期优化", time: "4.12 21:09:53", from: sender2, type: .text)
         let message6 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:54", from: sender2, type: .text)
+        let message8 = FTChatMessageImageModel(data: "http://ww4.sinaimg.cn/mw600/78565ac5jw1f8ibyaw0wij20tn18ghdt.jpg", time: "4.12 21:09:56", from: sender1, type: .image)
+        message8.imageUrl = "http://ww4.sinaimg.cn/mw600/78565ac5jw1f8ibyaw0wij20tn18ghdt.jpg"
+
+        
         let message7 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:55", from: sender1, type: .text)
-        let message8 = FTChatMessageModel(data: "https://raw.githubusercontent.com/liufengting/liufengting.github.io/master/img/macbookpro.jpg", time: "4.12 21:09:56", from: sender1, type: .image)
+
         
 //        let array = [[message1,message2,message3],[message4,message5,message6],[message7,message8]]
-        let array = [message1,message2,message3,message4,message5,message6,message7,message8]
+        let array = [message1,message2,message3,message4,message5,message6,message8,message7]
 
         return array;
         
@@ -115,7 +122,7 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         print("Recording ended!")
         FTIndicator.showSuccess(withMessage: "Record done.")
         
-        let message2 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:51", from: sender2, type: .audio)
+        let message2 = FTChatMessageModel(data: "", time: "4.12 21:09:51", from: sender2, type: .audio)
 
         self.addNewMessage(message2)
         
@@ -125,7 +132,6 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         picker.dismiss(animated: true) {
-            
             
             let image : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             let message2 = FTChatMessageImageModel(data: "", time: "4.12 21:09:51", from: self.sender2, type: .image)

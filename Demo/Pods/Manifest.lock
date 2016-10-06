@@ -6,13 +6,16 @@ PODS:
   - FTIndicator/FTNotificationIndicator (1.1.5)
   - FTIndicator/FTProgressIndicator (1.1.5)
   - FTIndicator/FTToastIndicator (1.1.5)
+  - Kingfisher (3.1.1)
 
 DEPENDENCIES:
   - FTIndicator
+  - Kingfisher (~> 3.0)
 
 SPEC CHECKSUMS:
   FTIndicator: 8b9885b84340a19029ad13672add3bb8183feba8
+  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
 
-PODFILE CHECKSUM: 6fa34eddf6e25e530a9b6adb8173b7bfc7694f72
+PODFILE CHECKSUM: 32c3982a1140a3501e02ec8af2d922d46cb1611b
 
 COCOAPODS: 1.0.1

@@ -2,6 +2,7 @@ target 'Demo' do
 
 use_frameworks!
 #pod 'AlamofireImage'
+pod 'Kingfisher', '~> 3.0'
 pod 'FTIndicator'
 
 end

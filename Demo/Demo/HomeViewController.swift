@@ -16,15 +16,19 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let sender1 = FTChatMessageUserModel.init(id: "", name: "路人甲", icon_url: "", extra_data: nil, isSelf: false)
-        let sender2 = FTChatMessageUserModel.init(id: "", name: "路人乙", icon_url: "", extra_data: nil, isSelf: false)
+        let sender1 = FTChatMessageUserModel.init(id: "1", name: "LiuFengting", icon_url: "http://ww2.sinaimg.cn/large/6b24115ejw1f8iqy6hggij20jg0jg75z.jpg", extra_data: nil, isSelf: false)
+        let sender2 = FTChatMessageUserModel.init(id: "2", name: "FTChatMessage", icon_url: "http://ww3.sinaimg.cn/mw600/83f596c9gw1f8ia359qygj20ia0bf794.jpg", extra_data: nil, isSelf: false)
         
-        let message1 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "", from: sender1, type: .text)
-        let message2 = FTChatMessageModel(data: "呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵", time: "", from: sender2, type: .text)
+        let message1 = FTChatMessageModel(data: "I just wrote some fake messages to make it look better. ", time: "", from: sender1, type: .text)
+        let message2 = FTChatMessageModel(data: "It is still working in progress. It's a long road ahead. ", time: "", from: sender2, type: .text)
         
-        messageArray = [message1,message2,message1,message2]
+        messageArray = [message1,message2]
+        
+        
+        
         if #available(iOS 9.0, *) {
             if (self.traitCollection.forceTouchCapability == UIForceTouchCapability.available){
+                
             }
         } else {
             // Fallback on earlier versions

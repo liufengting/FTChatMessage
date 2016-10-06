@@ -23,6 +23,7 @@ class ChatListTableViewCell: UITableViewCell {
         didSet {
             nameLabel.text = message.messageSender.senderName
             contentLabel.text = message.messageText
+            iconImageView.kf.setImage(with: URL(string: message.messageSender.senderIconUrl))
         }
     }
     
