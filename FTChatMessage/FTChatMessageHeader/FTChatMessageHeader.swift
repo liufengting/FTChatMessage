@@ -33,11 +33,6 @@ class FTChatMessageHeader: UIControl {
 
     }
     
-    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        let point : CGPoint = gestureRecognizer.location(in: self)
-        return iconButton.frame.contains(point)
-    }
-
     
     
     fileprivate func setupHeader(_ imageUrl : URL?, isSender: Bool){
