@@ -94,14 +94,26 @@ extension FTChatMessageBubbleItem {
                                                 context: nil)
             bubbleWidth = rect.width + FTDefaultTextLeftMargin*2 + FTDefaultMessageBubbleAngleWidth
         case .image:
-            bubbleWidth = FTDefaultMessageBubbleWidth
+            if aMessage.isKind(of: FTChatMessageImageModel.classForCoder()) {
+                if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
+                    bubbleWidth = FTChatMessageImageSize.convertSizeForMessageBubble(size: image.size).width
+                }else if let imageUrl : String = (aMessage as! FTChatMessageImageModel).imageUrl {
+                    bubbleWidth = FTChatMessageImageSize.getImageSizeForMessageBubbleFromURL(imageUrl).width
+                }else{
+                    bubbleWidth = FTDefaultMessageBubbleImageWidth
+                }
+            }else{
+                bubbleWidth = FTDefaultMessageBubbleImageWidth
+            }
         case .audio:
-            bubbleWidth = FTDefaultMessageBubbleWidth
+            bubbleWidth = FTDefaultMessageBubbleImageWidth
         case .location:
             bubbleWidth = FTDefaultMessageBubbleMapViewWidth
         case .video:
-            bubbleWidth = FTDefaultMessageBubbleWidth
+            bubbleWidth = FTDefaultMessageBubbleImageWidth
         }
+        
+
         return bubbleWidth
     }
     
@@ -114,15 +126,25 @@ extension FTChatMessageBubbleItem {
                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                                     attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
                                                     context: nil)
-            bubbleHeight += max(textRect.height + FTDefaultTextTopMargin*2, FTDefaultMessageRoundCorner*2)
+            bubbleHeight = max(textRect.height + FTDefaultTextTopMargin*2, FTDefaultMessageRoundCorner*2)
         case .image:
-            bubbleHeight += FTDefaultMessageBubbleHeight
+            if aMessage.isKind(of: FTChatMessageImageModel.classForCoder()) {
+                if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
+                    bubbleHeight = FTChatMessageImageSize.convertSizeForMessageBubble(size: image.size).height
+                }else if let imageUrl : String = (aMessage as! FTChatMessageImageModel).imageUrl {
+                    bubbleHeight = FTChatMessageImageSize.getImageSizeForMessageBubbleFromURL(imageUrl).height
+                }else{
+                    bubbleHeight = FTDefaultMessageBubbleImageHeight
+                }
+            }else{
+                bubbleHeight = FTDefaultMessageBubbleImageHeight
+            }
         case .audio:
-            bubbleHeight += FTDefaultMessageBubbleAudioHeight
+            bubbleHeight = FTDefaultMessageBubbleAudioHeight
         case .location:
-            bubbleHeight += FTDefaultMessageBubbleMapViewHeight
+            bubbleHeight = FTDefaultMessageBubbleMapViewHeight
         case .video:
-            bubbleHeight += FTDefaultMessageBubbleHeight
+            bubbleHeight = FTDefaultMessageBubbleImageHeight
         }
         return bubbleHeight
     }

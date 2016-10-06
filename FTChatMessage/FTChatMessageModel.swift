@@ -62,5 +62,3 @@ class FTChatMessageImageModel: FTChatMessageModel {
     var imageUrl : String!
 
 }
-
-

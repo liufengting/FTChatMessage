@@ -86,14 +86,7 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         super.viewDidAppear(animated)
 
 
-        print("layoutIfNeeded")
-        print(messageInputView.frame)
-        messageInputView.layoutIfNeeded()
         messageAccessoryView.setupAccessoryView()
-        
-        
-
-
     }
     
 

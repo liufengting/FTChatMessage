@@ -63,7 +63,7 @@ class FTChatMessageCell: UITableViewCell {
         let x = theMessage.isUserSelf ? FTScreenWidth - (FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin) - bubbleWidth : FTDefaultIconSize + FTDefaultMargin + FTDefaultMessageCellIconToMessageMargin
         
         bubbleRect = CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight)
-
+        
         self.setupCellBubbleItem(bubbleRect, for: indexPath)
 
     }
@@ -127,7 +127,7 @@ extension FTChatMessageCell {
 //        cellDesiredHeight += FTDefaultMargin
         cellDesiredHeight += FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
         cellDesiredHeight += FTDefaultMargin
-        
+        cellDesiredHeight = max(1, cellDesiredHeight)
         return cellDesiredHeight
     }
 }

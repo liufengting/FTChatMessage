@@ -30,7 +30,7 @@ class FTChatMessageBubbleVideoItem: FTChatMessageBubbleItem {
         layer.frame = self.bounds
         self.layer.addSublayer(layer)
         
-        if let image = UIImage(named : "lost.jpg") {
+        if let image = UIImage(named : "dog.jpg") {
             layer.contents = image.cgImage
         }
 

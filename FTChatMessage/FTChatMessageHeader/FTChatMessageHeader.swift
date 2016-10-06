@@ -48,7 +48,7 @@ class FTChatMessageHeader: UIControl {
         self.addSubview(iconButton)
         
         if (imageUrl != nil){
-//            iconButton.af_setImageForState(UIControlState(), URL: imageUrl!)
+            iconButton.kf.setBackgroundImage(with: imageUrl, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
 

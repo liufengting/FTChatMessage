@@ -55,10 +55,10 @@ let FTDefaultAccessoryViewBottomMargin : CGFloat = 30.0
 //MARK: - MessageBubble -
 let FTDefaultMessageBubbleTextInViewMaxWidth : CGFloat = FTScreenWidth*0.65
 let FTDefaultMessageBubbleAngleWidth : CGFloat = 6.0
-let FTDefaultMessageBubbleWidth : CGFloat = FTScreenWidth*0.52
-let FTDefaultMessageBubbleHeight : CGFloat = FTScreenWidth*0.32
-let FTDefaultMessageBubbleMapViewWidth : CGFloat = FTScreenWidth*0.62
-let FTDefaultMessageBubbleMapViewHeight : CGFloat = FTScreenWidth*0.40
+let FTDefaultMessageBubbleImageWidth : CGFloat = FTScreenWidth*0.58
+let FTDefaultMessageBubbleImageHeight : CGFloat = FTDefaultMessageBubbleImageWidth*0.61
+let FTDefaultMessageBubbleMapViewWidth : CGFloat = FTDefaultMessageBubbleImageWidth
+let FTDefaultMessageBubbleMapViewHeight : CGFloat = FTDefaultMessageBubbleImageHeight
 let FTDefaultMessageBubbleAudioHeight : CGFloat = 36.0
 let FTDefaultMessageBubbleAudioIconHeight : CGFloat = 24.0
 let FTDefaultMessageBubbleMediaIconHeight : CGFloat = 30.0

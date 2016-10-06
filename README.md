@@ -11,6 +11,10 @@
 
 Still working in progress.
 
+# Requirements
+
+Swift 3.0 Xcode 8.0
+
 # CHANGELOG
 
 [See CHANGELOG](https://github.com/liufengting/FTChatMessage/blob/master/CHANGELOG.md)

@@ -8,10 +8,11 @@
 
 import UIKit
 
+
 class FTChatMessageImageSize: NSObject {
     
     // MARK: - getImageSize
-    internal class func getImageSize(_ imageURL:String) ->CGSize {
+    fileprivate class func getImageSize(_ imageURL:String) ->CGSize {
         var URL:Foundation.URL?
         if imageURL.isKind(of: NSString.self) {
             URL = Foundation.URL(string: imageURL)
@@ -171,3 +172,29 @@ class FTChatMessageImageSize: NSObject {
         }
     }
 }
+
+
+extension FTChatMessageImageSize {
+    
+    internal class func getImageSizeForMessageBubbleFromURL(_ imageURL:String) ->CGSize {
+        return self.convertSizeForMessageBubble(size: self.getImageSize(imageURL))
+    }
+    
+    internal class func convertSizeForMessageBubble(size :CGSize) -> CGSize {
+        var convertedSize : CGSize = CGSize.zero
+        if size.width == 0 || size.height == 0 {
+            return CGSize(width: FTDefaultMessageBubbleImageWidth,height: FTDefaultMessageBubbleImageHeight)
+        }
+        if size.width < FTDefaultMessageBubbleImageWidth/2 {
+            convertedSize.height = (size.height * FTDefaultMessageBubbleImageWidth/2) / size.width
+            convertedSize.width = FTDefaultMessageBubbleImageWidth/2
+        }else{
+            convertedSize.height = (size.height * FTDefaultMessageBubbleImageWidth) / size.width
+            convertedSize.width = FTDefaultMessageBubbleImageWidth;
+        }
+        convertedSize.height = min(convertedSize.height, FTDefaultMessageBubbleImageWidth*2)
+        return convertedSize
+    }
+}
+
+
