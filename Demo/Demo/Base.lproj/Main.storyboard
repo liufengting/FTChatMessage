@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sLt-0S-ro8">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sLt-0S-ro8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMr-xT-o6A" id="fr7-8m-hBD" userLabel="contentView">
-                                            <frame key="frameInset" width="375" height="70"/>
+                                            <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-Q2-9U7">
@@ -91,6 +92,10 @@
                                             <outlet property="contentLabel" destination="aw8-qo-NSf" id="f6X-vD-zDI"/>
                                             <outlet property="iconImageView" destination="DKl-Q2-9U7" id="ing-kQ-vWG"/>
                                             <outlet property="nameLabel" destination="aTs-uJ-ubA" id="Vay-zQ-bYi"/>
+                                            <segue destination="yp7-sx-RoE" kind="show" id="g5r-Dm-Eeg">
+                                                <segue key="commit" inheritsFrom="parent" id="tqF-Us-cHP"/>
+                                                <segue key="preview" inheritsFrom="commit" id="BX1-K8-ppl"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -111,7 +116,6 @@
                     <navigationItem key="navigationItem" title="Demo" id="blF-yx-7HT"/>
                     <connections>
                         <outlet property="chatListTableView" destination="mU5-Db-lRS" id="pfZ-OJ-zEX"/>
-                        <segue destination="yp7-sx-RoE" kind="show" identifier="ToChat" id="15c-Yg-2mv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNg-od-XWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJx-pi-pYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="857"/>
+            <point key="canvasLocation" x="1153" y="857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K8C-T8-1eL">
@@ -159,4 +163,7 @@
     <resources>
         <image name="Contacts" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="g5r-Dm-Eeg"/>
+    </inferredMetricsTieBreakers>
 </document>

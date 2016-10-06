@@ -59,7 +59,7 @@ class FTChatMessageModel: NSObject {
 class FTChatMessageImageModel: FTChatMessageModel {
     
     var image : UIImage!
-    
+    var imageUrl : String!
 
 }
 

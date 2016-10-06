@@ -60,6 +60,15 @@ class FTChatMessageAccessoryView: UIView, UIScrollViewDelegate{
     //MARK: - setupAccessoryView
     func setupAccessoryView() {
         
+        self.layoutIfNeeded()
+        
+        for items in self.scrollView.subviews {
+            if items.isKind(of: FTChatMessageAccessoryItem.classForCoder()) {
+                items.removeFromSuperview()
+            }
+        }
+        
+        
         let modelArray = accessoryDataSource.ftChatMessageAccessoryViewModelArray()
         
         let totalCount = modelArray.count

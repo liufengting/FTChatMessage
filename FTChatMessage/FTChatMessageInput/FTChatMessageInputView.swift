@@ -48,8 +48,8 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
         super.awakeFromNib()
         
         inputTextView.layer.cornerRadius = FTDefaultInputViewTextCornerRadius
-        inputTextView.layer.borderColor = FTDefaultIncomingColor.cgColor
-        inputTextView.layer.borderWidth = 0.8
+        inputTextView.layer.borderColor = UIColor.lightGray.cgColor
+        inputTextView.layer.borderWidth = 0.5
         inputTextView.textContainerInset = FTDefaultInputTextViewEdgeInset
         inputTextView.delegate = self
 

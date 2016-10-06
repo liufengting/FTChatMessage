@@ -26,12 +26,19 @@ class FTChatMessageHeader: UIControl {
     convenience init(frame: CGRect, senderModel: FTChatMessageUserModel ) {
         self.init(frame : frame)
         
-//        self.isUserInteractionEnabled = false;
+//        self.isUserInteractionEnabled = false
         messageSenderModel = senderModel;
         
         self.setupHeader(URL(string: senderModel.senderIconUrl), isSender: senderModel.isUserSelf)
 
     }
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let point : CGPoint = gestureRecognizer.location(in: self)
+        return iconButton.frame.contains(point)
+    }
+
+    
     
     fileprivate func setupHeader(_ imageUrl : URL?, isSender: Bool){
         self.backgroundColor = UIColor.clear

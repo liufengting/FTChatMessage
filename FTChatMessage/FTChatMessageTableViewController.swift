@@ -10,11 +10,14 @@ import UIKit
 
 class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, FTChatMessageInputViewDelegate, FTChatMessageHeaderDelegate {
     
-    var messageArray : [FTChatMessageModel] = []
+    var chatMessageDataArray : [FTChatMessageModel] = [] {
+        didSet {
+            self.origanizeAndReload()
+        }
+    }
+    open var messageArray : [[FTChatMessageModel]] = []
     var delegete : FTChatMessageDelegate?
     var dataSource : FTChatMessageDataSource?
-    var shouldShowSendTime : Bool = true
-    var shouldShowSenderName : Bool = true
     var messageInputMode : FTChatMessageInputMode = FTChatMessageInputMode.none
 
     let sender2 = FTChatMessageUserModel.init(id: "2", name: "LiuFengting", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: true)
@@ -65,9 +68,9 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         super.viewDidLoad()
 
         self.view.addSubview(messageTableView)
-
+        
         self.view.addSubview(messageInputView)
-
+        
         self.view.addSubview(messageRecordView)
         
         self.view.addSubview(messageAccessoryView)
@@ -75,12 +78,23 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.scrollToBottom(false)
         }
-        
     }
 
     
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+        print("layoutIfNeeded")
+        print(messageInputView.frame)
+        messageInputView.layoutIfNeeded()
+        messageAccessoryView.setupAccessoryView()
+        
+        
+
+
+    }
     
 
 
@@ -89,14 +103,40 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     
     internal func addNewMessage(_ message : FTChatMessageModel) {
         
-        messageArray.append(message);
-        
-        messageTableView.insertSections(IndexSet.init(integersIn: NSMakeRange(messageArray.count-1, 1).toRange() ?? 0..<0), with: UITableViewRowAnimation.bottom)
-        
+        chatMessageDataArray.append(message);
+
+        self.origanizeAndReload()
+
         self.scrollToBottom(true)
 
     }
     
+    func origanizeAndReload() {
+        var nastyArray : [[FTChatMessageModel]] = []
+        var tempArray : [FTChatMessageModel] = []
+        var tempId = ""
+        for i in 0...chatMessageDataArray.count-1 {
+            let message = chatMessageDataArray[i]
+            if message.messageSender.senderId == tempId {
+                tempArray.append(message)
+            }else{
+                tempId = message.messageSender.senderId;
+                if tempArray.count > 0 {
+                    nastyArray.append(tempArray)
+                }
+                tempArray.removeAll()
+                tempArray.append(message)
+            }
+            if i == chatMessageDataArray.count - 1 {
+                if tempArray.count > 0 {
+                    nastyArray.append(tempArray)
+                }
+            }
+        }
+        
+        self.messageArray = nastyArray
+        self.messageTableView.reloadData()
+    }
 
     
 

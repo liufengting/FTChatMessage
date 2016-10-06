@@ -10,12 +10,12 @@ import UIKit
 
 class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
     
-    convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
+    convenience init(frame: CGRect, aMessage : FTChatMessageModel, for indexPath: IndexPath) {
         self.init(frame:frame)
         self.backgroundColor = UIColor.clear
         message = aMessage
         
-        let messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf)
+        let messageBubblePath = self.getBubbleShapePathWithSize(frame.size, isUserSelf: aMessage.isUserSelf, for: indexPath)
         
         messageBubbleLayer.path = messageBubblePath.cgPath
         messageBubbleLayer.fillColor = aMessage.messageSender.isUserSelf ? FTDefaultOutgoingColor.cgColor : FTDefaultIncomingColor.cgColor

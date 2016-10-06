@@ -39,25 +39,24 @@ class FTChatMessageCell: UITableViewCell {
     }()
     
     //MARK: - convenience init
-    convenience init(style: UITableViewCellStyle, reuseIdentifier: String?, theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) {
+    convenience init(style: UITableViewCellStyle, reuseIdentifier: String?, theMessage : FTChatMessageModel, for indexPath: IndexPath) {
         self.init(style: style, reuseIdentifier: reuseIdentifier)
 
         message = theMessage
 
-        var heightSoFar = -FTDefaultSectionHeight
+        let heightSoFar : CGFloat = 0
         var bubbleRect = CGRect.zero
 
-        if shouldShowSendTime {
+        
+        if indexPath.row == 0 {
             self.addTimeLabel()
-            heightSoFar += FTDefaultTimeLabelHeight
-        }
+//            heightSoFar += FTDefaultTimeLabelHeight
 
-        if shouldShowSenderName {
             self.addSenderLabel()
-            heightSoFar = (FTDefaultNameLabelHeight - FTDefaultSectionHeight)/2
+//            heightSoFar = (FTDefaultNameLabelHeight - FTDefaultSectionHeight)/2
         }
         
-        let y : CGFloat = heightSoFar + FTDefaultMargin
+        let y : CGFloat = heightSoFar
         let bubbleWidth : CGFloat = FTChatMessageBubbleItem.getMessageBubbleWidthForMessage(theMessage)
         let bubbleHeight : CGFloat = FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
 
@@ -65,14 +64,14 @@ class FTChatMessageCell: UITableViewCell {
         
         bubbleRect = CGRect(x: x, y: y, width: bubbleWidth, height: bubbleHeight)
 
-        self.setupCellBubbleItem(bubbleRect)
+        self.setupCellBubbleItem(bubbleRect, for: indexPath)
 
     }
     
     //MARK: - setupCellBubbleItem
-    func setupCellBubbleItem(_ bubbleFrame: CGRect) {
+    func setupCellBubbleItem(_ bubbleFrame: CGRect, for indexPath: IndexPath) {
         
-        messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message)
+        messageBubbleItem = FTChatMessageBubbleItem.getBubbleItemWithFrame(bubbleFrame, aMessage: message, for: indexPath)
         messageBubbleItem.addTarget(self, action: #selector(self.itemTapped), for: UIControlEvents.touchUpInside)
         self.addSubview(messageBubbleItem)
         
@@ -83,7 +82,7 @@ class FTChatMessageCell: UITableViewCell {
     
     //MARK: - addTimeLabel
     func addTimeLabel() {
-        let timeLabelRect = CGRect(x: 0, y: -FTDefaultSectionHeight ,width: FTScreenWidth, height: FTDefaultTimeLabelHeight);
+        let timeLabelRect = CGRect(x: 0, y: -FTDefaultSectionHeight ,width: FTScreenWidth, height: FTDefaultSectionHeight/2);
         messageTimeLabel.frame = timeLabelRect
         messageTimeLabel.text = message.messageTimeStamp
         self.addSubview(messageTimeLabel)
@@ -92,7 +91,7 @@ class FTChatMessageCell: UITableViewCell {
     //MARK: - addSenderLabel
     func addSenderLabel() {
         var nameLabelTextAlignment : NSTextAlignment = .right
-        var nameLabelRect = CGRect( x: 0, y: (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2  - FTDefaultSectionHeight  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultNameLabelHeight)
+        var nameLabelRect = CGRect( x: 0, y: -FTDefaultSectionHeight/2  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultSectionHeight/2)
  
         if message.isUserSelf == false {
             nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth
@@ -123,17 +122,11 @@ class FTChatMessageCell: UITableViewCell {
 
 extension FTChatMessageCell {
 
-    internal class func getCellHeightWithMessage(_ theMessage : FTChatMessageModel, shouldShowSendTime : Bool , shouldShowSenderName : Bool) -> CGFloat{
-        var cellDesiredHeight : CGFloat = 0;
-        if shouldShowSendTime {
-            cellDesiredHeight = FTDefaultTimeLabelHeight
-        }
-        if shouldShowSenderName {
-            cellDesiredHeight = (FTDefaultSectionHeight - FTDefaultNameLabelHeight)/2 + FTDefaultNameLabelHeight
-        }
-        cellDesiredHeight += FTDefaultMargin
+    internal class func getCellHeightWithMessage(_ theMessage : FTChatMessageModel, for indexPath: IndexPath) -> CGFloat{
+        var cellDesiredHeight : CGFloat =  0;
+//        cellDesiredHeight += FTDefaultMargin
         cellDesiredHeight += FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
-        cellDesiredHeight += FTDefaultMargin*2 - FTDefaultSectionHeight
+        cellDesiredHeight += FTDefaultMargin
         
         return cellDesiredHeight
     }

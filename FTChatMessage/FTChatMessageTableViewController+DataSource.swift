@@ -28,7 +28,10 @@ extension FTChatMessageTableViewController{
     
     func scrollToBottom(_ animated: Bool) {
         if self.messageArray.count > 0 {
-            self.messageTableView.scrollToRow(at: IndexPath(row: 0, section: self.messageArray.count-1), at: UITableViewScrollPosition.top, animated: animated)
+            let lastSection = self.messageArray.count - 1
+            let lastSectionMessageCount = messageArray[lastSection].count - 1
+
+            self.messageTableView.scrollToRow(at: IndexPath(row: lastSectionMessageCount, section: lastSection), at: UITableViewScrollPosition.top, animated: animated)
         }
     }
     
@@ -209,10 +212,11 @@ extension FTChatMessageTableViewController{
         return messageArray.count;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        let messages : [FTChatMessageModel] = messageArray[section]
+        return messages.count;
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let message = messageArray[section]
+        let message = messageArray[section][0]
         let header = FTChatMessageHeader(frame: CGRect(x: 0,y: 0,width: tableView.frame.width,height: 40), senderModel: message.messageSender)
         header.headerViewDelegate = self
         return header
@@ -226,17 +230,16 @@ extension FTChatMessageTableViewController{
     }
     @objc(tableView:heightForRowAtIndexPath:)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let message = messageArray[(indexPath as NSIndexPath).section]
-        
-        return FTChatMessageCell.getCellHeightWithMessage(message, shouldShowSendTime: shouldShowSendTime, shouldShowSenderName: shouldShowSenderName)
+        let message = messageArray[indexPath.section][indexPath.row]
+        return FTChatMessageCell.getCellHeightWithMessage(message, for: indexPath)
     }
     
     @objc(tableView:cellForRowAtIndexPath:)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let message = messageArray[(indexPath as NSIndexPath).section]
+        let message = messageArray[indexPath.section][indexPath.row]
         
-        let cell = FTChatMessageCell.init(style: UITableViewCellStyle.default, reuseIdentifier: FTDefaultMessageCellReuseIndentifier, theMessage: message, shouldShowSendTime: shouldShowSendTime , shouldShowSenderName: shouldShowSenderName );
+        let cell = FTChatMessageCell(style: UITableViewCellStyle.default, reuseIdentifier: FTDefaultMessageCellReuseIndentifier, theMessage: message, for: indexPath)
         return cell
     }
     @objc(tableView:didSelectRowAtIndexPath:)

@@ -23,7 +23,13 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         let message2 = FTChatMessageModel(data: "呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵", time: "", from: sender2, type: .text)
         
         messageArray = [message1,message2,message1,message2]
-        
+        if #available(iOS 9.0, *) {
+            if (self.traitCollection.forceTouchCapability == UIForceTouchCapability.available){
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    
 
     }
     
@@ -48,10 +54,38 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let chat : FTChatMessageTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "DemoTableViewController") as! FTChatMessageTableViewController
-        self.navigationController?.pushViewController(chat, animated: true)
+//        self.performSegue(withIdentifier: "ToChat", sender: self)
+        
+//        let chat : FTChatMessageTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "DemoTableViewController") as! FTChatMessageTableViewController
+//        self.navigationController?.pushViewController(chat, animated: true)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+    }
+    
+    
+//    1 - (UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location{
+//    2      NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell* )[previewingContext sourceView]];
+//    3　　　　//通过[previewingContext sourceView]拿到对应的cell；
+//    4     NewVC *vc = [[FPHNewHouseDetailVC alloc] init];
+//    5     newModel *model= [_tableView objectAtIndex:indexPath.row];
+//    6     vc.pid = house.id;
+//    7
+//    8     NSLog(@"%@",location);
+//    9     return vc;
+//    10 }
+//    //pop的代理方法，在此处可对将要进入的vc进行处理，比如隐藏tabBar；
+//    11 - (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit
+//    12 {
+//    13     viewControllerToCommit.hidesBottomBarWhenPushed = YES;
+//    14     [self showViewController:viewControllerToCommit sender:self];
+//    15 }
+    
+    
     
 }
 

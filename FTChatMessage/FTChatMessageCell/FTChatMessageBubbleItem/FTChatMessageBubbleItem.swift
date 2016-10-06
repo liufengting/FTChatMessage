@@ -14,7 +14,7 @@ class FTChatMessageBubbleItem: UIButton {
     var messageBubbleLayer = CAShapeLayer()
     var messageLabel : UILabel!
 
-    convenience init(frame: CGRect, aMessage : FTChatMessageModel) {
+    convenience init(frame: CGRect, aMessage : FTChatMessageModel, for indexPath: IndexPath) {
         self.init(frame: frame)
         NSException(name: NSExceptionName(rawValue: "SubClassing"), reason: "Subclass must impliment this method", userInfo: nil).raise()
     }
@@ -28,7 +28,7 @@ class FTChatMessageBubbleItem: UIButton {
      
      - returns: UIBezierPath
      */
-    func getBubbleShapePathWithSize(_ size:CGSize , isUserSelf : Bool) -> UIBezierPath {
+    func getBubbleShapePathWithSize(_ size:CGSize , isUserSelf : Bool, for indexPath: IndexPath) -> UIBezierPath {
         var path = UIBezierPath()
         
         let x : CGFloat = isUserSelf ? 0 : FTDefaultMessageBubbleAngleWidth
@@ -42,28 +42,21 @@ class FTChatMessageBubbleItem: UIButton {
                             byRoundingCorners: .allCorners,
                             cornerRadii: CGSize(width: FTDefaultMessageRoundCorner, height: FTDefaultMessageRoundCorner));
         
-        if isUserSelf {
-            
-            path.move(to: CGPoint(x: x+bubbleWidth-FTDefaultMessageRoundCorner+distance, y: y+FTDefaultMessageRoundCorner-distance))
-
-            path.addQuadCurve(to: CGPoint(x: x+bubbleWidth+FTDefaultMessageBubbleAngleWidth, y: y),
-                              controlPoint: CGPoint(x: x+bubbleWidth ,y: y))
-            
-            path.addQuadCurve(to: CGPoint(x: x+bubbleWidth, y: y+FTDefaultMessageRoundCorner),
-                              controlPoint: CGPoint(x: x+bubbleWidth+magicNumber ,y: y))
-            
-        }else{
-            path.move(to: CGPoint(x: x, y: y + FTDefaultMessageRoundCorner))
-            
-            path.addQuadCurve(to: CGPoint(x: x - FTDefaultMessageBubbleAngleWidth ,y: y),
-                              controlPoint: CGPoint(x: x-magicNumber ,y: y))
-
-            path.addQuadCurve(to: CGPoint(x: x+FTDefaultMessageRoundCorner-distance, y: y+FTDefaultMessageRoundCorner-distance),
-                              controlPoint: CGPoint(x: x ,y: y))
+        if indexPath.row == 0 {
+            if isUserSelf {
+                path.move(to: CGPoint(x: x+bubbleWidth-FTDefaultMessageRoundCorner+distance, y: y+FTDefaultMessageRoundCorner-distance))
+                path.addQuadCurve(to: CGPoint(x: x+bubbleWidth+FTDefaultMessageBubbleAngleWidth, y: y),
+                                  controlPoint: CGPoint(x: x+bubbleWidth ,y: y))
+                path.addQuadCurve(to: CGPoint(x: x+bubbleWidth, y: y+FTDefaultMessageRoundCorner),
+                                  controlPoint: CGPoint(x: x+bubbleWidth+magicNumber ,y: y))
+            }else{
+                path.move(to: CGPoint(x: x, y: y + FTDefaultMessageRoundCorner))
+                path.addQuadCurve(to: CGPoint(x: x - FTDefaultMessageBubbleAngleWidth ,y: y),
+                                  controlPoint: CGPoint(x: x-magicNumber ,y: y))
+                path.addQuadCurve(to: CGPoint(x: x+FTDefaultMessageRoundCorner-distance, y: y+FTDefaultMessageRoundCorner-distance),
+                                  controlPoint: CGPoint(x: x ,y: y))
+            }
         }
-        
-        
-        
         return path;
     }
     
@@ -72,19 +65,19 @@ class FTChatMessageBubbleItem: UIButton {
 
 extension FTChatMessageBubbleItem {
     
-    internal class func getBubbleItemWithFrame(_ bubbleFrame: CGRect,aMessage: FTChatMessageModel) -> FTChatMessageBubbleItem {
+    internal class func getBubbleItemWithFrame(_ bubbleFrame: CGRect,aMessage: FTChatMessageModel, for indexPath: IndexPath) -> FTChatMessageBubbleItem {
         var messageBubbleItem : FTChatMessageBubbleItem! = FTChatMessageBubbleItem()
         switch aMessage.messageType {
         case .text:
-            messageBubbleItem = FTChatMessageBubbleTextItem(frame: bubbleFrame, aMessage: aMessage)
+            messageBubbleItem = FTChatMessageBubbleTextItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         case .image:
-            messageBubbleItem = FTChatMessageBubbleImageItem(frame: bubbleFrame, aMessage: aMessage)
+            messageBubbleItem = FTChatMessageBubbleImageItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         case .audio:
-            messageBubbleItem = FTChatMessageBubbleAudioItem(frame: bubbleFrame, aMessage: aMessage)
+            messageBubbleItem = FTChatMessageBubbleAudioItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         case .location:
-            messageBubbleItem = FTChatMessageBubbleLocationItem(frame: bubbleFrame, aMessage: aMessage)
+            messageBubbleItem = FTChatMessageBubbleLocationItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         case .video:
-            messageBubbleItem = FTChatMessageBubbleVideoItem(frame: bubbleFrame, aMessage: aMessage)
+            messageBubbleItem = FTChatMessageBubbleVideoItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         }
         return messageBubbleItem
     }

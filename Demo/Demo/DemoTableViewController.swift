@@ -25,7 +25,7 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         messageAccessoryView.setupWithDataSource(self , accessoryViewDelegate : self)
         
             
-        messageArray = self.loadDefaultMessages()
+        chatMessageDataArray = self.loadDefaultMessages()
     }
     
     //MARK: - addNewIncomingMessage -
@@ -48,8 +48,9 @@ class DemoTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         let message7 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:55", from: sender1, type: .text)
         let message8 = FTChatMessageModel(data: "https://raw.githubusercontent.com/liufengting/liufengting.github.io/master/img/macbookpro.jpg", time: "4.12 21:09:56", from: sender1, type: .image)
         
+//        let array = [[message1,message2,message3],[message4,message5,message6],[message7,message8]]
         let array = [message1,message2,message3,message4,message5,message6,message7,message8]
-        
+
         return array;
         
     }
