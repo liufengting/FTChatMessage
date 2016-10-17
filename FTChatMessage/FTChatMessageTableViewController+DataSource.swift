@@ -28,7 +28,6 @@ extension FTChatMessageTableViewController{
     
     func scrollToBottom(_ animated: Bool) {
         if self.messageArray.count > 0 {
-//            self.messageTableView.setContentOffset(CGPoint(x:0 ,y: self.messageTableView.contentSize.height), animated: animated)
             let lastSection = self.messageArray.count - 1
             let lastSectionMessageCount = messageArray[lastSection].count - 1
 
