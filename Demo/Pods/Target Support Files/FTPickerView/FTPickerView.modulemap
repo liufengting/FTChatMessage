@@ -1,0 +1,6 @@
+framework module FTPickerView {
+  umbrella header "FTPickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

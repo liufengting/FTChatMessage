@@ -1,6 +1,6 @@
 //
 //  FTChatMessageUserModel.swift
-//  ChatMessageDemoProject
+//  FTChatMessage
 //
 //  Created by liufengting on 16/8/21.
 //  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.

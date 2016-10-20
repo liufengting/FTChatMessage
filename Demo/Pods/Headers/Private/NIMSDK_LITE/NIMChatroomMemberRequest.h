@@ -1,0 +1,1 @@
+../../../NIMSDK_LITE/SDK/ExportHeaders/Chatroom/NIMChatroomMemberRequest.h

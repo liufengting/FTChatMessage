@@ -1,0 +1,1 @@
+../../../NIMSDK_LITE/SDK/ExportHeaders/Protocol/NIMUserManagerProtocol.h

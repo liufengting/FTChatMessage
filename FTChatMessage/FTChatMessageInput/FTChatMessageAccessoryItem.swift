@@ -1,6 +1,6 @@
 //
 //  FTChatMessageAccessoryItem.swift
-//  ChatMessageDemoProject
+//  FTChatMessage
 //
 //  Created by liufengting on 16/9/22.
 //  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.
@@ -20,7 +20,6 @@ class FTChatMessageAccessoryItem : UIButton {
         self.tag = index
         self.accessoryImageView.image = viewModel.iconImage
         self.accessoryNameLabel.text = viewModel.title
-        
     }
     
 }

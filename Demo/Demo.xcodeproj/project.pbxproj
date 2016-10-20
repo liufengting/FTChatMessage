@@ -11,9 +11,9 @@
 		2A54C4D31D94024B00D0B904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4D21D94024B00D0B904 /* AppDelegate.swift */; };
 		2A54C4DA1D94024B00D0B904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C4D91D94024B00D0B904 /* Assets.xcassets */; };
 		2A54C4DD1D94024B00D0B904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C4DB1D94024B00D0B904 /* LaunchScreen.storyboard */; };
-		2A54C4E71D94027500D0B904 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E41D94027500D0B904 /* HomeViewController.swift */; };
-		2A54C4E81D94027500D0B904 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E51D94027500D0B904 /* ChatListTableViewCell.swift */; };
-		2A54C4E91D94027500D0B904 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E61D94027500D0B904 /* DemoTableViewController.swift */; };
+		2A54C4E71D94027500D0B904 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E41D94027500D0B904 /* ChatRoomViewController.swift */; };
+		2A54C4E81D94027500D0B904 /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E51D94027500D0B904 /* ChatRoomTableViewCell.swift */; };
+		2A54C4E91D94027500D0B904 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4E61D94027500D0B904 /* ChatTableViewController.swift */; };
 		2A54C50B1D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4F11D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift */; };
 		2A54C50C1D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4F21D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift */; };
 		2A54C50D1D9402B800D0B904 /* FTChatMessageBubbleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C4F31D9402B800D0B904 /* FTChatMessageBubbleItem.swift */; };
@@ -40,8 +40,12 @@
 		2A54C5221D9402B800D0B904 /* FTChatMessageUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */; };
 		2A54C5251D9403E800D0B904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5231D9403E800D0B904 /* Main.storyboard */; };
 		2A54C5271D940AF300D0B904 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5261D940AF300D0B904 /* dog.jpg */; };
-		2AA8BA7E1DA4254700DD118F /* lost.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA8BA7D1DA4254700DD118F /* lost.jpg */; };
 		2AD6125C1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */; };
+		2ADD9EF61DB64A3100615A43 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD9EF51DB64A3100615A43 /* SignInViewController.swift */; };
+		2ADD9EFD1DB664EE00615A43 /* NSString+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD9EFC1DB664EE00615A43 /* NSString+NTES.m */; };
+		2AE4D0221DB8879E00A5CAF6 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4D0211DB8879E00A5CAF6 /* ContactsViewController.swift */; };
+		2AE4D0241DB887B800A5CAF6 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4D0231DB887B800A5CAF6 /* ContactsTableViewCell.swift */; };
+		2AE4D0321DB8AC8900A5CAF6 /* pinyin.bin in Resources */ = {isa = PBXBuildFile; fileRef = 2AE4D0311DB8AC8900A5CAF6 /* pinyin.bin */; };
 		36E8EED2F4874F3AEE8A6EF7 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF7488B03447E888C7B3D2D /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,9 +57,9 @@
 		2A54C4D91D94024B00D0B904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A54C4DC1D94024B00D0B904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A54C4DE1D94024B00D0B904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A54C4E41D94027500D0B904 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2A54C4E51D94027500D0B904 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
-		2A54C4E61D94027500D0B904 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		2A54C4E41D94027500D0B904 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		2A54C4E51D94027500D0B904 /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
+		2A54C4E61D94027500D0B904 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		2A54C4F11D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageBubbleAudioItem.swift; sourceTree = "<group>"; };
 		2A54C4F21D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageBubbleImageItem.swift; sourceTree = "<group>"; };
 		2A54C4F31D9402B800D0B904 /* FTChatMessageBubbleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageBubbleItem.swift; sourceTree = "<group>"; };
@@ -82,8 +86,14 @@
 		2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageUserModel.swift; sourceTree = "<group>"; };
 		2A54C5241D9403E800D0B904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A54C5261D940AF300D0B904 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
-		2AA8BA7D1DA4254700DD118F /* lost.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lost.jpg; sourceTree = "<group>"; };
 		2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FTChatMessageTableViewController+DataSource.swift"; sourceTree = "<group>"; };
+		2ADD9EF51DB64A3100615A43 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2ADD9EF71DB65F1400615A43 /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		2ADD9EFB1DB664EE00615A43 /* NSString+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NTES.h"; sourceTree = "<group>"; };
+		2ADD9EFC1DB664EE00615A43 /* NSString+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NTES.m"; sourceTree = "<group>"; };
+		2AE4D0211DB8879E00A5CAF6 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		2AE4D0231DB887B800A5CAF6 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		2AE4D0311DB8AC8900A5CAF6 /* pinyin.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = pinyin.bin; sourceTree = "<group>"; };
 		598B6FECD64EED72578E196D /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		7D3792E37FADAE9B75A2E1B2 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,16 +141,17 @@
 			isa = PBXGroup;
 			children = (
 				2A54C4D21D94024B00D0B904 /* AppDelegate.swift */,
-				2A54C4E41D94027500D0B904 /* HomeViewController.swift */,
-				2A54C4E51D94027500D0B904 /* ChatListTableViewCell.swift */,
-				2A54C4E61D94027500D0B904 /* DemoTableViewController.swift */,
+				2AE4D01E1DB885FA00A5CAF6 /* ViewController */,
+				2AE4D01F1DB8860800A5CAF6 /* View */,
+				2AE4D0201DB8861900A5CAF6 /* Category */,
 				2A54C4EE1D9402B800D0B904 /* FTChatMessage */,
 				2A54C5231D9403E800D0B904 /* Main.storyboard */,
 				2A54C4D91D94024B00D0B904 /* Assets.xcassets */,
 				2A54C4DB1D94024B00D0B904 /* LaunchScreen.storyboard */,
 				2A54C4DE1D94024B00D0B904 /* Info.plist */,
 				2A54C5261D940AF300D0B904 /* dog.jpg */,
-				2AA8BA7D1DA4254700DD118F /* lost.jpg */,
+				2AE4D0311DB8AC8900A5CAF6 /* pinyin.bin */,
+				2ADD9EF71DB65F1400615A43 /* Demo-Bridging-Header.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -211,6 +222,35 @@
 			path = FTChatMessageInput;
 			sourceTree = "<group>";
 		};
+		2AE4D01E1DB885FA00A5CAF6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2ADD9EF51DB64A3100615A43 /* SignInViewController.swift */,
+				2A54C4E41D94027500D0B904 /* ChatRoomViewController.swift */,
+				2AE4D0211DB8879E00A5CAF6 /* ContactsViewController.swift */,
+				2A54C4E61D94027500D0B904 /* ChatTableViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		2AE4D01F1DB8860800A5CAF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A54C4E51D94027500D0B904 /* ChatRoomTableViewCell.swift */,
+				2AE4D0231DB887B800A5CAF6 /* ContactsTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2AE4D0201DB8861900A5CAF6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2ADD9EFB1DB664EE00615A43 /* NSString+NTES.h */,
+				2ADD9EFC1DB664EE00615A43 /* NSString+NTES.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		5625618B64EB89BFEFC6C7AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +288,7 @@
 		2A54C4C71D94024B00D0B904 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FTChatMessage;
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = LiuFengting;
@@ -287,7 +328,7 @@
 				2A54C5251D9403E800D0B904 /* Main.storyboard in Resources */,
 				2A54C51A1D9402B800D0B904 /* FTChatMessageAccessoryView.xib in Resources */,
 				2A54C5181D9402B800D0B904 /* FTChatMessageAccessoryItem.xib in Resources */,
-				2AA8BA7E1DA4254700DD118F /* lost.jpg in Resources */,
+				2AE4D0321DB8AC8900A5CAF6 /* pinyin.bin in Resources */,
 				2A54C51E1D9402B800D0B904 /* FTChatMessageRecorderView.xib in Resources */,
 				2A54C51C1D9402B800D0B904 /* FTChatMessageInputView.xib in Resources */,
 				2A54C4DD1D94024B00D0B904 /* LaunchScreen.storyboard in Resources */,
@@ -325,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5021C2B29014DD6E7269F5A5 /* [CP] Copy Pods Resources */ = {
@@ -353,6 +394,7 @@
 				2A54C5121D9402B800D0B904 /* FTChatMessageDeliverStatusView.swift in Sources */,
 				2A54C5131D9402B800D0B904 /* FTChatMessageDataSource.swift in Sources */,
 				2A54C51D1D9402B800D0B904 /* FTChatMessageRecorderView.swift in Sources */,
+				2AE4D0241DB887B800A5CAF6 /* ContactsTableViewCell.swift in Sources */,
 				2A54C5141D9402B800D0B904 /* FTChatMessageDelegate.swift in Sources */,
 				2A54C5101D9402B800D0B904 /* FTChatMessageBubbleVideoItem.swift in Sources */,
 				2A54C5201D9402B800D0B904 /* FTChatMessageModel.swift in Sources */,
@@ -364,18 +406,21 @@
 				2A54C5111D9402B800D0B904 /* FTChatMessageCell.swift in Sources */,
 				2A54C5171D9402B800D0B904 /* FTChatMessageAccessoryItem.swift in Sources */,
 				2A54C50C1D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift in Sources */,
+				2ADD9EF61DB64A3100615A43 /* SignInViewController.swift in Sources */,
 				2A34E7D81D9A370500EC5A34 /* FTChatMessageConfiguration.swift in Sources */,
 				2A54C51F1D9402B800D0B904 /* FTChatMessageMarcos.swift in Sources */,
+				2AE4D0221DB8879E00A5CAF6 /* ContactsViewController.swift in Sources */,
 				2A54C50B1D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift in Sources */,
 				2A54C50E1D9402B800D0B904 /* FTChatMessageBubbleLocationItem.swift in Sources */,
-				2A54C4E91D94027500D0B904 /* DemoTableViewController.swift in Sources */,
-				2A54C4E81D94027500D0B904 /* ChatListTableViewCell.swift in Sources */,
+				2A54C4E91D94027500D0B904 /* ChatTableViewController.swift in Sources */,
+				2A54C4E81D94027500D0B904 /* ChatRoomTableViewCell.swift in Sources */,
 				2AD6125C1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift in Sources */,
 				2A54C4D31D94024B00D0B904 /* AppDelegate.swift in Sources */,
-				2A54C4E71D94027500D0B904 /* HomeViewController.swift in Sources */,
+				2A54C4E71D94027500D0B904 /* ChatRoomViewController.swift in Sources */,
 				2A54C50F1D9402B800D0B904 /* FTChatMessageBubbleTextItem.swift in Sources */,
 				2A54C5221D9402B800D0B904 /* FTChatMessageUserModel.swift in Sources */,
 				2A54C5211D9402B800D0B904 /* FTChatMessageTableViewController.swift in Sources */,
+				2ADD9EFD1DB664EE00615A43 /* NSString+NTES.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,13 +543,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D3792E37FADAE9B75A2E1B2 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.ChatMessageDemoProject;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTChatMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -513,13 +562,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 598B6FECD64EED72578E196D /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.ChatMessageDemoProject;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTChatMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -1,6 +1,6 @@
 //
 //  FTChatMessageDeliverStatusView.swift
-//  ChatMessageDemoProject
+//  FTChatMessage
 //
 //  Created by liufengting on 16/9/12.
 //  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.

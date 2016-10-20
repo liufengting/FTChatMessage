@@ -10,47 +10,132 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>013A701A0C0465BFB2A9FAF14B2F8C0D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>650DA5A34031E280A9BB0147F1CFFCBA</string>
-				<string>3F7981998C9B76A01BE6FAE757C33D40</string>
-				<string>138E865B17CEC8B5ABD90258624AB805</string>
-				<string>12777AEE99089BEB3C564EE1846843F6</string>
-				<string>1042DFDBA21CCFFF0B85B23F7693474E</string>
-				<string>0EB957B8FD5E0E50B5A1E9A846B656D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Kingfisher</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>01B2DFF8B71C6DDDBFAF5520BFCCA924</key>
+		<key>0107766D40E4766C11C1FC095A48C535</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>ImageView+Kingfisher.swift</string>
+			<string>libssl.a</string>
 			<key>path</key>
-			<string>Sources/ImageView+Kingfisher.swift</string>
+			<string>SDK/Libs/libssl.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>015A368F878AC3E2CEAE21DDE8026304</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGNING_REQUIRED</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>POD_CONFIGURATION_DEBUG=1</string>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>PROVISIONING_PROFILE_SPECIFIER</key>
+				<string>NO_SIGNING/</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
 		<key>01C6AD05FE0BF7937FB1A8262E3B3BA3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>3D24C08188ADD612C9C67434DE26CC72</string>
+			<string>D462A03F7AEA34B0EECEBF6C324AB5C5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>03146073E27ED6779E08AF909D882334</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C5BC86D40B890A7B0844F888209CA06F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0338A57D007983BBBB5C6041F22C6266</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D8EB331FF4AAC78DC5CD9D84BD574722</string>
+				<string>DCC7B711B35B4D3ABCFABE92BE415EC9</string>
+				<string>263187C7CBDEA1416E70141E43CD7CF6</string>
+				<string>4E582B0BA0AFDABABCDEE5B08CC45B7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>03EA1E60232BFA05817BC26ACB8E68BA</key>
 		<dict>
@@ -65,48 +150,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>076BC7BAA0115B8BECBA4ED21C148FE3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F2DACC45662F43DEDAE7A2DC7AA2C680</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>08208C36EE8DF867BE81EFBD7E00EB9D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A8E470B116583DA96004A2D7DFD6D136</string>
-				<string>2090123667F75BE09AC401EFAEAB5EF0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>094980F9F75B32C58125DDD88869D34F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4BE22604F08B5141202F3BB42A09A23A</string>
-				<string>26C46E5F51CAE3D7F4D10347339A3878</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0D9F8EED18543D64207441A65C43DFBA</key>
+		<key>0410D7A6E47F210995FAE002DE4DBE7A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -115,46 +159,68 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>name</key>
-			<string>CacheSerializer.swift</string>
+			<string>ImageProcessor.swift</string>
 			<key>path</key>
-			<string>Sources/CacheSerializer.swift</string>
+			<string>Sources/ImageProcessor.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0EB957B8FD5E0E50B5A1E9A846B656D5</key>
+		<key>06EF5C846B66DC8F809A9E499781A8EB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>String+MD5.swift</string>
 			<key>path</key>
-			<string>Kingfisher-umbrella.h</string>
+			<string>Sources/String+MD5.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1028BA33EEB2B297E87594A87DECE1B9</key>
+		<key>0939D3AC48BE9E3BAAFDB815A70B813F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTNotificationIndicator.m</string>
+			<key>path</key>
+			<string>FTIndicator/FTNotificationIndicator/FTNotificationIndicator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0E11520E756A7FE3B7A997697CBECB02</key>
 		<dict>
 			<key>children</key>
-			<array>
-				<string>7B1BC3B134268E0D5F820188087B577F</string>
-				<string>934FF65FBC33EE3321474FDB85E0A869</string>
-				<string>E9D66304BA3C244D04261F2819CDC244</string>
-				<string>848EAD98591396417087C798B39A403B</string>
-				<string>7EB42767BEAED5AD800202E85BF3083F</string>
-				<string>2DF20E05DDFE7D23C93EE67B5C255932</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/FTIndicator</string>
+			<string>FTNotificationIndicator</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1042DFDBA21CCFFF0B85B23F7693474E</key>
+		<key>0E1D4A38E35F695ACA6A32CFED396191</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>312BFC26015DF536A90FD1F2A29934AA</string>
+				<string>98692F8328E3F1A0D9E9333A487DFE72</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0F3BCB9A6CE6BE21BD383824308F768F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -162,23 +228,59 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMSystemNotificationManagerProtocol.h</string>
 			<key>path</key>
-			<string>Kingfisher-prefix.pch</string>
+			<string>SDK/ExportHeaders/Protocol/NIMSystemNotificationManagerProtocol.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>11DE5113850DDE1FEC6254F813F83B6A</key>
+		<key>1098791E46896383735C52F8BC17673D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Kingfisher.h</string>
+			<key>path</key>
+			<string>Sources/Kingfisher.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>11C2E611C40A47586D912BE60004BB77</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libcrypto.a</string>
+			<key>path</key>
+			<string>SDK/Libs/libcrypto.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>13D1B3BC987C2D078E86994AC47FB9B6</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>138E865B17CEC8B5ABD90258624AB805</string>
+			<string>E5A2FD37A2C14E2F30C252F4C3021EA1</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
+				<string>dwarf-with-dsym</string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -208,15 +310,15 @@
 				<key>MODULEMAP_FILE</key>
 				<string>Target Support Files/Kingfisher/Kingfisher.modulemap</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
+				<string>NO</string>
 				<key>PRODUCT_NAME</key>
 				<string>Kingfisher</string>
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VERSIONING_SYSTEM</key>
@@ -227,9 +329,40 @@
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>Release</string>
 		</dict>
-		<key>12777AEE99089BEB3C564EE1846843F6</key>
+		<key>17BCCC109CDE3562D0E466B552CCA0E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>17CF569E5ACF92C9D43132C6018370F5</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>182F5545BD7E16461C051038B2C4C3CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D7294393952800C6EC391520043DFA4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1936BEBEA46E75B6E24CB7801A4E97E7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -237,58 +370,12 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Kingfisher-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>138E865B17CEC8B5ABD90258624AB805</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Kingfisher.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1664296424354B4CDEA0DF05CB41DBF0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>08208C36EE8DF867BE81EFBD7E00EB9D</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4AAE542C1D84FB5B111082DAC115688E</string>
-				<string>076BC7BAA0115B8BECBA4ED21C148FE3</string>
-				<string>D88D68BE122A984628CE057D6A0D819D</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>7C148B1C7238C7B6E7194077D4F4022D</string>
-				<string>6840E1B207DA805E95A497CC28585E2A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>Pods-Demo</string>
-			<key>productName</key>
-			<string>Pods-Demo</string>
-			<key>productReference</key>
-			<string>97F0E60ECF7F3C456D45B97B5097E197</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>182F5545BD7E16461C051038B2C4C3CC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A30221A6FB8A9E16A46A35DA76358910</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>FTIndicator.m</string>
+			<key>path</key>
+			<string>FTIndicator/FTIndicator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1A2DF02B542A17161162CA48FE208D3C</key>
 		<dict>
@@ -303,6 +390,36 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>1B76BA2CD5DAC43A67E12BA1A9EDDD72</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ThreadHelper.swift</string>
+			<key>path</key>
+			<string>Sources/ThreadHelper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1CC4989248E79C1904E8E47642598A0A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>KingfisherOptionsInfo.swift</string>
+			<key>path</key>
+			<string>Sources/KingfisherOptionsInfo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1DE93A359FA21F91DFBE81309E851A4A</key>
 		<dict>
@@ -325,18 +442,278 @@
 			<key>productName</key>
 			<string>Kingfisher</string>
 			<key>productReference</key>
-			<string>F751098A7AF1DC5F4538FC76DE84D817</string>
+			<string>3540E34F9003B41C012E960153D9E715</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>2090123667F75BE09AC401EFAEAB5EF0</key>
+		<key>1F5948DEAF54F7A9074F2A49002A7358</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTNotificationIndicator.h</string>
+			<key>path</key>
+			<string>FTIndicator/FTNotificationIndicator/FTNotificationIndicator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2244D0D520DC6392DAAE901A2BEC8B79</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AD5907E6C04FE0AAEF95053CF76A26C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>22AC472C78B3033823A0D0510B5A7371</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMSession.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMSession.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>22F5599DDE73D063937087DBEEB0702D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>232CC40B6BDED99579A8A76AF55C1F9B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CFNetwork.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CFNetwork.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>248629B712CCFE4C54898F85FE6F270C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4FB4C5140A72375ACF1D812D5DACCC76</string>
+				<string>3407136B5A675E18EC672F76258E8E7C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>25D2B4C42EA1E27D19F1E583DF9868B7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FTIndicator-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25E7420AD5A080D22FDD9A9A60D665C6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMessageSetting.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMMessageSetting.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>263187C7CBDEA1416E70141E43CD7CF6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81CCB7396B06D1007EAB0326617111AD</string>
+				<string>8D7294393952800C6EC391520043DFA4</string>
+				<string>5B0708FB73318A086079CF3809770075</string>
+				<string>51ABCD6657955B960DC33FC55D2433EA</string>
+				<string>D462A03F7AEA34B0EECEBF6C324AB5C5</string>
+				<string>5375FB5EC21CBB70EA0613DE60321245</string>
+				<string>88FCAB6AB215A898E0672DBA8E8A8413</string>
+				<string>8B5248E150CBDCB71C5389EAF3C327F9</string>
+				<string>0410D7A6E47F210995FAE002DE4DBE7A</string>
+				<string>D7B3BD0BE0FFE8291A520CA72EB85FE3</string>
+				<string>269B0E1DE40E32A5437B1757DBDB3131</string>
+				<string>95983D16608AAE7AFC945FD6A6D8262D</string>
+				<string>1098791E46896383735C52F8BC17673D</string>
+				<string>3E39EDCC727EA1FC61BF534AF3CF3393</string>
+				<string>6AD5907E6C04FE0AAEF95053CF76A26C</string>
+				<string>1CC4989248E79C1904E8E47642598A0A</string>
+				<string>3930AE7DC2A099BAA34C861A84C7CDFA</string>
+				<string>35E5E9880D8D3C9FD207CCD3D99078F6</string>
+				<string>06EF5C846B66DC8F809A9E499781A8EB</string>
+				<string>1B76BA2CD5DAC43A67E12BA1A9EDDD72</string>
+				<string>684AB21346CE51D4D1662C09C0164CFB</string>
+				<string>F2F7F5F1CB451E8BECD243FA982BD540</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Kingfisher</string>
+			<key>path</key>
+			<string>Kingfisher</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>269B0E1DE40E32A5437B1757DBDB3131</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ImageView+Kingfisher.swift</string>
+			<key>path</key>
+			<string>Sources/ImageView+Kingfisher.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2781A4E450FDD5AF27644BB819D16123</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A9CE0701982BFCDE140FF49774CE6377</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>2BA38D15A950F8BE1299E11035FCCB32</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTToastIndicator.h</string>
+			<key>path</key>
+			<string>FTIndicator/FTToastIndicator/FTToastIndicator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C38C2BE44F8AFF462A03F083EA071C4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMSystemNotification.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMSystemNotification.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>015A368F878AC3E2CEAE21DDE8026304</string>
+				<string>44CDBB6D11DE06DB64D6268622BDC47E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>312BFC26015DF536A90FD1F2A29934AA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7DF562E4A3231D8098C961EA432A3DCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>322419E99883B306EE7EC77959FCC8DF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-Demo.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>32738000E54CB9710767C9A1A677C825</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6596C777EEEACF6474EF0593D19D80CB</string>
+				<string>D5228F1D4AB78BAB7C19ECA7B3472FE8</string>
+				<string>C3218A2E0AF65AF31B59012DA5FC773E</string>
+				<string>6A116BE468FFC45AFCBF71108DBA9D85</string>
+				<string>5FD50E50429A19A8DEDD7D52F8562FD6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>33DF4B134C34804BCF18850132DA29A9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B5248E150CBDCB71C5389EAF3C327F9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3407136B5A675E18EC672F76258E8E7C</key>
 		<dict>
 			<key>baseConfigurationReference</key>
 			<string>DAB0701F8F25395B1ED46510ED4B9797</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -397,7 +774,7 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>21F75CD369CA175D85CE220F16CCF425</key>
+		<key>343D704AC4FD4C5AED01FD4A6CD375D5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -406,273 +783,24 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTProgressIndicator.h</string>
+			<string>NIMChatroomNotificationContent.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.h</string>
+			<string>SDK/ExportHeaders/MessageObject/NotificationContent/NIMChatroomNotificationContent.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2244D0D520DC6392DAAE901A2BEC8B79</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23623E74D5D4C7BAF0FB996F7C1CCF54</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>232CC40B6BDED99579A8A76AF55C1F9B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CFNetwork.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CFNetwork.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>23623E74D5D4C7BAF0FB996F7C1CCF54</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>KingfisherManager.swift</string>
-			<key>path</key>
-			<string>Sources/KingfisherManager.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>24D8CDD09DC293CCFA04FE8EB41F0D22</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ImageDownloader.swift</string>
-			<key>path</key>
-			<string>Sources/ImageDownloader.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>26C46E5F51CAE3D7F4D10347339A3878</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>80BBD3F2214435FA9D1DE2B211073913</string>
-				<string>A30221A6FB8A9E16A46A35DA76358910</string>
-				<string>0D9F8EED18543D64207441A65C43DFBA</string>
-				<string>CCC29C8ACFC65576671F68C21F72EDA4</string>
-				<string>3D24C08188ADD612C9C67434DE26CC72</string>
-				<string>7CE94E415BFA5A89B54C2FF00DBF4285</string>
-				<string>24D8CDD09DC293CCFA04FE8EB41F0D22</string>
-				<string>AC9CD166C5C1501BDE0C8D8C504301D2</string>
-				<string>FA97B7D19A4F4913D2792BF76129E5FA</string>
-				<string>895C494E10516AA82F90ABD87577F7F4</string>
-				<string>01B2DFF8B71C6DDDBFAF5520BFCCA924</string>
-				<string>A342B3064F85809AC7A8FDFC47669B41</string>
-				<string>35C1FAEEFAD48A76767E08A68D65D234</string>
-				<string>68D6AA70CE8BD3E4BFA0ACC51F429EA2</string>
-				<string>23623E74D5D4C7BAF0FB996F7C1CCF54</string>
-				<string>E82F3943278DB971D18EC8846464960A</string>
-				<string>3FF44778DC42D14620CB61FED6FFEFA2</string>
-				<string>D234042B9B7924625E79C32E8CA91877</string>
-				<string>E2655BFD61FE36FCA444F1189D4A4AEE</string>
-				<string>5D61AD42A9A98769FBD095ACE0D20D01</string>
-				<string>319CC2C96A6B4597845B5665FBE8C7F5</string>
-				<string>013A701A0C0465BFB2A9FAF14B2F8C0D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Kingfisher</string>
-			<key>path</key>
-			<string>Kingfisher</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>47BEF9D903506B003EA5C2B249729489</string>
-				<string>AAF678CED40D3499169D10F63CA0719E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2DF20E05DDFE7D23C93EE67B5C255932</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>319CC2C96A6B4597845B5665FBE8C7F5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIButton+Kingfisher.swift</string>
-			<key>path</key>
-			<string>Sources/UIButton+Kingfisher.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>322419E99883B306EE7EC77959FCC8DF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-Demo.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32738000E54CB9710767C9A1A677C825</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6596C777EEEACF6474EF0593D19D80CB</string>
-				<string>D5228F1D4AB78BAB7C19ECA7B3472FE8</string>
-				<string>C3218A2E0AF65AF31B59012DA5FC773E</string>
-				<string>6A116BE468FFC45AFCBF71108DBA9D85</string>
-				<string>5FD50E50429A19A8DEDD7D52F8562FD6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>33DF4B134C34804BCF18850132DA29A9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AC9CD166C5C1501BDE0C8D8C504301D2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>340F088798F3FFB03E5140BAF37E183F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FC5F2AA3E6AB242BD949E0C728433B34</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>FTProgressIndicator</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>35C1FAEEFAD48A76767E08A68D65D234</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Kingfisher.h</string>
-			<key>path</key>
-			<string>Sources/Kingfisher.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>363F048EAA6933FA24F8FFB2537AE0B0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>11DE5113850DDE1FEC6254F813F83B6A</string>
-				<string>3F53272B4E5E6820890ECD544235BF82</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>371F2E7759D965A93E641FAE90B0500B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>12777AEE99089BEB3C564EE1846843F6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3CD5A30239C90F1B549B4AB9299ECF16</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-Demo-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3D24C08188ADD612C9C67434DE26CC72</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Image.swift</string>
-			<key>path</key>
-			<string>Sources/Image.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3D653C9DA16200D75AD14323AA830C6B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-Demo-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F53272B4E5E6820890ECD544235BF82</key>
+		<key>3446B320523424E76B9480DD910F61F9</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>138E865B17CEC8B5ABD90258624AB805</string>
+			<string>B91C451E75635D69FF061C8FA74B3257</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -690,9 +818,9 @@
 				<key>GCC_NO_COMMON_BLOCKS</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Kingfisher/Kingfisher-prefix.pch</string>
+				<string>Target Support Files/FTPickerView/FTPickerView-prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Kingfisher/Info.plist</string>
+				<string>Target Support Files/FTPickerView/Info.plist</string>
 				<key>INSTALL_PATH</key>
 				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -704,15 +832,17 @@
 					<string>@loader_path/Frameworks</string>
 				</array>
 				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Kingfisher/Kingfisher.modulemap</string>
+				<string>Target Support Files/FTPickerView/FTPickerView.modulemap</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>PRODUCT_NAME</key>
-				<string>Kingfisher</string>
+				<string>FTPickerView</string>
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VERSIONING_SYSTEM</key>
@@ -725,25 +855,97 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>3F7981998C9B76A01BE6FAE757C33D40</key>
+		<key>3540E34F9003B41C012E960153D9E715</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Kingfisher.framework</string>
+			<key>path</key>
+			<string>Kingfisher.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3561AA7595022390A537873DC8F05A3E</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>6F04D2EB19E361DFF9FD343401854AE7</string>
+			<key>remoteInfo</key>
+			<string>FTIndicator</string>
+		</dict>
+		<key>3581667D6C1990B985C6D8D98A787156</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>03146073E27ED6779E08AF909D882334</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>35DF7F6E8595731AE51F1527F9F2868D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>5A5097292BDF98B4B61651AE947D96CD</string>
+			<key>remoteInfo</key>
+			<string>FTPickerView</string>
+		</dict>
+		<key>35E5E9880D8D3C9FD207CCD3D99078F6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Resource.swift</string>
 			<key>path</key>
-			<string>Kingfisher.modulemap</string>
+			<string>Sources/Resource.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3FD268C5E6003DF678ADC483EFF33DA2</key>
+		<key>363F048EAA6933FA24F8FFB2537AE0B0</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FE34EC6D364E0969FC4871AFAEEFA0D0</string>
+				<string>13D1B3BC987C2D078E86994AC47FB9B6</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>371F2E7759D965A93E641FAE90B0500B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0D9F8EED18543D64207441A65C43DFBA</string>
+			<string>84F16D9BE6AA8C63BB4CEF5C922B1D05</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>3FF44778DC42D14620CB61FED6FFEFA2</key>
+		<key>3930AE7DC2A099BAA34C861A84C7CDFA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -757,6 +959,154 @@
 			<string>Sources/RequrstModifier.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3972E048E42373D53C2E1FCC34C7E698</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Kingfisher</string>
+			<key>target</key>
+			<string>1DE93A359FA21F91DFBE81309E851A4A</string>
+			<key>targetProxy</key>
+			<string>C9BF53D9E4C54A03BD7D47F59F8720A6</string>
+		</dict>
+		<key>3B61267335E82123BCED8E04CF090E07</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FTIndicator.framework</string>
+			<key>path</key>
+			<string>FTIndicator.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3C61542E607760076408DF7B0FE1D302</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTIndicator.h</string>
+			<key>path</key>
+			<string>FTIndicator/FTIndicator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3CD5A30239C90F1B549B4AB9299ECF16</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-Demo-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D2E1B617833A7C0DFAB6DE84588FD88</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMessage.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMMessage.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D653C9DA16200D75AD14323AA830C6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-Demo-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E39EDCC727EA1FC61BF534AF3CF3393</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Kingfisher.swift</string>
+			<key>path</key>
+			<string>Sources/Kingfisher.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E7C44A020063C16F74DC4259EE55EF1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMUserManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMUserManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD268C5E6003DF678ADC483EFF33DA2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5B0708FB73318A086079CF3809770075</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4010CCA74D6276C75F5E5AA94128015E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroomQueueRequest.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroomQueueRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>40527050B8D98A3CE7621FA584F2388D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A0C005C1F64EABE32251532FE924E0C9</string>
+				<string>3446B320523424E76B9480DD910F61F9</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>42AD183F0B7DC5A32D03E91F225954F3</key>
 		<dict>
@@ -785,55 +1135,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>44CDA2672925568F0574A9C803E9FEAC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FTIndicator.framework</string>
-			<key>path</key>
-			<string>FTIndicator.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>4621A0496CDA4C719DFA7DE511A855DD</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>6F04D2EB19E361DFF9FD343401854AE7</string>
-			<key>remoteInfo</key>
-			<string>FTIndicator</string>
-		</dict>
-		<key>465D81858B131C9CC6D67DD6B2F933F9</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>1DE93A359FA21F91DFBE81309E851A4A</string>
-			<key>remoteInfo</key>
-			<string>Kingfisher</string>
-		</dict>
-		<key>473A9085410554074ED17F48C4BB8308</key>
-		<dict>
-			<key>fileRef</key>
-			<string>232CC40B6BDED99579A8A76AF55C1F9B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>47BEF9D903506B003EA5C2B249729489</key>
+		<key>44CDBB6D11DE06DB64D6268622BDC47E</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -867,24 +1169,19 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
+				<key>CODE_SIGNING_REQUIRED</key>
 				<string>NO</string>
-				<key>ENABLE_TESTABILITY</key>
+				<key>COPY_PHASE_STRIP</key>
 				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
 				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
 				<array>
-					<string>POD_CONFIGURATION_DEBUG=1</string>
-					<string>DEBUG=1</string>
+					<string>POD_CONFIGURATION_RELEASE=1</string>
 					<string>$(inherited)</string>
 				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
 				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
 				<string>YES</string>
 				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
@@ -899,30 +1196,114 @@
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
 				<string>8.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
+				<key>PROVISIONING_PROFILE_SPECIFIER</key>
+				<string>NO_SIGNING/</string>
 				<key>STRIP_INSTALLED_PRODUCT</key>
 				<string>NO</string>
 				<key>SYMROOT</key>
 				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>Release</string>
 		</dict>
-		<key>4AAE542C1D84FB5B111082DAC115688E</key>
+		<key>450C52CC76A9CD95B7D998A494B50DA3</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMRecentSession.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMRecentSession.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4599D990E1A2BB20A24D1B4D098DC9B1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FTIndicator</string>
+			<key>target</key>
+			<string>6F04D2EB19E361DFF9FD343401854AE7</string>
+			<key>targetProxy</key>
+			<string>3561AA7595022390A537873DC8F05A3E</string>
+		</dict>
+		<key>463371A718B06A9939E3BB3216C043C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMVideoObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMVideoObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>473A9085410554074ED17F48C4BB8308</key>
+		<dict>
+			<key>fileRef</key>
+			<string>232CC40B6BDED99579A8A76AF55C1F9B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>47921028DFC8ED91DB3B9C71757E3402</key>
+		<dict>
+			<key>children</key>
 			<array>
-				<string>CD5D1C92DFC0101AC2277751C3D3F4C9</string>
+				<string>936808ECF8D810DEE6E51A70BDF99933</string>
+				<string>11C2E611C40A47586D912BE60004BB77</string>
+				<string>ACF48B87FD063DDC08200C9B15A02BF6</string>
+				<string>8ABC129AA1118682DF89CD1F7D729B28</string>
+				<string>0107766D40E4766C11C1FC095A48C535</string>
 			</array>
 			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4A3060E63482A69B1195F28AEB9FBFEF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMNotificationContent.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NotificationContent/NIMNotificationContent.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B43E6D8E2ACBCD387BDC71964E4641D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>name</key>
+			<string>FTProgressIndicator.bundle</string>
+			<key>path</key>
+			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4B454CD46A59516A2CDA08A4275CE4FA</key>
 		<dict>
@@ -931,41 +1312,127 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>4BE22604F08B5141202F3BB42A09A23A</key>
+		<key>4D9E2E82053C395F430D1970D76BA03A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTProgressIndicator.h</string>
+			<key>path</key>
+			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4E582B0BA0AFDABABCDEE5B08CC45B7A</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>CF87B470F90995AEF8CB277A7772C0D3</string>
-				<string>B5BC686ED49F6BFDBFA813E7B5A842D0</string>
-				<string>985C0336D9461CFE6F2E62267451BE11</string>
-				<string>E0B382E5352A316E2538D4786CDD2477</string>
-				<string>21F75CD369CA175D85CE220F16CCF425</string>
-				<string>F19256EA98B7EA59E86813F33FA46D25</string>
-				<string>F1BC2AD72CBCA83BD180958D4ADA583F</string>
-				<string>9EC8AE475F5E27E967DC0D4DFE8B9388</string>
-				<string>84179027E9711ED2C90852948CAF0F45</string>
-				<string>340F088798F3FFB03E5140BAF37E183F</string>
-				<string>811CB7151C915492E15B6E7A2FB800E2</string>
-				<string>B7DBBF7D05A6EC79EA1A623E01D761BC</string>
-				<string>1028BA33EEB2B297E87594A87DECE1B9</string>
+				<string>9059B1D801F418DB353D11E1DEA8BDDC</string>
+				<string>E9BD56EA9CCC973A02A887D4E65B19DC</string>
+				<string>74924DF0BBD78C1D2CAE43A4AF28408B</string>
+				<string>6A8E06E184746CCDE8E51CC7F446701C</string>
+				<string>FECA5551A30670E22ACB6931E4C150B6</string>
+				<string>F845F57A946C6FDB83A11CDBB7BCF706</string>
+				<string>D943A46B83DA29BBC9B37ABDECD1867F</string>
+				<string>68CD906D0B8248844E200A77176BEF68</string>
+				<string>343D704AC4FD4C5AED01FD4A6CD375D5</string>
+				<string>4010CCA74D6276C75F5E5AA94128015E</string>
+				<string>8CAE54E6E2E10422299964CD95372314</string>
+				<string>D41632CDD0B3E6159D48DD56C83C37AB</string>
+				<string>FA92EF5B503FED7C851E7E0FBDEAFE9E</string>
+				<string>B9DC3684EC67DC21F31B47BEBD3DC07E</string>
+				<string>F057AFF581A0B630C50F3810A650380B</string>
+				<string>8D192D61A5170A0868BEBFF3DE74C55B</string>
+				<string>BA52E64BC0AC6A6854DA3B6F299726B8</string>
+				<string>A0FFBB482127DC28C77C6BC6EE3C267E</string>
+				<string>AFB72569EA6D5FEF73E70617023590B8</string>
+				<string>EFB289BCE084BCF8888CB28795973CA0</string>
+				<string>901D4A76EB2662B2ABE9AAE03DE1A9A6</string>
+				<string>E3115ECBBFA1327956D6A3E5A81F82ED</string>
+				<string>3D2E1B617833A7C0DFAB6DE84588FD88</string>
+				<string>E86027DC422F39EA27E272987E6BFA67</string>
+				<string>E8448B0D86B049D5E20721F9C3471004</string>
+				<string>BE4A63B7980B4FD29E6DB793A2A54607</string>
+				<string>81270DEFEA1235DEBC6E6FBDD640CD8F</string>
+				<string>F7AEF3907852A1E4FF665575E87CBA65</string>
+				<string>25E7420AD5A080D22FDD9A9A60D665C6</string>
+				<string>5CCBA316195A456950903A964B1638FF</string>
+				<string>4A3060E63482A69B1195F28AEB9FBFEF</string>
+				<string>6D2421193E5B5D531283EA25C97DB86E</string>
+				<string>DBBBACD230B0B72E820B75570D9634CC</string>
+				<string>450C52CC76A9CD95B7D998A494B50DA3</string>
+				<string>8EC9C53B7B37EFD0F3FD74F7E7663517</string>
+				<string>D29A5E977EF508F0F61F3CFC8F77D5EC</string>
+				<string>828E5A999EF10DEC68EE460641271234</string>
+				<string>90124D0C2E8D18FD22163C54FE1E14B2</string>
+				<string>22AC472C78B3033823A0D0510B5A7371</string>
+				<string>2C38C2BE44F8AFF462A03F083EA071C4</string>
+				<string>0F3BCB9A6CE6BE21BD383824308F768F</string>
+				<string>95241E50CC85F8464D7149F34D16696B</string>
+				<string>CAD1A2F9D9151BE08F5CB6BC5B704DEB</string>
+				<string>544BB6095612FF80C13BC3D283FCA23C</string>
+				<string>E10155EDDCF1CDB44B36B888423B4D7A</string>
+				<string>A8DB34ADAC4D8F4EF535C5F1EC85B978</string>
+				<string>D6B7AE3B2AFA5F9BFE884DA672D9F574</string>
+				<string>CD3B929E622FBE934456E5AE4E425726</string>
+				<string>E2F803BCA54994E37C2A7AE303F1C662</string>
+				<string>3E7C44A020063C16F74DC4259EE55EF1</string>
+				<string>463371A718B06A9939E3BB3216C043C8</string>
+				<string>47921028DFC8ED91DB3B9C71757E3402</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>FTIndicator</string>
+			<string>NIMSDK_LITE</string>
 			<key>path</key>
-			<string>FTIndicator</string>
+			<string>NIMSDK_LITE</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>55AE920C7D978B4F022822DC0E1BEE8C</key>
+		<key>4EEABE63DA01A09A38EB9AB45D14DEBE</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FTPickerView.framework</string>
+			<key>path</key>
+			<string>FTPickerView.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4F7B211204F7176A44C514CB0A49F946</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4FB4C5140A72375ACF1D812D5DACCC76</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>934FF65FBC33EE3321474FDB85E0A869</string>
+			<string>CC6A59B0ADA6CB2F51DAE6508E437829</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -982,10 +1449,8 @@
 				<string>YES</string>
 				<key>GCC_NO_COMMON_BLOCKS</key>
 				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/FTIndicator/FTIndicator-prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/FTIndicator/Info.plist</string>
+				<string>Target Support Files/Pods-Demo/Info.plist</string>
 				<key>INSTALL_PATH</key>
 				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -996,16 +1461,28 @@
 					<string>@executable_path/Frameworks</string>
 					<string>@loader_path/Frameworks</string>
 				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
 				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/FTIndicator/FTIndicator.modulemap</string>
+				<string>Target Support Files/Pods-Demo/Pods-Demo.modulemap</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
 				<key>PRODUCT_NAME</key>
-				<string>FTIndicator</string>
+				<string>Pods_Demo</string>
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VERSIONING_SYSTEM</key>
@@ -1018,14 +1495,7 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>5AE67D264C4344E3FF61663626FEE190</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D234042B9B7924625E79C32E8CA91877</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5D61AD42A9A98769FBD095ACE0D20D01</key>
+		<key>51ABCD6657955B960DC33FC55D2433EA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1034,252 +1504,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>name</key>
-			<string>ThreadHelper.swift</string>
+			<string>Filter.swift</string>
 			<key>path</key>
-			<string>Sources/ThreadHelper.swift</string>
+			<string>Sources/Filter.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>5DECC5260971AB931B43152ECFA6785B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>name</key>
-			<string>FTProgressIndicator.bundle</string>
-			<key>path</key>
-			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FD50E50429A19A8DEDD7D52F8562FD6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1BC2AD72CBCA83BD180958D4ADA583F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>634D923C054F3A5EC7D1137FA01DFB23</key>
-		<dict>
-			<key>fileRef</key>
-			<string>68D6AA70CE8BD3E4BFA0ACC51F429EA2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>650DA5A34031E280A9BB0147F1CFFCBA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6596C777EEEACF6474EF0593D19D80CB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7EB42767BEAED5AD800202E85BF3083F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6840E1B207DA805E95A497CC28585E2A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Kingfisher</string>
-			<key>target</key>
-			<string>1DE93A359FA21F91DFBE81309E851A4A</string>
-			<key>targetProxy</key>
-			<string>465D81858B131C9CC6D67DD6B2F933F9</string>
-		</dict>
-		<key>68D6AA70CE8BD3E4BFA0ACC51F429EA2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Kingfisher.swift</string>
-			<key>path</key>
-			<string>Sources/Kingfisher.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6A116BE468FFC45AFCBF71108DBA9D85</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21F75CD369CA175D85CE220F16CCF425</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6B0E041441B82020A2FD07264D2B4526</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5D61AD42A9A98769FBD095ACE0D20D01</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6EC1503C470A8C477D35881509B24BC1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D265E2E7B73CD231B517DBAC9EC561C7</string>
-				<string>DA4036259E6D3F6A684954D38D7AA09D</string>
-				<string>768F8DE3113C8E9D00E05C5B0D6FD441</string>
-				<string>F716445012C1037C0471D201C651E6FE</string>
-				<string>79CFC89666F47B02F1D006D2194AD520</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6F04D2EB19E361DFF9FD343401854AE7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D09798EDC43DCF4750A6035F02FF286B</string>
-			<key>buildPhases</key>
-			<array>
-				<string>6EC1503C470A8C477D35881509B24BC1</string>
-				<string>F7B39A6990361ED48ED40E709E32C582</string>
-				<string>32738000E54CB9710767C9A1A677C825</string>
-				<string>E4234FCD77E4A02A6DA9EF2A17784DE0</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>FTIndicator</string>
-			<key>productName</key>
-			<string>FTIndicator</string>
-			<key>productReference</key>
-			<string>44CDA2672925568F0574A9C803E9FEAC</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>6F2351C272926D3E0225FEFC2F9C5D1F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>ECC58720C5754A079F9A150E40E2FCDD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6F83313432503F82A7B068C33B5B414E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5DECC5260971AB931B43152ECFA6785B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>71940C1CEB7995DC34CFE54CAF1AEF88</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-Demo-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>768F8DE3113C8E9D00E05C5B0D6FD441</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0B382E5352A316E2538D4786CDD2477</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>793326254CA24186BC31A1183C5CEEB6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>895C494E10516AA82F90ABD87577F7F4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>79CFC89666F47B02F1D006D2194AD520</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9EC8AE475F5E27E967DC0D4DFE8B9388</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>7B1BC3B134268E0D5F820188087B577F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>FTIndicator.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7C148B1C7238C7B6E7194077D4F4022D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>FTIndicator</string>
-			<key>target</key>
-			<string>6F04D2EB19E361DFF9FD343401854AE7</string>
-			<key>targetProxy</key>
-			<string>4621A0496CDA4C719DFA7DE511A855DD</string>
-		</dict>
-		<key>7CE94E415BFA5A89B54C2FF00DBF4285</key>
+		<key>5375FB5EC21CBB70EA0613DE60321245</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1294,29 +1525,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
-				<string>433CD3331B6C3787F473C941B61FC68F</string>
-				<string>094980F9F75B32C58125DDD88869D34F</string>
-				<string>E439BBEF2B75C2A9889FDB4491573086</string>
-				<string>6F2351C272926D3E0225FEFC2F9C5D1F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DF076F5F2A8469A307E7B719CC73FD9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E2655BFD61FE36FCA444F1189D4A4AEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7EB42767BEAED5AD800202E85BF3083F</key>
+		<key>544BB6095612FF80C13BC3D283FCA23C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1324,12 +1533,75 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMTeamManagerProtocol.h</string>
 			<key>path</key>
-			<string>FTIndicator-umbrella.h</string>
+			<string>SDK/ExportHeaders/Protocol/NIMTeamManagerProtocol.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>80BBD3F2214435FA9D1DE2B211073913</key>
+		<key>55B77C13CE753C0E42718AE04BC682E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>03EA1E60232BFA05817BC26ACB8E68BA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>57DE98E1442313D1B71EB15E8E53A756</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTProgressIndicator.m</string>
+			<key>path</key>
+			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A5097292BDF98B4B61651AE947D96CD</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>40527050B8D98A3CE7621FA584F2388D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>0E1D4A38E35F695ACA6A32CFED396191</string>
+				<string>FD5AB7F854C761CB5A4FA2E091EC3CEA</string>
+				<string>D058E8C78D55BFA7FE4207A2DB8BC4FF</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FTPickerView</string>
+			<key>productName</key>
+			<string>FTPickerView</string>
+			<key>productReference</key>
+			<string>4EEABE63DA01A09A38EB9AB45D14DEBE</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>5AE67D264C4344E3FF61663626FEE190</key>
+		<dict>
+			<key>fileRef</key>
+			<string>35E5E9880D8D3C9FD207CCD3D99078F6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5B0708FB73318A086079CF3809770075</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1338,35 +1610,26 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>name</key>
-			<string>AnimatedImageView.swift</string>
+			<string>CacheSerializer.swift</string>
 			<key>path</key>
-			<string>Sources/AnimatedImageView.swift</string>
+			<string>Sources/CacheSerializer.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>811CB7151C915492E15B6E7A2FB800E2</key>
+		<key>5B50252C64974846C6DA7591A40A929C</key>
 		<dict>
-			<key>children</key>
-			<array/>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>55B77C13CE753C0E42718AE04BC682E4</string>
+			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>FTToastIndicator</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
-		<key>84179027E9711ED2C90852948CAF0F45</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>FTNotificationIndicator</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>848EAD98591396417087C798B39A403B</key>
+		<key>5CCBA316195A456950903A964B1638FF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1374,19 +1637,132 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMNetCallNotificationContent.h</string>
 			<key>path</key>
-			<string>FTIndicator-prefix.pch</string>
+			<string>SDK/ExportHeaders/MessageObject/NotificationContent/NIMNetCallNotificationContent.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8809CCC90E274FE0FFB6A4EF16699DDB</key>
+		<key>5D1F2E655CCF9A9650E95BCC58D2BDF2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EE65F1DA1DD0399E8F8A8AD1A307A67</string>
+				<string>DA247ABDF146FE42B25625A97ED59F99</string>
+				<string>753E9EE7F15EDF4926DF3022C8255491</string>
+				<string>25D2B4C42EA1E27D19F1E583DF9868B7</string>
+				<string>6DB3911DF32D604EAA67695FC4F4EAE6</string>
+				<string>4F7B211204F7176A44C514CB0A49F946</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/FTIndicator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EE65F1DA1DD0399E8F8A8AD1A307A67</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FTIndicator.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5FD50E50429A19A8DEDD7D52F8562FD6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BA38D15A950F8BE1299E11035FCCB32</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>61F026CFF712783C4458D891F73840A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Kingfisher.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>634D923C054F3A5EC7D1137FA01DFB23</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E39EDCC727EA1FC61BF534AF3CF3393</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6596C777EEEACF6474EF0593D19D80CB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6DB3911DF32D604EAA67695FC4F4EAE6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>684AB21346CE51D4D1662C09C0164CFB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>UIButton+Kingfisher.swift</string>
+			<key>path</key>
+			<string>Sources/UIButton+Kingfisher.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>68CD906D0B8248844E200A77176BEF68</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroomMemberRequest.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroomMemberRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>69DE13D29101458C96A57EDD71434BEE</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>934FF65FBC33EE3321474FDB85E0A869</string>
+			<string>DA247ABDF146FE42B25625A97ED59F99</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -1427,6 +1803,8 @@
 				<string>iphoneos</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VERSIONING_SYSTEM</key>
@@ -1439,7 +1817,36 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>895C494E10516AA82F90ABD87577F7F4</key>
+		<key>6A116BE468FFC45AFCBF71108DBA9D85</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D9E2E82053C395F430D1970D76BA03A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6A8E06E184746CCDE8E51CC7F446701C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroom.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroom.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AD5907E6C04FE0AAEF95053CF76A26C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1448,9 +1855,389 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>name</key>
-			<string>ImageTransition.swift</string>
+			<string>KingfisherManager.swift</string>
 			<key>path</key>
-			<string>Sources/ImageTransition.swift</string>
+			<string>Sources/KingfisherManager.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B0E041441B82020A2FD07264D2B4526</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1B76BA2CD5DAC43A67E12BA1A9EDDD72</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6D2421193E5B5D531283EA25C97DB86E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMNotificationObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMNotificationObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6DB3911DF32D604EAA67695FC4F4EAE6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FTIndicator-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6EC1503C470A8C477D35881509B24BC1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D265E2E7B73CD231B517DBAC9EC561C7</string>
+				<string>DA4036259E6D3F6A684954D38D7AA09D</string>
+				<string>768F8DE3113C8E9D00E05C5B0D6FD441</string>
+				<string>F716445012C1037C0471D201C651E6FE</string>
+				<string>79CFC89666F47B02F1D006D2194AD520</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6EE1DC3E8ADBAFAFA9A8B80147B51C45</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTToastIndicator.m</string>
+			<key>path</key>
+			<string>FTIndicator/FTToastIndicator/FTToastIndicator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6F04D2EB19E361DFF9FD343401854AE7</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>D09798EDC43DCF4750A6035F02FF286B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6EC1503C470A8C477D35881509B24BC1</string>
+				<string>F7B39A6990361ED48ED40E709E32C582</string>
+				<string>32738000E54CB9710767C9A1A677C825</string>
+				<string>E4234FCD77E4A02A6DA9EF2A17784DE0</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FTIndicator</string>
+			<key>productName</key>
+			<string>FTIndicator</string>
+			<key>productReference</key>
+			<string>3B61267335E82123BCED8E04CF090E07</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>6F2351C272926D3E0225FEFC2F9C5D1F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ECC58720C5754A079F9A150E40E2FCDD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6F83313432503F82A7B068C33B5B414E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4B43E6D8E2ACBCD387BDC71964E4641D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71940C1CEB7995DC34CFE54CAF1AEF88</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-Demo-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74924DF0BBD78C1D2CAE43A4AF28408B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMChatManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>750BA56FA6513E32FA1F69678AB11B7F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AF23B59B4DA51F3E8E8E82DABD9D83DD</string>
+				<string>B91C451E75635D69FF061C8FA74B3257</string>
+				<string>7DF562E4A3231D8098C961EA432A3DCD</string>
+				<string>8E068132D6AD6DBAD9FFB2E96E4D2A04</string>
+				<string>A9CE0701982BFCDE140FF49774CE6377</string>
+				<string>22F5599DDE73D063937087DBEEB0702D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/FTPickerView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>753E9EE7F15EDF4926DF3022C8255491</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FTIndicator-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>768F8DE3113C8E9D00E05C5B0D6FD441</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0939D3AC48BE9E3BAAFDB815A70B813F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0 -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>793326254CA24186BC31A1183C5CEEB6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D7B3BD0BE0FFE8291A520CA72EB85FE3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>79CFC89666F47B02F1D006D2194AD520</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6EE1DC3E8ADBAFAFA9A8B80147B51C45</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0 -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>7D5DFAD032EF13E984C2B26296C291DB</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9DDFDA135FD52EFE37A61C76D45DAE0B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
+				<string>433CD3331B6C3787F473C941B61FC68F</string>
+				<string>0338A57D007983BBBB5C6041F22C6266</string>
+				<string>C79C1375667E3D16C6E56DF21FFCA47F</string>
+				<string>6F2351C272926D3E0225FEFC2F9C5D1F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DF076F5F2A8469A307E7B719CC73FD9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>06EF5C846B66DC8F809A9E499781A8EB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7DF562E4A3231D8098C961EA432A3DCD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FTPickerView-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80A990DDC4B53C6160231B66754EFC6A</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FTToastIndicator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81270DEFEA1235DEBC6E6FBDD640CD8F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMessageReceipt.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMMessageReceipt.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81CCB7396B06D1007EAB0326617111AD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>AnimatedImageView.swift</string>
+			<key>path</key>
+			<string>Sources/AnimatedImageView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>828E5A999EF10DEC68EE460641271234</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMSDKConfig.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMSDKConfig.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8356B676E9C64EB9865D21CCE4156DAE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>17CF569E5ACF92C9D43132C6018370F5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FTProgressIndicator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>84F16D9BE6AA8C63BB4CEF5C922B1D05</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Kingfisher-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>88FCAB6AB215A898E0672DBA8E8A8413</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ImageDownloader.swift</string>
+			<key>path</key>
+			<string>Sources/ImageDownloader.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8ABC129AA1118682DF89CD1F7D729B28</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libNIMSDK.a</string>
+			<key>path</key>
+			<string>SDK/libNIMSDK.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B5248E150CBDCB71C5389EAF3C327F9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ImagePrefetcher.swift</string>
+			<key>path</key>
+			<string>Sources/ImagePrefetcher.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1487,6 +2274,51 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>8CAE54E6E2E10422299964CD95372314</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroomUpdateRequest.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroomUpdateRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8D192D61A5170A0868BEBFF3DE74C55B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMFileObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMFileObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8D7294393952800C6EC391520043DFA4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Box.swift</string>
+			<key>path</key>
+			<string>Sources/Box.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>8DBA83DA7327FE5D6C8D4AEA11B88256</key>
 		<dict>
 			<key>fileRef</key>
@@ -1494,23 +2326,98 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>8E999D5DC5547C68D20D1692414B1D0C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>01B2DFF8B71C6DDDBFAF5520BFCCA924</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>934FF65FBC33EE3321474FDB85E0A869</key>
+		<key>8E068132D6AD6DBAD9FFB2E96E4D2A04</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>FTIndicator.xcconfig</string>
+			<string>FTPickerView-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E999D5DC5547C68D20D1692414B1D0C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>269B0E1DE40E32A5437B1757DBDB3131</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8EC9C53B7B37EFD0F3FD74F7E7663517</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMResourceManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMResourceManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>90124D0C2E8D18FD22163C54FE1E14B2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMSDKHeaders.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMSDKHeaders.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>901D4A76EB2662B2ABE9AAE03DE1A9A6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMLoginManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMLoginManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9059B1D801F418DB353D11E1DEA8BDDC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMApnsManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMApnsManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>936808ECF8D810DEE6E51A70BDF99933</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libaacplus.a</string>
+			<key>path</key>
+			<string>SDK/Libs/libaacplus.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1533,29 +2440,21 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>963610B72BBE039FA504968D53F09CE8</key>
+		<key>9470342D8D8F3D13C2725E075DB284A4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A342B3064F85809AC7A8FDFC47669B41</string>
+			<string>FF8074054C9B1F753FF01CAAFDBD7FED</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
-		<key>97F0E60ECF7F3C456D45B97B5097E197</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_Demo.framework</string>
-			<key>path</key>
-			<string>Pods-Demo.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>985C0336D9461CFE6F2E62267451BE11</key>
+		<key>95241E50CC85F8464D7149F34D16696B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1564,50 +2463,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTNotificationIndicator.h</string>
+			<string>NIMTeam.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTNotificationIndicator/FTNotificationIndicator.h</string>
+			<string>SDK/ExportHeaders/Team/NIMTeam.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9976EC64B4ACEAD461A3CD0BB3344FF6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>80BBD3F2214435FA9D1DE2B211073913</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9EC8AE475F5E27E967DC0D4DFE8B9388</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTToastIndicator.m</string>
-			<key>path</key>
-			<string>FTIndicator/FTToastIndicator/FTToastIndicator.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A30221A6FB8A9E16A46A35DA76358910</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Box.swift</string>
-			<key>path</key>
-			<string>Sources/Box.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A342B3064F85809AC7A8FDFC47669B41</key>
+		<key>95983D16608AAE7AFC945FD6A6D8262D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1622,21 +2484,90 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A6376A642C07EB9739E20803BB9A07D7</key>
+		<key>963610B72BBE039FA504968D53F09CE8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>3FF44778DC42D14620CB61FED6FFEFA2</string>
+			<string>95983D16608AAE7AFC945FD6A6D8262D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>A8E470B116583DA96004A2D7DFD6D136</key>
+		<key>97F4055B9BD10C30F5983A88537D4626</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FTPickerView</string>
+			<key>target</key>
+			<string>5A5097292BDF98B4B61651AE947D96CD</string>
+			<key>targetProxy</key>
+			<string>35DF7F6E8595731AE51F1527F9F2868D</string>
+		</dict>
+		<key>98692F8328E3F1A0D9E9333A487DFE72</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9D07A500103641FB836074DF82E0493C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>9976EC64B4ACEAD461A3CD0BB3344FF6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81CCB7396B06D1007EAB0326617111AD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9D07A500103641FB836074DF82E0493C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTPickerView.m</string>
+			<key>path</key>
+			<string>FTPickerView/FTPickerView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9DDFDA135FD52EFE37A61C76D45DAE0B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BC4DC3D8EFEFCB57DD743BA66A83A5F6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F0A0192BE82A12BBCF5B209C521038F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4B43E6D8E2ACBCD387BDC71964E4641D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A0C005C1F64EABE32251532FE924E0C9</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>CC6A59B0ADA6CB2F51DAE6508E437829</string>
+			<string>B91C451E75635D69FF061C8FA74B3257</string>
 			<key>buildSettings</key>
 			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -1653,8 +2584,10 @@
 				<string>YES</string>
 				<key>GCC_NO_COMMON_BLOCKS</key>
 				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FTPickerView/FTPickerView-prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-Demo/Info.plist</string>
+				<string>Target Support Files/FTPickerView/Info.plist</string>
 				<key>INSTALL_PATH</key>
 				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -1665,28 +2598,18 @@
 					<string>@executable_path/Frameworks</string>
 					<string>@loader_path/Frameworks</string>
 				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
 				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-Demo/Pods-Demo.modulemap</string>
+				<string>Target Support Files/FTPickerView/FTPickerView.modulemap</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
 				<key>PRODUCT_NAME</key>
-				<string>Pods_Demo</string>
+				<string>FTPickerView</string>
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VERSIONING_SYSTEM</key>
@@ -1699,145 +2622,164 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>AAF678CED40D3499169D10F63CA0719E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_RELEASE=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AC9CD166C5C1501BDE0C8D8C504301D2</key>
+		<key>A0FFBB482127DC28C77C6BC6EE3C267E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>ImagePrefetcher.swift</string>
+			<string>NIMImageObject.h</string>
 			<key>path</key>
-			<string>Sources/ImagePrefetcher.swift</string>
+			<string>SDK/ExportHeaders/MessageObject/NIMImageObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A6376A642C07EB9739E20803BB9A07D7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3930AE7DC2A099BAA34C861A84C7CDFA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A8DB34ADAC4D8F4EF535C5F1EC85B978</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMTeamNotificationContent.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NotificationContent/NIMTeamNotificationContent.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9CE0701982BFCDE140FF49774CE6377</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FTPickerView-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ACF48B87FD063DDC08200C9B15A02BF6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libevent.a</string>
+			<key>path</key>
+			<string>SDK/Libs/libevent.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AF23B59B4DA51F3E8E8E82DABD9D83DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FTPickerView.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFB72569EA6D5FEF73E70617023590B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMLocationObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMLocationObject.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>B513DD750CAC32A84E315E8BBDC46145</key>
 		<dict>
 			<key>fileRef</key>
-			<string>319CC2C96A6B4597845B5665FBE8C7F5</string>
+			<string>684AB21346CE51D4D1662C09C0164CFB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>B5BC686ED49F6BFDBFA813E7B5A842D0</key>
+		<key>B83FC3BF13A495578059C75F71C09CD5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTIndicator.m</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTIndicator.m</string>
+			<string>Kingfisher-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B7DBBF7D05A6EC79EA1A623E01D761BC</key>
+		<key>B91C451E75635D69FF061C8FA74B3257</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>5DECC5260971AB931B43152ECFA6785B</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>FTPickerView.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DC3684EC67DC21F31B47BEBD3DC07E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Resources</string>
+			<string>NIMCustomObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMCustomObject.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B833694C599020081E5CD7EE8FBB18A1</key>
+		<key>BA52E64BC0AC6A6854DA3B6F299726B8</key>
 		<dict>
-			<key>fileRef</key>
-			<string>03EA1E60232BFA05817BC26ACB8E68BA</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMGlobalDefs.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMGlobalDefs.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BC3108B0D0BE17194D3D4C1040F6B566</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FA97B7D19A4F4913D2792BF76129E5FA</string>
+			<string>0410D7A6E47F210995FAE002DE4DBE7A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1853,6 +2795,21 @@
 			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>BE4A63B7980B4FD29E6DB793A2A54607</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMessageObjectProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMMessageObjectProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C07D2A8B30A1C35A24C6B9D689290840</key>
 		<dict>
@@ -1871,14 +2828,14 @@
 		<key>C1B8D8FE3B63424F8D7FEA6A54EF96B9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E82F3943278DB971D18EC8846464960A</string>
+			<string>1CC4989248E79C1904E8E47642598A0A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
 		<key>C3218A2E0AF65AF31B59012DA5FC773E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>985C0336D9461CFE6F2E62267451BE11</string>
+			<string>1F5948DEAF54F7A9074F2A49002A7358</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1892,7 +2849,43 @@
 		<key>C35BED43CD153EA467343937F6AFBFF0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7CE94E415BFA5A89B54C2FF00DBF4285</string>
+			<string>5375FB5EC21CBB70EA0613DE60321245</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C5092AF367DBB524AF6C7E04B1BF9AA1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>248629B712CCFE4C54898F85FE6F270C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>3581667D6C1990B985C6D8D98A787156</string>
+				<string>7D5DFAD032EF13E984C2B26296C291DB</string>
+				<string>5B50252C64974846C6DA7591A40A929C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>4599D990E1A2BB20A24D1B4D098DC9B1</string>
+				<string>97F4055B9BD10C30F5983A88537D4626</string>
+				<string>3972E048E42373D53C2E1FCC34C7E698</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Demo</string>
+			<key>productName</key>
+			<string>Pods-Demo</string>
+			<key>productReference</key>
+			<string>DEC1A3FEDA47E6EB475FF6D13BDD05AA</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>C5171D97EFCEDEBB6A03716B8DADD50A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BC4DC3D8EFEFCB57DD743BA66A83A5F6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1909,6 +2902,35 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>C79C1375667E3D16C6E56DF21FFCA47F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B61267335E82123BCED8E04CF090E07</string>
+				<string>4EEABE63DA01A09A38EB9AB45D14DEBE</string>
+				<string>3540E34F9003B41C012E960153D9E715</string>
+				<string>DEC1A3FEDA47E6EB475FF6D13BDD05AA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9BF53D9E4C54A03BD7D47F59F8720A6</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>1DE93A359FA21F91DFBE81309E851A4A</string>
+			<key>remoteInfo</key>
+			<string>Kingfisher</string>
+		</dict>
 		<key>CA19694C0AC41D598DE4ABFEB300E619</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1922,10 +2944,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>CAD1A2F9D9151BE08F5CB6BC5B704DEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMTeamDefs.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Team/NIMTeamDefs.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>CC513442B1C0CC1AEF8E7F9B76801010</key>
 		<dict>
 			<key>fileRef</key>
-			<string>24D8CDD09DC293CCFA04FE8EB41F0D22</string>
+			<string>88FCAB6AB215A898E0672DBA8E8A8413</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1942,29 +2979,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>CCC29C8ACFC65576671F68C21F72EDA4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Filter.swift</string>
-			<key>path</key>
-			<string>Sources/Filter.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD5D1C92DFC0101AC2277751C3D3F4C9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C5BC86D40B890A7B0844F888209CA06F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF87B470F90995AEF8CB277A7772C0D3</key>
+		<key>CD3B929E622FBE934456E5AE4E425726</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1973,18 +2988,32 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTIndicator.h</string>
+			<string>NIMUnsupportedNotificationContent.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTIndicator.h</string>
+			<string>SDK/ExportHeaders/MessageObject/NotificationContent/NIMUnsupportedNotificationContent.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D058E8C78D55BFA7FE4207A2DB8BC4FF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2781A4E450FDD5AF27644BB819D16123</string>
+				<string>9470342D8D8F3D13C2725E075DB284A4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>D09798EDC43DCF4750A6035F02FF286B</key>
 		<dict>
 			<key>buildConfigurations</key>
 			<array>
-				<string>55AE920C7D978B4F022822DC0E1BEE8C</string>
-				<string>8809CCC90E274FE0FFB6A4EF16699DDB</string>
+				<string>EADC737637DCD01155ECD316629CD47F</string>
+				<string>69DE13D29101458C96A57EDD71434BEE</string>
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
@@ -1993,27 +3022,42 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>D234042B9B7924625E79C32E8CA91877</key>
+		<key>D265E2E7B73CD231B517DBAC9EC561C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>753E9EE7F15EDF4926DF3022C8255491</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D29A5E977EF508F0F61F3CFC8F77D5EC</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Resource.swift</string>
+			<string>NIMSDK.h</string>
 			<key>path</key>
-			<string>Sources/Resource.swift</string>
+			<string>SDK/ExportHeaders/NIMSDK.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D265E2E7B73CD231B517DBAC9EC561C7</key>
+		<key>D41632CDD0B3E6159D48DD56C83C37AB</key>
 		<dict>
-			<key>fileRef</key>
-			<string>E9D66304BA3C244D04261F2819CDC244</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMConversationManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMConversationManagerProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -2041,7 +3085,7 @@
 			<key>mainGroup</key>
 			<string>7DB346D0F39D3F0E887471402A8071AB</string>
 			<key>productRefGroup</key>
-			<string>E439BBEF2B75C2A9889FDB4491573086</string>
+			<string>C79C1375667E3D16C6E56DF21FFCA47F</string>
 			<key>projectDirPath</key>
 			<string></string>
 			<key>projectReferences</key>
@@ -2051,14 +3095,30 @@
 			<key>targets</key>
 			<array>
 				<string>6F04D2EB19E361DFF9FD343401854AE7</string>
+				<string>5A5097292BDF98B4B61651AE947D96CD</string>
 				<string>1DE93A359FA21F91DFBE81309E851A4A</string>
-				<string>1664296424354B4CDEA0DF05CB41DBF0</string>
+				<string>C5092AF367DBB524AF6C7E04B1BF9AA1</string>
 			</array>
+		</dict>
+		<key>D462A03F7AEA34B0EECEBF6C324AB5C5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Image.swift</string>
+			<key>path</key>
+			<string>Sources/Image.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D5228F1D4AB78BAB7C19ECA7B3472FE8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CF87B470F90995AEF8CB277A7772C0D3</string>
+			<string>3C61542E607760076408DF7B0FE1D302</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2069,23 +3129,82 @@
 				</array>
 			</dict>
 		</dict>
-		<key>D88D68BE122A984628CE057D6A0D819D</key>
+		<key>D6B7AE3B2AFA5F9BFE884DA672D9F574</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMTipObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMTipObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D7B3BD0BE0FFE8291A520CA72EB85FE3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ImageTransition.swift</string>
+			<key>path</key>
+			<string>Sources/ImageTransition.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D8EB331FF4AAC78DC5CD9D84BD574722</key>
+		<dict>
+			<key>children</key>
 			<array>
-				<string>B833694C599020081E5CD7EE8FBB18A1</string>
+				<string>3C61542E607760076408DF7B0FE1D302</string>
+				<string>1936BEBEA46E75B6E24CB7801A4E97E7</string>
+				<string>1F5948DEAF54F7A9074F2A49002A7358</string>
+				<string>0939D3AC48BE9E3BAAFDB815A70B813F</string>
+				<string>4D9E2E82053C395F430D1970D76BA03A</string>
+				<string>57DE98E1442313D1B71EB15E8E53A756</string>
+				<string>2BA38D15A950F8BE1299E11035FCCB32</string>
+				<string>6EE1DC3E8ADBAFAFA9A8B80147B51C45</string>
+				<string>0E11520E756A7FE3B7A997697CBECB02</string>
+				<string>8356B676E9C64EB9865D21CCE4156DAE</string>
+				<string>80A990DDC4B53C6160231B66754EFC6A</string>
+				<string>9F0A0192BE82A12BBCF5B209C521038F</string>
+				<string>5D1F2E655CCF9A9650E95BCC58D2BDF2</string>
 			</array>
 			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FTIndicator</string>
+			<key>path</key>
+			<string>FTIndicator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D943A46B83DA29BBC9B37ABDECD1867F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroomMember.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroomMember.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D96A6C6E1676F9832AA3BE49E22AAEBA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>35C1FAEEFAD48A76767E08A68D65D234</string>
+			<string>1098791E46896383735C52F8BC17673D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2096,10 +3215,23 @@
 				</array>
 			</dict>
 		</dict>
+		<key>DA247ABDF146FE42B25625A97ED59F99</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>FTIndicator.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>DA4036259E6D3F6A684954D38D7AA09D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B5BC686ED49F6BFDBFA813E7B5A842D0</string>
+			<string>1936BEBEA46E75B6E24CB7801A4E97E7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2121,40 +3253,102 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E0B382E5352A316E2538D4786CDD2477</key>
+		<key>DBBBACD230B0B72E820B75570D9634CC</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTNotificationIndicator.m</string>
+			<string>NIMPushNotificationSetting.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTNotificationIndicator/FTNotificationIndicator.m</string>
+			<string>SDK/ExportHeaders/NIMPushNotificationSetting.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E2655BFD61FE36FCA444F1189D4A4AEE</key>
+		<key>DCC7B711B35B4D3ABCFABE92BE415EC9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF8074054C9B1F753FF01CAAFDBD7FED</string>
+				<string>9D07A500103641FB836074DF82E0493C</string>
+				<string>750BA56FA6513E32FA1F69678AB11B7F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FTPickerView</string>
+			<key>path</key>
+			<string>FTPickerView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DEC1A3FEDA47E6EB475FF6D13BDD05AA</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_Demo.framework</string>
+			<key>path</key>
+			<string>Pods-Demo.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E10155EDDCF1CDB44B36B888423B4D7A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>String+MD5.swift</string>
+			<string>NIMTeamMember.h</string>
 			<key>path</key>
-			<string>Sources/String+MD5.swift</string>
+			<string>SDK/ExportHeaders/Team/NIMTeamMember.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E2F803BCA54994E37C2A7AE303F1C662</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMUser.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMUser.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E3115ECBBFA1327956D6A3E5A81F82ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMediaManagerProtocol.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Protocol/NIMMediaManagerProtocol.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E36FDA97D600E8DAAB9A573C0CE6666B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CCC29C8ACFC65576671F68C21F72EDA4</string>
+			<string>51ABCD6657955B960DC33FC55D2433EA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2171,18 +3365,16 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>E439BBEF2B75C2A9889FDB4491573086</key>
+		<key>E5A2FD37A2C14E2F30C252F4C3021EA1</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>44CDA2672925568F0574A9C803E9FEAC</string>
-				<string>F751098A7AF1DC5F4538FC76DE84D817</string>
-				<string>97F0E60ECF7F3C456D45B97B5097E197</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Kingfisher.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2199,33 +3391,116 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E82F3943278DB971D18EC8846464960A</key>
+		<key>E8448B0D86B049D5E20721F9C3471004</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>KingfisherOptionsInfo.swift</string>
+			<string>NIMMessageChatroomExtension.h</string>
 			<key>path</key>
-			<string>Sources/KingfisherOptionsInfo.swift</string>
+			<string>SDK/ExportHeaders/Chatroom/NIMMessageChatroomExtension.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E9D66304BA3C244D04261F2819CDC244</key>
+		<key>E86027DC422F39EA27E272987E6BFA67</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMMessageApnsMemberOption.h</string>
 			<key>path</key>
-			<string>FTIndicator-dummy.m</string>
+			<string>SDK/ExportHeaders/NIMMessageApnsMemberOption.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E9BD56EA9CCC973A02A887D4E65B19DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMAudioObject.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/MessageObject/NIMAudioObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EADC737637DCD01155ECD316629CD47F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>DA247ABDF146FE42B25625A97ED59F99</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FTIndicator/FTIndicator-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/FTIndicator/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/FTIndicator/FTIndicator.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>FTIndicator</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
 		<key>ECC58720C5754A079F9A150E40E2FCDD</key>
 		<dict>
@@ -2254,7 +3529,7 @@
 		<key>EE2F34B0BA1B34C7A826B60ED1F34F46</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0EB957B8FD5E0E50B5A1E9A846B656D5</string>
+			<string>B83FC3BF13A495578059C75F71C09CD5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2265,22 +3540,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>F19256EA98B7EA59E86813F33FA46D25</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTProgressIndicator.m</string>
-			<key>path</key>
-			<string>FTIndicator/FTProgressIndicator/FTProgressIndicator.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1BC2AD72CBCA83BD180958D4ADA583F</key>
+		<key>EFB289BCE084BCF8888CB28795973CA0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2289,23 +3549,64 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTToastIndicator.h</string>
+			<string>NIMLoginClient.h</string>
 			<key>path</key>
-			<string>FTIndicator/FTToastIndicator/FTToastIndicator.h</string>
+			<string>SDK/ExportHeaders/NIMLoginClient.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F2DACC45662F43DEDAE7A2DC7AA2C680</key>
+		<key>F057AFF581A0B630C50F3810A650380B</key>
 		<dict>
-			<key>fileRef</key>
-			<string>BC4DC3D8EFEFCB57DD743BA66A83A5F6</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMCustomSystemNotificationSetting.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/NIMCustomSystemNotificationSetting.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F1871BF5F92691CECFB678641A18E3F7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Kingfisher-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F2F7F5F1CB451E8BECD243FA982BD540</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>17BCCC109CDE3562D0E466B552CCA0E2</string>
+				<string>61F026CFF712783C4458D891F73840A8</string>
+				<string>E5A2FD37A2C14E2F30C252F4C3021EA1</string>
+				<string>84F16D9BE6AA8C63BB4CEF5C922B1D05</string>
+				<string>F1871BF5F92691CECFB678641A18E3F7</string>
+				<string>B83FC3BF13A495578059C75F71C09CD5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Kingfisher</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F716445012C1037C0471D201C651E6FE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F19256EA98B7EA59E86813F33FA46D25</string>
+			<string>57DE98E1442313D1B71EB15E8E53A756</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2314,20 +3615,20 @@
 				<string>-DOS_OBJECT_USE_OBJC=0 -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>F751098A7AF1DC5F4538FC76DE84D817</key>
+		<key>F7AEF3907852A1E4FF665575E87CBA65</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
-			<string>0</string>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Kingfisher.framework</string>
+			<string>NIMMessageSearchOption.h</string>
 			<key>path</key>
-			<string>Kingfisher.framework</string>
+			<string>SDK/ExportHeaders/NIMMessageSearchOption.h</string>
 			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F7B39A6990361ED48ED40E709E32C582</key>
 		<dict>
@@ -2342,29 +3643,144 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>FA97B7D19A4F4913D2792BF76129E5FA</key>
+		<key>F845F57A946C6FDB83A11CDBB7BCF706</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>ImageProcessor.swift</string>
+			<string>NIMChatroomManagerProtocol.h</string>
 			<key>path</key>
-			<string>Sources/ImageProcessor.swift</string>
+			<string>SDK/ExportHeaders/Protocol/NIMChatroomManagerProtocol.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FC5F2AA3E6AB242BD949E0C728433B34</key>
+		<key>FA92EF5B503FED7C851E7E0FBDEAFE9E</key>
 		<dict>
-			<key>children</key>
-			<array/>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Resources</string>
+			<string>NIMCreateTeamOption.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Team/NIMCreateTeamOption.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD5AB7F854C761CB5A4FA2E091EC3CEA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C5171D97EFCEDEBB6A03716B8DADD50A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FE34EC6D364E0969FC4871AFAEEFA0D0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E5A2FD37A2C14E2F30C252F4C3021EA1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string></string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Kingfisher/Kingfisher-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Kingfisher/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Kingfisher/Kingfisher.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>Kingfisher</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FECA5551A30670E22ACB6931E4C150B6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NIMChatroomEnterRequest.h</string>
+			<key>path</key>
+			<string>SDK/ExportHeaders/Chatroom/NIMChatroomEnterRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF8074054C9B1F753FF01CAAFDBD7FED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTPickerView.h</string>
+			<key>path</key>
+			<string>FTPickerView/FTPickerView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

@@ -1,9 +1,12 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/FTIndicator" "$PODS_CONFIGURATION_BUILD_DIR/Kingfisher"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/FTIndicator" "$PODS_CONFIGURATION_BUILD_DIR/FTPickerView" "$PODS_CONFIGURATION_BUILD_DIR/Kingfisher"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NIMSDK_LITE"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/FTIndicator/FTIndicator.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Kingfisher/Kingfisher.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "FTIndicator" -framework "Kingfisher"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/NIMSDK_LITE/SDK" $(inherited) "${PODS_ROOT}/NIMSDK_LITE/SDK/Libs"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/FTIndicator/FTIndicator.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FTPickerView/FTPickerView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Kingfisher/Kingfisher.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/NIMSDK_LITE"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"NIMSDK" -l"aacplus" -l"crypto" -l"event" -l"sqlite3.0" -l"ssl" -l"stdc++.6.0.9" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CoreMedia" -framework "CoreTelephony" -framework "FTIndicator" -framework "FTPickerView" -framework "Kingfisher" -framework "SystemConfiguration" -framework "VideoToolbox"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -6,16 +6,22 @@ PODS:
   - FTIndicator/FTNotificationIndicator (1.1.5)
   - FTIndicator/FTProgressIndicator (1.1.5)
   - FTIndicator/FTToastIndicator (1.1.5)
+  - FTPickerView (1.0.1)
   - Kingfisher (3.1.1)
+  - NIMSDK_LITE (2.9.0)
 
 DEPENDENCIES:
   - FTIndicator
-  - Kingfisher (~> 3.0)
+  - FTPickerView
+  - Kingfisher
+  - NIMSDK_LITE
 
 SPEC CHECKSUMS:
   FTIndicator: 8b9885b84340a19029ad13672add3bb8183feba8
+  FTPickerView: fd26852f56c352c777d1dafc87ed4c2138eeea4c
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  NIMSDK_LITE: 4514a9cc900ba647c74e25aae91fe074efcad04f
 
-PODFILE CHECKSUM: 32c3982a1140a3501e02ec8af2d922d46cb1611b
+PODFILE CHECKSUM: 9f0e99bb1102c9aad7dc6a5b923c0586505728a1
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0

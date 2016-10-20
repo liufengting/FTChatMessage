@@ -1,8 +1,9 @@
 target 'Demo' do
 
-use_frameworks!
-#pod 'AlamofireImage'
-pod 'Kingfisher', '~> 3.0'
+pod 'Kingfisher'
+pod 'NIMSDK_LITE'
 pod 'FTIndicator'
+pod 'FTPickerView'
+use_frameworks!
 
 end
