@@ -34,3 +34,49 @@
 
 
 @end
+
+//add a friend
+//        self.searchAndADD(user: "Test05")
+// change icon
+//        self.setmyIconUrl(url: "..")
+
+
+//    func setmyIconUrl(url:String) {
+//        let number : NSNumber = NSNumber(value: NIMUserInfoUpdateTag.avatar.rawValue)
+//        NIMSDK.shared().userManager.updateMyUserInfo([number:url]) { (error) in
+//            if  error == nil {
+//                FTIndicator.showSuccess(withMessage: "Update icon succeeded.")
+//            }else{
+//                FTIndicator.showError(withMessage: "Update icon failed.");
+//            }
+//        }
+//    }
+//
+//
+//
+//    func searchAndADD(user:String) {
+//        NIMSDK.shared().userManager.fetchUserInfos([user]) { (userArray, error) in
+//            if ((userArray?.count) != nil){
+//                print("\(userArray)")
+//                if let user : NIMUser = userArray?[0] {
+//                    self.addContacts(userId: user.userId!)
+//                }
+//
+//            }else{
+//                print("no");
+//            }
+//        }
+//    }
+//
+//    func addContacts(userId: String) {
+//        let request : NIMUserRequest = NIMUserRequest()
+//        request.userId = userId
+//        request.operation = NIMUserOperation.add
+//        NIMSDK.shared().userManager .requestFriend(request) { (error) in
+//            if  error == nil {
+//                FTIndicator.showSuccess(withMessage: "Add friend succeeded.")
+//            }else{
+//                FTIndicator.showError(withMessage: "Add friend failed.");
+//            }
+//        }
+//    }

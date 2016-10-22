@@ -9,84 +9,51 @@
 import UIKit
 import FTIndicator
 
+
 class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var chatListTableView: UITableView!
     var messageArray : [FTChatMessageModel] = []
+    var recentChats : [NIMRecentSession] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         
-        self.loadData()
+        self.chatListTableView.addSubview(refreshControl);
+        
 
-        //add a friend
-//        self.searchAndADD(user: "Test05")
-        // change icon
-//        self.setmyIconUrl(url: "..")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        self.reloadConversations()
     }
     
-    func loadData() {
-        let sender1 = FTChatMessageUserModel.init(id: "1", name: "LiuFengting", icon_url: "http://ww2.sinaimg.cn/large/6b24115ejw1f8iqy6hggij20jg0jg75z.jpg", extra_data: nil, isSelf: false)
-        let sender2 = FTChatMessageUserModel.init(id: "2", name: "FTChatMessage", icon_url: "http://ww3.sinaimg.cn/mw600/83f596c9gw1f8ia359qygj20ia0bf794.jpg", extra_data: nil, isSelf: false)
-        
-        let message1 = FTChatMessageModel(data: "I just wrote some fake messages to make it look better. ", time: "", from: sender1, type: .text)
-        let message2 = FTChatMessageModel(data: "It is still working in progress. It's a long road ahead. ", time: "", from: sender2, type: .text)
-        
-        messageArray = [message1,message2]
-        
-        
+    func reloadConversations() {
+        self.recentChats = NIMSDK.shared().conversationManager.allRecentSessions()!
+        self.chatListTableView.reloadData()
     }
     
+    
+    
+    lazy var refreshControl : UIRefreshControl = {
+        let refresh : UIRefreshControl = UIRefreshControl.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 60))
+        refresh.addTarget(self, action: #selector(self.onPullToRefreshTriggered), for: UIControlEvents.valueChanged)
+        return refresh;
+    }()
+
+    @objc func onPullToRefreshTriggered() {
+        self.reloadConversations()
+        DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+            self.refreshControl.endRefreshing()
+        }
+    }
+
 
     @IBAction func addItemAction(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "ChooseContactsToChat", sender: self)
     }
-    
-    
-//    func setmyIconUrl(url:String) {
-//        let number : NSNumber = NSNumber(value: NIMUserInfoUpdateTag.avatar.rawValue)
-//        NIMSDK.shared().userManager.updateMyUserInfo([number:url]) { (error) in
-//            if  error == nil {
-//                FTIndicator.showSuccess(withMessage: "Update icon succeeded.")
-//            }else{
-//                FTIndicator.showError(withMessage: "Update icon failed.");
-//            }
-//        }
-//    }
-//    
-//    
-//    
-//    func searchAndADD(user:String) {
-//        NIMSDK.shared().userManager.fetchUserInfos([user]) { (userArray, error) in
-//            if ((userArray?.count) != nil){
-//                print("\(userArray)")
-//                if let user : NIMUser = userArray?[0] {
-//                    self.addContacts(userId: user.userId!)
-//                }
-//                
-//            }else{
-//                print("no");
-//            }
-//        }
-//    }
-//
-//    func addContacts(userId: String) {
-//        let request : NIMUserRequest = NIMUserRequest()
-//        request.userId = userId
-//        request.operation = NIMUserOperation.add
-//        NIMSDK.shared().userManager .requestFriend(request) { (error) in
-//            if  error == nil {
-//                FTIndicator.showSuccess(withMessage: "Add friend succeeded.")
-//            }else{
-//                FTIndicator.showError(withMessage: "Add friend failed.");
-//            }
-//        }
-//    }
-    
-    
-    
     
     /* UITableViewDelegate,UITableViewDataSource */
     
@@ -97,26 +64,27 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
         return 0.01
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageArray.count
+        return self.recentChats.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ChatRoomTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomTableViewCellIndentifier") as! ChatRoomTableViewCell
-        
-        cell.message = messageArray[(indexPath as NSIndexPath).row]
-        
+        cell.conversation = self.recentChats[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        self.didTappedCell(at: indexPath)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
+    func didTappedCell(at indexPath: IndexPath)  {
+    
+        let chat : ChatTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
+        chat.session = (self.recentChats[indexPath.row]).session
+        self.navigationController?.pushViewController(chat, animated: true)
         
     }
     
-    
+
 }
 

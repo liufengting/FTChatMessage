@@ -52,7 +52,7 @@ class SignInViewController: UIViewController {
         }
         self.view.endEditing(true)
         
-        FTIndicator.showProgressWithmessage("Signing in...")
+        FTIndicator.showProgressWithmessage("Signing in...", userInteractionEnable:false)
 
         NIMSDK.shared().loginManager.login(self.accountTextField.text!, token: (self.passwordTextField.text! as NSString).tokenByPassword()) { (error) in
             if (error != nil) {

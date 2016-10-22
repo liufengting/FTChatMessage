@@ -21,8 +21,14 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+        
     }
+    
+    
+    
+    
+
 
     
     /* UITableViewDelegate,UITableViewDataSource */
@@ -47,9 +53,17 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        self.didTappedCell(at: indexPath)
     }
 
-
+    func didTappedCell(at indexPath: IndexPath)  {
+        
+        let chat : ChatTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
+        let user : NIMUser = contactsArray[indexPath.row]
+        chat.session = NIMSession.init(user.userId!, type: NIMSessionType.P2P)
+        self.navigationController?.pushViewController(chat, animated: true)
+        
+    }
     
 
 }
