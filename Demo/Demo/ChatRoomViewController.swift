@@ -21,7 +21,6 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
         self.navigationItem.hidesBackButton = true
         
         self.chatListTableView.addSubview(refreshControl);
-        
 
     }
     override func viewDidAppear(_ animated: Bool) {

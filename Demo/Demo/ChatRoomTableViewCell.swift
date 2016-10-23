@@ -39,7 +39,9 @@ class ChatRoomTableViewCell: UITableViewCell {
         
         let user : NIMUser = self.userById(conversion: conversion)
         if (conversation.session?.sessionType == NIMSessionType.P2P){
-            iconImageView.kf.setImage(with: URL(string: (user.userInfo?.avatarUrl)!))
+            if let url : String = (user.userInfo?.avatarUrl){
+                iconImageView.kf.setImage(with: URL(string: url))
+            }
         }else{
             
         }
