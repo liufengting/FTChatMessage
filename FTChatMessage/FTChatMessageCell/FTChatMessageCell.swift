@@ -24,14 +24,6 @@ class FTChatMessageCell: UITableViewCell {
         return label
     }()
     
-    //MARK: - messageSenderNameLabel
-    lazy var messageSenderNameLabel: UILabel! = {
-        let label = UILabel(frame: CGRect.zero)
-        label.font = FTDefaultTimeLabelFont
-        label.textAlignment = .center
-        label.textColor = UIColor.lightGray
-        return label
-    }()
     
     //MARK: - messageDeliverStatusView
     var messageDeliverStatusView : FTChatMessageDeliverStatusView? = {
@@ -50,10 +42,6 @@ class FTChatMessageCell: UITableViewCell {
         
         if indexPath.row == 0 {
             self.addTimeLabel()
-//            heightSoFar += FTDefaultTimeLabelHeight
-
-            self.addSenderLabel()
-//            heightSoFar = (FTDefaultNameLabelHeight - FTDefaultSectionHeight)/2
         }
         
         let y : CGFloat = heightSoFar
@@ -82,27 +70,27 @@ class FTChatMessageCell: UITableViewCell {
     
     //MARK: - addTimeLabel
     func addTimeLabel() {
-        let timeLabelRect = CGRect(x: 0, y: -FTDefaultSectionHeight ,width: FTScreenWidth, height: FTDefaultSectionHeight/2);
+        let timeLabelRect = CGRect(x: 0, y: -FTDefaultMessageCellTimeLabelHeight ,width: FTScreenWidth, height: FTDefaultMessageCellTimeLabelHeight);
         messageTimeLabel.frame = timeLabelRect
         messageTimeLabel.text = message.messageTimeStamp
         self.addSubview(messageTimeLabel)
     }
     
     //MARK: - addSenderLabel
-    func addSenderLabel() {
-        var nameLabelTextAlignment : NSTextAlignment = .right
-        var nameLabelRect = CGRect( x: 0, y: -FTDefaultSectionHeight/2  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultSectionHeight/2)
- 
-        if message.isUserSelf == false {
-            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth
-            nameLabelTextAlignment =  .left
-        }
-        
-        messageSenderNameLabel.frame = nameLabelRect
-        messageSenderNameLabel.text = message.messageSender.senderName
-        messageSenderNameLabel.textAlignment = nameLabelTextAlignment
-        self.addSubview(messageSenderNameLabel)
-    }
+//    func addSenderLabel() {
+//        var nameLabelTextAlignment : NSTextAlignment = .right
+//        var nameLabelRect = CGRect( x: 0, y: -FTDefaultSectionHeight/2  , width: FTScreenWidth - (FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth), height: FTDefaultSectionHeight/2)
+// 
+//        if message.isUserSelf == false {
+//            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMessageBubbleAngleWidth
+//            nameLabelTextAlignment =  .left
+//        }
+//        
+//        messageSenderNameLabel.frame = nameLabelRect
+//        messageSenderNameLabel.text = message.messageSender.senderName
+//        messageSenderNameLabel.textAlignment = nameLabelTextAlignment
+//        self.addSubview(messageSenderNameLabel)
+//    }
     
     //MARK: - addSendStatusView
     func addSendStatusView(_ bubbleFrame: CGRect) {
@@ -124,7 +112,6 @@ extension FTChatMessageCell {
 
     internal class func getCellHeightWithMessage(_ theMessage : FTChatMessageModel, for indexPath: IndexPath) -> CGFloat{
         var cellDesiredHeight : CGFloat =  0;
-//        cellDesiredHeight += FTDefaultMargin
         cellDesiredHeight += FTChatMessageBubbleItem.getMessageBubbleHeightForMessage(theMessage)
         cellDesiredHeight += FTDefaultMargin
         cellDesiredHeight = max(1, cellDesiredHeight)

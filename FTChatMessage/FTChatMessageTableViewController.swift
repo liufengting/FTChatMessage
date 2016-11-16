@@ -32,8 +32,8 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         tableView.delegate = self
         tableView.dataSource = self
         
-        let header = UIView(frame: CGRect( x: 0, y: 0, width: FTScreenWidth, height: FTDefaultMargin*2))
-        tableView.tableHeaderView = header
+//        let header = UIView(frame: CGRect( x: 0, y: 0, width: FTScreenWidth, height: FTDefaultMargin*2))
+//        tableView.tableHeaderView = header
         
         let footer = UIView(frame: CGRect( x: 0, y: 0, width: FTScreenWidth, height: FTDefaultInputViewHeight))
         tableView.tableFooterView = footer

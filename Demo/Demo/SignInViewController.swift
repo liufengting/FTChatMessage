@@ -59,7 +59,10 @@ class SignInViewController: UIViewController {
                 FTIndicator.showError(withMessage: "Sign in failed with code:\((error! as NSError).code)")
             }else{
                 FTIndicator.showSuccess(withMessage: "Sign in succeeded.");
-                self.performSegue(withIdentifier: "SigninToHome", sender: self)
+                
+                DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+                    self.performSegue(withIdentifier: "SigninToHome", sender: self)
+                }
             }
         }
     }

@@ -63,6 +63,7 @@ let FTDefaultMessageBubbleAudioHeight : CGFloat = 36.0
 let FTDefaultMessageBubbleAudioIconHeight : CGFloat = 24.0
 let FTDefaultMessageBubbleMediaIconHeight : CGFloat = 30.0
 //MARK: - MessageCell -
+let FTDefaultMessageCellTimeLabelHeight : CGFloat = 20.0
 let FTDefaultMessageCellSendStatusViewSize : CGFloat = 20.0
 let FTDefaultMessageCellIconToMessageMargin : CGFloat = 2.0
 let FTDefaultMessageCellReuseIndentifier = "FTDefaultMessageCellReuseIndentifier"
