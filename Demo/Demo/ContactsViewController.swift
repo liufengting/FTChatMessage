@@ -13,10 +13,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var contactsArray : [NIMUser] = {
-        return NIMSDK.shared().userManager.myFriends()!
-    }()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +31,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     /* UITableViewDelegate,UITableViewDataSource */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactsArray.count
+        return 2
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
@@ -47,7 +44,6 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ContactsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCellIdentifier") as! ContactsTableViewCell
-        cell.setupWithUser(user: contactsArray[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -59,8 +55,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     func didTappedCell(at indexPath: IndexPath)  {
         
         let chat : ChatTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
-        let user : NIMUser = contactsArray[indexPath.row]
-        chat.session = NIMSession.init(user.userId!, type: NIMSessionType.P2P)
+
         self.navigationController?.pushViewController(chat, animated: true)
         
     }

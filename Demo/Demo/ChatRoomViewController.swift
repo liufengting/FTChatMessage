@@ -14,7 +14,6 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
 
     @IBOutlet weak var chatListTableView: UITableView!
     var messageArray : [FTChatMessageModel] = []
-    var recentChats : [NIMRecentSession] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
     }
     
     func reloadConversations() {
-        self.recentChats = NIMSDK.shared().conversationManager.allRecentSessions()!
+//        self.recentChats = NIMSDK.shared().conversationManager.allRecentSessions()!
         self.chatListTableView.reloadData()
     }
     
@@ -63,11 +62,11 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
         return 0.01
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.recentChats.count
+        return 1//self.recentChats.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ChatRoomTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomTableViewCellIndentifier") as! ChatRoomTableViewCell
-        cell.conversation = self.recentChats[indexPath.row]
+//        cell.conversation = self.recentChats[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,7 +78,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate,UITableViewD
     func didTappedCell(at indexPath: IndexPath)  {
     
         let chat : ChatTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
-        chat.session = (self.recentChats[indexPath.row]).session
+//        chat.session = (self.recentChats[indexPath.row]).session
         self.navigationController?.pushViewController(chat, animated: true)
         
     }

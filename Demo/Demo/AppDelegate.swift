@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FTIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-//        FTIndicator.setIndicatorStyle(UIBlurEffectStyle.dark)
-        
-        
-        
-        NIMSDK.shared().register(withAppID: "2f8222427d4262ab45ec073e6abc62ca", cerName: "")
+
         
         return true
     }

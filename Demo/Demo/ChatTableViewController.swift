@@ -12,7 +12,6 @@ import FTIndicator
 class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAccessoryViewDelegate,FTChatMessageAccessoryViewDataSource,FTChatMessageRecorderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
-    var session : NIMSession! = NIMSession()
 
     
     let sender1 = FTChatMessageUserModel.init(id: "1", name: "Someone", icon_url: "http://ww3.sinaimg.cn/mw600/6cca1403jw1f3lrknzxczj20gj0g0t96.jpg", extra_data: nil, isSelf: false)
@@ -31,27 +30,18 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         
         
         
-        let user : NIMUser = NIMSDK.shared().userManager.userInfo(self.session.sessionId)!
-//        self.navigationItem.prompt = user.userInfo?.nickName;
-        self.title = user.userInfo?.nickName
+//        let user : NIMUser = NIMSDK.shared().userManager.userInfo(self.session.sessionId)!
+////        self.navigationItem.prompt = user.userInfo?.nickName;
+//        self.title = user.userInfo?.nickName
         
         //
-        let message = NIMMessage()
-        message.text = "fake message at \(NSDate())"
-        self.sendoutMessage(message: message, session: session)
+
 
         
     }
     
     
-    
-    func sendoutMessage(message : NIMMessage,session: NIMSession)  {
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch let err as NSError {
-            print(err)
-        }
-    }
+
     
     //MARK: - addNewIncomingMessage
     

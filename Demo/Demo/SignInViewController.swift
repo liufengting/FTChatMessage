@@ -44,27 +44,29 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signInAction(_ sender: UIButton) {
-        if self.accountTextField.text == "" {
-            return;
-        }
-        if self.passwordTextField.text == "" {
-            return;
-        }
-        self.view.endEditing(true)
         
-        FTIndicator.showProgressWithmessage("Signing in...", userInteractionEnable:false)
-
-        NIMSDK.shared().loginManager.login(self.accountTextField.text!, token: (self.passwordTextField.text! as NSString).tokenByPassword()) { (error) in
-            if (error != nil) {
-                FTIndicator.showError(withMessage: "Sign in failed with code:\((error! as NSError).code)")
-            }else{
-                FTIndicator.showSuccess(withMessage: "Sign in succeeded.");
-                
-                DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+        
+//        if self.accountTextField.text == "" {
+//            return;
+//        }
+//        if self.passwordTextField.text == "" {
+//            return;
+//        }
+//        self.view.endEditing(true)
+//        
+//        FTIndicator.showProgressWithmessage("Signing in...", userInteractionEnable:false)
+//
+//        NIMSDK.shared().loginManager.login(self.accountTextField.text!, token: (self.passwordTextField.text! as NSString).tokenByPassword()) { (error) in
+//            if (error != nil) {
+//                FTIndicator.showError(withMessage: "Sign in failed with code:\((error! as NSError).code)")
+//            }else{
+//                FTIndicator.showSuccess(withMessage: "Sign in succeeded.");
+//                
+//                DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
                     self.performSegue(withIdentifier: "SigninToHome", sender: self)
-                }
-            }
-        }
+//                }
+//            }
+//        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

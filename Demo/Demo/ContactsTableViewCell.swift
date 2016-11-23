@@ -13,11 +13,11 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
 
-    open func setupWithUser(user : NIMUser) {
-        if let iconUrl : String = user.userInfo?.avatarUrl {
-            self.iconImageView.kf.setImage(with: URL(string: iconUrl)!)
-        }
-        self.nameLabel.text = user.userInfo?.nickName
-    }
+//    open func setupWithUser(user : NIMUser) {
+//        if let iconUrl : String = user.userInfo?.avatarUrl {
+//            self.iconImageView.kf.setImage(with: URL(string: iconUrl)!)
+//        }
+//        self.nameLabel.text = user.userInfo?.nickName
+//    }
     
 }

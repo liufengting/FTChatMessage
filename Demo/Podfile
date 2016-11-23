@@ -1,9 +1,9 @@
+use_frameworks!
+
 target 'Demo' do
 
 pod 'Kingfisher'
-pod 'NIMSDK_LITE'
 pod 'FTIndicator'
 pod 'FTPickerView'
-use_frameworks!
 
 end
