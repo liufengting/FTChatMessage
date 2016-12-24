@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
     
@@ -34,12 +33,12 @@ class FTChatMessageBubbleImageItem: FTChatMessageBubbleItem {
             if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
                 layer.contents = image.withRenderingMode(.alwaysOriginal).cgImage
             }else  if let imageURL : String = (aMessage as! FTChatMessageImageModel).imageUrl {
-                ImageDownloader.default.downloadImage(with: URL(string: imageURL)!, options: [], progressBlock: nil) {
-                    (image, error, url, data) in
-                    if image != nil {
-                        layer.contents = image?.cgImage
-                    }
-                }
+//                ImageDownloader.default.downloadImage(with: URL(string: imageURL)!, options: [], progressBlock: nil) {
+//                    (image, error, url, data) in
+//                    if image != nil {
+//                        layer.contents = image?.cgImage
+//                    }
+//                }
             }
         }else{
             if let image = UIImage(named : "dog.jpg") {

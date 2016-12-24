@@ -1,0 +1,6 @@
+framework module FTImageSize {
+  umbrella header "FTImageSize-umbrella.h"
+
+  export *
+  module * { export * }
+}

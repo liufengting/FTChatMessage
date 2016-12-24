@@ -51,7 +51,7 @@ class FTChatMessageHeader: UILabel {
         self.addSubview(iconButton)
         
         if (user.senderIconUrl != nil) {
-            iconButton.kf.setBackgroundImage(with: URL(string : user.senderIconUrl!), for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+//            iconButton.kf.setBackgroundImage(with: URL(string : user.senderIconUrl!), for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
         
         

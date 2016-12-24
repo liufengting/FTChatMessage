@@ -2,8 +2,8 @@ use_frameworks!
 
 target 'Demo' do
 
-pod 'Kingfisher'
 pod 'FTIndicator'
 pod 'FTPickerView'
+pod 'FTImageSize'
 
 end

@@ -10,7 +10,7 @@ import UIKit
 
 class FTChatMessageConfiguration: NSObject {
 
-    open class var shared : FTChatMessageConfiguration {
+    public static var shared : FTChatMessageConfiguration {
         struct Static {
             static let instance : FTChatMessageConfiguration = FTChatMessageConfiguration()
         }

@@ -94,6 +94,18 @@ class FTChatMessagePublicMethods {
 }
 
 
+extension UIViewController {
+
+    func viewWidth() -> CGFloat {
+        return view.bounds.size.width
+    }
+    func viewHeight() -> CGFloat {
+        return view.bounds.size.height
+    }
+
+    
+}
+
 
 
 

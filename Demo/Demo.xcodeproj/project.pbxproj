@@ -40,6 +40,7 @@
 		2A54C5221D9402B800D0B904 /* FTChatMessageUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */; };
 		2A54C5251D9403E800D0B904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5231D9403E800D0B904 /* Main.storyboard */; };
 		2A54C5271D940AF300D0B904 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A54C5261D940AF300D0B904 /* dog.jpg */; };
+		2ABB00701E0CB5CE003C7281 /* FTChatMessageImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB006F1E0CB5CE003C7281 /* FTChatMessageImageCache.swift */; };
 		2AD6125C1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */; };
 		2ADD9EF61DB64A3100615A43 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD9EF51DB64A3100615A43 /* SignInViewController.swift */; };
 		2AE4D0221DB8879E00A5CAF6 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4D0211DB8879E00A5CAF6 /* ContactsViewController.swift */; };
@@ -85,6 +86,7 @@
 		2A54C50A1D9402B800D0B904 /* FTChatMessageUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageUserModel.swift; sourceTree = "<group>"; };
 		2A54C5241D9403E800D0B904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A54C5261D940AF300D0B904 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		2ABB006F1E0CB5CE003C7281 /* FTChatMessageImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChatMessageImageCache.swift; sourceTree = "<group>"; };
 		2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FTChatMessageTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2ADD9EF51DB64A3100615A43 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2ADD9EF71DB65F1400615A43 /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				2A54C4FA1D9402B800D0B904 /* FTChatMessageDelegate.swift */,
 				2A54C4F91D9402B800D0B904 /* FTChatMessageDataSource.swift */,
 				2A54C4FD1D9402B800D0B904 /* FTChatMessageImageSize.swift */,
+				2ABB006F1E0CB5CE003C7281 /* FTChatMessageImageCache.swift */,
 				2A54C5091D9402B800D0B904 /* FTChatMessageTableViewController.swift */,
 				2AD6125B1D9AA9E300B01A30 /* FTChatMessageTableViewController+DataSource.swift */,
 				2A54C4EF1D9402B800D0B904 /* FTChatMessageCell */,
@@ -186,10 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				2A54C4F31D9402B800D0B904 /* FTChatMessageBubbleItem.swift */,
+				2A54C4F51D9402B800D0B904 /* FTChatMessageBubbleTextItem.swift */,
 				2A54C4F11D9402B800D0B904 /* FTChatMessageBubbleAudioItem.swift */,
 				2A54C4F21D9402B800D0B904 /* FTChatMessageBubbleImageItem.swift */,
 				2A54C4F41D9402B800D0B904 /* FTChatMessageBubbleLocationItem.swift */,
-				2A54C4F51D9402B800D0B904 /* FTChatMessageBubbleTextItem.swift */,
 				2A54C4F61D9402B800D0B904 /* FTChatMessageBubbleVideoItem.swift */,
 			);
 			path = FTChatMessageBubbleItem;
@@ -406,6 +409,7 @@
 				2A54C4E71D94027500D0B904 /* ChatRoomViewController.swift in Sources */,
 				2A54C50F1D9402B800D0B904 /* FTChatMessageBubbleTextItem.swift in Sources */,
 				2A54C5221D9402B800D0B904 /* FTChatMessageUserModel.swift in Sources */,
+				2ABB00701E0CB5CE003C7281 /* FTChatMessageImageCache.swift in Sources */,
 				2A54C5211D9402B800D0B904 /* FTChatMessageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

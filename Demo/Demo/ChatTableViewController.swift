@@ -10,10 +10,7 @@ import UIKit
 import FTIndicator
 
 class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAccessoryViewDelegate,FTChatMessageAccessoryViewDataSource,FTChatMessageRecorderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
-    
 
-    
     let sender1 = FTChatMessageUserModel.init(id: "1", name: "Someone", icon_url: "http://ww3.sinaimg.cn/mw600/6cca1403jw1f3lrknzxczj20gj0g0t96.jpg", extra_data: nil, isSelf: false)
     
     
@@ -27,22 +24,9 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         messageAccessoryView.setupWithDataSource(self , accessoryViewDelegate : self)
             
         chatMessageDataArray = self.loadDefaultMessages()
-        
-        
-        
-//        let user : NIMUser = NIMSDK.shared().userManager.userInfo(self.session.sessionId)!
-////        self.navigationItem.prompt = user.userInfo?.nickName;
-//        self.title = user.userInfo?.nickName
-        
-        //
 
-
-        
     }
-    
-    
 
-    
     //MARK: - addNewIncomingMessage
     
     func addNewIncomingMessage() {
@@ -53,27 +37,6 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     }
 
     func loadDefaultMessages() -> [FTChatMessageModel] {
-        
-//        _sessionDatasource = [[NIMSessionMsgDatasource alloc] initWithSession:_session dataProvider:dataProvider showTimeInterval:showTimestampInterval limit:limit];
-//        _sessionDatasource.sessionConfig = [self sessionConfig];
-//        [self.conversationManager markAllMessagesReadInSession:_session];
-//        
-//        _sessionDatasource.delegate = self;
-//        
-//        if (![self.sessionConfig respondsToSelector:@selector(autoFetchWhenOpenSession)] || self.sessionConfig.autoFetchWhenOpenSession) {
-//            [_sessionDatasource resetMessages:nil];
-//        }
-//        
-//        
-//        NSMutableArray *messageArray = [[NSMutableArray alloc] init];
-//        for (id model in _sessionDatasource.modelArray) {
-//            if ([model isKindOfClass:[NIMMessageModel class]])
-//            {
-//                [messageArray addObject:[model message]];
-//            }
-//        }
-
-        
         
         let message1 = FTChatMessageModel(data: "最近有点无聊，抽点时间写了这个聊天的UI框架。", time: "4.12 21:09:50", from: sender1, type: .text)
         let message2 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:51", from: sender1, type: .video)
