@@ -29,11 +29,15 @@ Swift 3.0 Xcode 8.0
   </tr>
 </table>
 
-s
-#Preview
+
+# Preview
 
 <center><img src="/ResourceImages/ChatMessageDemo.gif" width="300"/></center>
 
+
+# Something
+
+24 Dec, 2016. It's Christmas tomorrow. It's hard for me to focus on something recently. I'm thinking of rewrite it from the ground up. I have been write some other frameworks that I'm interested in, mostly not perfect. So sometimes I feel so depressed.
 
 
 
