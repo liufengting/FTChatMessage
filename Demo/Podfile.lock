@@ -8,17 +8,20 @@ PODS:
   - FTIndicator/FTProgressIndicator (1.1.5)
   - FTIndicator/FTToastIndicator (1.1.5)
   - FTPickerView (1.0.1)
+  - Kingfisher (3.2.4)
 
 DEPENDENCIES:
   - FTImageSize
   - FTIndicator
   - FTPickerView
+  - Kingfisher
 
 SPEC CHECKSUMS:
   FTImageSize: 29c6fc0830dbe33973286148a8e32cd582a9f26d
   FTIndicator: 8b9885b84340a19029ad13672add3bb8183feba8
   FTPickerView: fd26852f56c352c777d1dafc87ed4c2138eeea4c
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
 
-PODFILE CHECKSUM: 0ede7f642ef86f121ef302dba6752ec4da6e028a
+PODFILE CHECKSUM: 0897bbd78b2258d0c7f01ee2e9d5eb5a802cde17
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

@@ -3,7 +3,7 @@
 //  FTChatMessage
 //
 //  Created by liufengting on 16/2/28.
-//  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.
+//  Copyright © 2016年 liufengting <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -47,8 +47,8 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         let message4 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:53", from: sender2, type: .text)
         let message5 = FTChatMessageModel(data: "文字背景不是图片，是用贝塞尔曲线画的，效率应该不高，后期优化", time: "4.12 21:09:53", from: sender2, type: .text)
         let message6 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:54", from: sender2, type: .text)
-        let message8 = FTChatMessageImageModel(data: "http://ww4.sinaimg.cn/mw600/78565ac5jw1f8ibyaw0wij20tn18ghdt.jpg", time: "4.12 21:09:56", from: sender1, type: .image)
-        message8.imageUrl = "http://ww4.sinaimg.cn/mw600/78565ac5jw1f8ibyaw0wij20tn18ghdt.jpg"
+        let message8 = FTChatMessageImageModel(data: "http://wx3.sinaimg.cn/mw600/9e745efdly1fbmfs45minj20tg0xcq6v.jpg", time: "4.12 21:09:56", from: sender1, type: .image)
+        message8.imageUrl = "http://wx3.sinaimg.cn/mw600/9e745efdly1fbmfs45minj20tg0xcq6v.jpg"
 
         
         let message7 = FTChatMessageModel(data: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", time: "4.12 21:09:55", from: sender1, type: .text)

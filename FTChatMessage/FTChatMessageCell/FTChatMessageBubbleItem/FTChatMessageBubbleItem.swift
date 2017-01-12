@@ -3,10 +3,11 @@
 //  FTChatMessage
 //
 //  Created by liufengting on 16/3/23.
-//  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.
+//  Copyright © 2016年 liufengting <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
+import FTImageSize
 
 class FTChatMessageBubbleItem: UIButton {
     
@@ -78,7 +79,10 @@ extension FTChatMessageBubbleItem {
             messageBubbleItem = FTChatMessageBubbleLocationItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
         case .video:
             messageBubbleItem = FTChatMessageBubbleVideoItem(frame: bubbleFrame, aMessage: aMessage, for: indexPath)
+        default:
+            break
         }
+        
         return messageBubbleItem
     }
     
@@ -96,9 +100,9 @@ extension FTChatMessageBubbleItem {
         case .image:
             if aMessage.isKind(of: FTChatMessageImageModel.classForCoder()) {
                 if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
-                    bubbleWidth = FTChatMessageImageSize.convertSizeForMessageBubble(size: image.size).width
+                    bubbleWidth = FTImageSize.convertSizeForMessageBubble(size: image.size).width
                 }else if let imageUrl : String = (aMessage as! FTChatMessageImageModel).imageUrl {
-                    bubbleWidth = FTChatMessageImageSize.getImageSizeForMessageBubbleFromURL(imageUrl).width
+                    bubbleWidth = FTImageSize.getImageSizeFromImageURL(imageUrl, perferdWidth: FTDefaultMessageBubbleImageWidth, maxHeight: FTDefaultMessageBubbleImageHeight).height
                 }else{
                     bubbleWidth = FTDefaultMessageBubbleImageWidth
                 }
@@ -111,6 +115,8 @@ extension FTChatMessageBubbleItem {
             bubbleWidth = FTDefaultMessageBubbleMapViewWidth
         case .video:
             bubbleWidth = FTDefaultMessageBubbleImageWidth
+        default:
+            break
         }
         
 
@@ -130,9 +136,9 @@ extension FTChatMessageBubbleItem {
         case .image:
             if aMessage.isKind(of: FTChatMessageImageModel.classForCoder()) {
                 if let image : UIImage = (aMessage as! FTChatMessageImageModel).image {
-                    bubbleHeight = FTChatMessageImageSize.convertSizeForMessageBubble(size: image.size).height
+                    bubbleHeight = FTImageSize.convertSizeForMessageBubble(size: image.size).height
                 }else if let imageUrl : String = (aMessage as! FTChatMessageImageModel).imageUrl {
-                    bubbleHeight = FTChatMessageImageSize.getImageSizeForMessageBubbleFromURL(imageUrl).height
+                    bubbleHeight = FTImageSize.getImageSizeFromImageURL(imageUrl, perferdWidth: FTDefaultMessageBubbleImageWidth, maxHeight: FTDefaultMessageBubbleImageHeight).height
                 }else{
                     bubbleHeight = FTDefaultMessageBubbleImageHeight
                 }
@@ -145,9 +151,30 @@ extension FTChatMessageBubbleItem {
             bubbleHeight = FTDefaultMessageBubbleMapViewHeight
         case .video:
             bubbleHeight = FTDefaultMessageBubbleImageHeight
+        default:
+            break
         }
         return bubbleHeight
     }
     
 
+}
+
+extension FTImageSize {
+    
+    internal class func convertSizeForMessageBubble(size :CGSize) -> CGSize {
+        var convertedSize : CGSize = CGSize.zero
+        if size.width == 0 || size.height == 0 {
+            return CGSize(width: FTDefaultMessageBubbleImageWidth,height: FTDefaultMessageBubbleImageHeight)
+        }
+        if size.width < FTDefaultMessageBubbleImageWidth/2 {
+            convertedSize.height = (size.height * FTDefaultMessageBubbleImageWidth/2) / size.width
+            convertedSize.width = FTDefaultMessageBubbleImageWidth/2
+        }else{
+            convertedSize.height = (size.height * FTDefaultMessageBubbleImageWidth) / size.width
+            convertedSize.width = FTDefaultMessageBubbleImageWidth;
+        }
+        convertedSize.height = min(convertedSize.height, FTDefaultMessageBubbleImageWidth*2)
+        return convertedSize
+    }
 }

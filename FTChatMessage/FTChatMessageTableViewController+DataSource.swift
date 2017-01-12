@@ -3,7 +3,7 @@
 //  Demo
 //
 //  Created by liufengting on 16/9/27.
-//  Copyright © 2016年 LiuFengting. All rights reserved.
+//  Copyright © 2016年 liufengting <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit

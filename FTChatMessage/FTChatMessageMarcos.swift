@@ -3,7 +3,7 @@
 //  FTChatMessage
 //
 //  Created by liufengting on 16/2/28.
-//  Copyright © 2016年 liufengting ( https://github.com/liufengting ). All rights reserved.
+//  Copyright © 2016年 liufengting <https://github.com/liufengting>. All rights reserved.
 //
 
 import UIKit
@@ -23,12 +23,12 @@ enum FTChatMessageType {
     case audio
     case video
     case location
-//    case Share
-//    case More
+    case Share
+    case More
 }
 
-let FTScreenWidth = UIScreen.main.bounds.size.width
-let FTScreenHeight = UIScreen.main.bounds.size.height
+public var FTScreenWidth : CGFloat { return UIScreen.main.bounds.size.width }
+public var FTScreenHeight : CGFloat { return UIScreen.main.bounds.size.width }
 
 
 let FTDefaultMargin : CGFloat = 5.0
@@ -92,22 +92,3 @@ class FTChatMessagePublicMethods {
     }
 
 }
-
-
-extension UIViewController {
-
-    func viewWidth() -> CGFloat {
-        return view.bounds.size.width
-    }
-    func viewHeight() -> CGFloat {
-        return view.bounds.size.height
-    }
-
-    
-}
-
-
-
-
-
-
