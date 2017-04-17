@@ -28,7 +28,7 @@ enum FTChatMessageType {
 }
 
 public var FTScreenWidth : CGFloat { return UIScreen.main.bounds.size.width }
-public var FTScreenHeight : CGFloat { return UIScreen.main.bounds.size.width }
+public var FTScreenHeight : CGFloat { return UIScreen.main.bounds.size.height }
 
 
 let FTDefaultMargin : CGFloat = 5.0

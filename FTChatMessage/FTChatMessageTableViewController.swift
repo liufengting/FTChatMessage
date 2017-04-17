@@ -21,7 +21,28 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
     var messageInputMode : FTChatMessageInputMode = FTChatMessageInputMode.none
 
     let sender2 = FTChatMessageUserModel.init(id: "2", name: "LiuFengting", icon_url: "http://ww3.sinaimg.cn/mw600/9d319f9agw1f3k8e4pixfj20u00u0ac6.jpg", extra_data: nil, isSelf: true)
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addSubview(messageTableView)
+        
+        self.view.addSubview(messageInputView)
+        
+        self.view.addSubview(messageRecordView)
+        
+        self.view.addSubview(messageAccessoryView)
+        
+        DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+            self.scrollToBottom(false)
+        }
+    }
 
+    
+    
+    
     
     lazy var messageTableView : UITableView! = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: FTScreenWidth, height: FTScreenHeight), style: .plain)
@@ -31,9 +52,6 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
         tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, FTDefaultInputViewHeight, 0)
         tableView.delegate = self
         tableView.dataSource = self
-        
-//        let header = UIView(frame: CGRect( x: 0, y: 0, width: FTScreenWidth, height: FTDefaultMargin*2))
-//        tableView.tableHeaderView = header
         
         let footer = UIView(frame: CGRect( x: 0, y: 0, width: FTScreenWidth, height: FTDefaultInputViewHeight))
         tableView.tableFooterView = footer
@@ -63,36 +81,17 @@ class FTChatMessageTableViewController: UIViewController, UITableViewDelegate,UI
 
     
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.view.addSubview(messageTableView)
-        
-        self.view.addSubview(messageInputView)
-        
-        self.view.addSubview(messageRecordView)
-        
-        self.view.addSubview(messageAccessoryView)
-        
-        DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-            self.scrollToBottom(false)
-        }
+    func repositionEverything() {
+        self.messageTableView.frame = CGRect(x: 0, y: 0, width: FTScreenWidth, height: FTScreenHeight)
+        self.messageInputView.frame = CGRect(x: 0, y: FTScreenHeight-FTDefaultInputViewHeight, width: FTScreenWidth, height: FTDefaultInputViewHeight)
+        self.messageRecordView.frame = CGRect(x: 0, y: FTScreenHeight, width: FTScreenWidth, height: FTDefaultAccessoryViewHeight)
+        self.messageAccessoryView.frame = CGRect(x: 0, y: FTScreenHeight, width: FTScreenWidth, height: FTDefaultAccessoryViewHeight)
+        self.messageTableView.reloadData()
     }
 
     
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
-
-        messageAccessoryView.setupAccessoryView()
-    }
-    
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
     
     
     internal func addNewMessage(_ message : FTChatMessageModel) {

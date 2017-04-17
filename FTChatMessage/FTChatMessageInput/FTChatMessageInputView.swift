@@ -101,7 +101,7 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
     
     func textViewDidChange(_ textView: UITextView) {
         if let text : NSAttributedString = textView.attributedText {
-            let textRect = text.boundingRect(with: CGSize(width: textView.bounds.width - textView.textContainerInset.left - textView.textContainerInset.right, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin , .usesFontLeading], context: nil);
+            let textRect = text.boundingRect(with: CGSize(width: textView.bounds.width - textView.textContainerInset.left - textView.textContainerInset.right, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin , .usesFontLeading, .truncatesLastVisibleLine], context: nil);
 
             if (inputDelegate != nil) {
                 inputDelegate!.ft_chatMessageInputViewShouldUpdateHeight(min(max(textRect.height + inputTextViewTopMargin.constant + inputTextViewBottomMargin.constant + textView.textContainerInset.top + textView.textContainerInset.bottom, FTDefaultInputViewHeight), FTDefaultInputViewMaxHeight))

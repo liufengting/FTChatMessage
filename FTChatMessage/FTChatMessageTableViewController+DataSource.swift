@@ -14,6 +14,7 @@ extension FTChatMessageTableViewController{
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboradWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeStatusBar(_:)), name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
         
         
     }
@@ -35,11 +36,21 @@ extension FTChatMessageTableViewController{
         }
     }
     
-
+//mark -
+    
+    @objc fileprivate func didChangeStatusBar(_ notification: Notification) {
+//        self.view.endEditing(true)
+        
+        DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+            self.repositionEverything()
+        }
+        
+    }
+    
     
     //MARK: - keyborad notification functions -
     
-    @objc fileprivate func keyboradWillChangeFrame(_ notification : Notification) {
+    @objc fileprivate func keyboradWillChangeFrame(_ notification: Notification) {
         
         if messageInputMode == FTChatMessageInputMode.keyboard {
             if let userInfo = (notification as NSNotification).userInfo {
@@ -207,7 +218,6 @@ extension FTChatMessageTableViewController{
         }
     }
     
-    @objc(numberOfSectionsInTableView:)
     func numberOfSections(in tableView: UITableView) -> Int {
         return messageArray.count;
     }
@@ -228,13 +238,11 @@ extension FTChatMessageTableViewController{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-    @objc(tableView:heightForRowAtIndexPath:)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let message = messageArray[indexPath.section][indexPath.row]
         return FTChatMessageCell.getCellHeightWithMessage(message, for: indexPath)
     }
     
-    @objc(tableView:cellForRowAtIndexPath:)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let message = messageArray[indexPath.section][indexPath.row]
@@ -242,7 +250,6 @@ extension FTChatMessageTableViewController{
         let cell = FTChatMessageCell(style: UITableViewCellStyle.default, reuseIdentifier: FTDefaultMessageCellReuseIndentifier, theMessage: message, for: indexPath)
         return cell
     }
-    @objc(tableView:didSelectRowAtIndexPath:)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -254,10 +261,14 @@ extension FTChatMessageTableViewController{
         
     }
     
-    //MARK: - preferredInterfaceOrientationForPresentation -
-    
-    override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
-        return UIInterfaceOrientation.portrait
-    }
-    
+//    //MARK: - preferredInterfaceOrientationForPresentation -
+//    
+//    override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
+//        return UIInterfaceOrientation.portrait
+//    }
+//    
+//    //MARK: - supportedInterfaceOrientations -
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return UIInterfaceOrientationMask.portrait
+//    }
 }

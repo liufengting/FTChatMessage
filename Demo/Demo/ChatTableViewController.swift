@@ -22,7 +22,7 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
         
         messageRecordView.recorderDelegate = self
         messageAccessoryView.setupWithDataSource(self , accessoryViewDelegate : self)
-            
+        
         chatMessageDataArray = self.loadDefaultMessages()
 
     }
