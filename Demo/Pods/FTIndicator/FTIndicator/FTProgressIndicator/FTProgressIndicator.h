@@ -9,138 +9,163 @@
 #import <UIKit/UIKit.h>
 
 #pragma mark - FTProgressIndicatorMessageType
+
 /**
- *  FTProgressIndicatorMessageType
+ FTProgressIndicatorMessageType
+
+ - FTProgressIndicatorMessageTypeInfo: FTProgressIndicatorMessageTypeInfo
+ - FTProgressIndicatorMessageTypeSuccess: FTProgressIndicatorMessageTypeSuccess
+ - FTProgressIndicatorMessageTypeError: FTProgressIndicatorMessageTypeError
+ - FTProgressIndicatorMessageTypeProgress: FTProgressIndicatorMessageTypeProgress
  */
 typedef NS_ENUM(NSUInteger, FTProgressIndicatorMessageType) {
-    /**
-     *  Info
-     */
     FTProgressIndicatorMessageTypeInfo,
-    /**
-     *  Success
-     */
     FTProgressIndicatorMessageTypeSuccess,
-    /**
-     *  Error
-     */
     FTProgressIndicatorMessageTypeError,
-    /**
-     *  Progress
-     */
     FTProgressIndicatorMessageTypeProgress
 };
 
 #pragma mark - FTProgressIndicator
 /**
- *  FTProgressIndicator
+ FTProgressIndicator
  */
 @interface FTProgressIndicator : NSObject
 
 /**
- *  showProgressWithmessage
- *
- *  @param message message
+ showProgressWithMessage
+
+ @param message message
  */
-+(void)showProgressWithmessage:(NSString *)message;
++ (void)showProgressWithMessage:(NSString *)message;
 
 /**
- *  showProgressWithmessage userInteractionEnable
- *
- *  @param message               message
- *  @param userInteractionEnable userInteractionEnable
+ showProgressWithMessage userInteractionEnable
+
+ @param message message
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)showProgressWithmessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
++ (void)showProgressWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  showInfoWithMessage
- *
- *  @param message NSString message
+ showInfoWithMessage
+
+ @param message message
  */
-+(void)showInfoWithMessage:(NSString *)message;
++ (void)showInfoWithMessage:(NSString *)message;
 
 /**
- *  showInfoWithMessage userInteractionEnable
- *
- *  @param message               message
- *  @param userInteractionEnable userInteractionEnable
+ showInfoWithMessage userInteractionEnable
+
+ @param message message
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)showInfoWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
++ (void)showInfoWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  showSuccessWithMessage
- *
- *  @param message NSString message
+ showInfoWithMessage image userInteractionEnable
+
+ @param message message
+ @param image image
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)showSuccessWithMessage:(NSString *)message;
++ (void)showInfoWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  showSuccessWithMessage userInteractionEnable
- *
- *  @param message               message
- *  @param userInteractionEnable userInteractionEnable
+ showSuccessWithMessage
+
+ @param message message
  */
-+(void)showSuccessWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
++ (void)showSuccessWithMessage:(NSString *)message;
 
 /**
- *  showErrorWithMessage
- *
- *  @param message NSString message
+ showSuccessWithMessage userInteractionEnable
+
+ @param message message
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)showErrorWithMessage:(NSString *)message;
++ (void)showSuccessWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  showErrorWithMessage userInteractionEnable
- *
- *  @param message               message
- *  @param userInteractionEnable userInteractionEnable
+ showSuccessWithMessage image userInteractionEnable
+
+ @param message message
+ @param image image
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)showErrorWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
++ (void)showSuccessWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  dismiss
+ showErrorWithMessage
+
+ @param message message
  */
-+(void)dismiss;
++ (void)showErrorWithMessage:(NSString *)message;
 
 /**
- *  setProgressIndicatorStyleToDefaultStyle
+ showErrorWithMessage userInteractionEnable
+
+ @param message message
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)setProgressIndicatorStyleToDefaultStyle;
++ (void)showErrorWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable;
 
 /**
- *  setProgressIndicatorStyle
- *
- *  @param style UIBlurEffectStyle style
+ showErrorWithMessage image userInteractionEnable
+
+ @param message message
+ @param image image
+ @param userInteractionEnable userInteractionEnable
  */
-+(void)setProgressIndicatorStyle:(UIBlurEffectStyle)style;
++ (void)showErrorWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable;
+
+/**
+ dismiss
+ */
++ (void)dismiss;
+
+/**
+ setProgressIndicatorStyleToDefaultStyle
+ */
++ (void)setProgressIndicatorStyleToDefaultStyle;
+
+/**
+ setProgressIndicatorStyle
+
+ @param style style
+ */
++ (void)setProgressIndicatorStyle:(UIBlurEffectStyle)style;
 
 @end
 
-#pragma FTProgressIndicatorView
+#pragma mark - FTProgressIndicatorView
+
 /**
- *  FTProgressIndicatorView
+ FTProgressIndicatorView
  */
 @interface FTProgressIndicatorView : UIVisualEffectView
+
 /**
- *  userInteractionEnable, if allows user touches at view
+ userInteractionEnable, if allows user touches at view
  */
 @property (assign, nonatomic) BOOL userInteractionEnable;
+
 /**
- *  showProgressWithType
- *
- *  @param type                   type
- *  @param message                message
- *  @param style                  style
- *  @param userInteractionEnable userInteractionEnable
+ showProgressWithType
+
+ @param type type
+ @param message message
+ @param image custom image
+ @param style style
+ @param userInteractionEnable userInteractionEnable
  */
--(void)showProgressWithType:(FTProgressIndicatorMessageType )type message:(NSString *)message style:(UIBlurEffectStyle)style userInteractionEnable:(BOOL)userInteractionEnable;
+- (void)showProgressWithType:(FTProgressIndicatorMessageType )type message:(NSString *)message image:(UIImage *)image style:(UIBlurEffectStyle)style userInteractionEnable:(BOOL)userInteractionEnable;
+
 /**
- *  getFrameForProgressViewWithMessage
- *
- *  @param progressMessage progressMessage
- *
- *  @return CGSize
+ getFrameForProgressViewWithMessage
+
+ @param progressMessage progressMessage
+ @return CGSize
  */
--(CGSize )getFrameForProgressViewWithMessage:(NSString *)progressMessage;
+- (CGSize )getFrameForProgressViewWithMessage:(NSString *)progressMessage;
 
 @end

@@ -15,38 +15,42 @@
 
 A light wight UI package contains local notification, progress HUD, toast, with `blur effect`, `elegant API` and `themes Support` for iOS. Inspired by Apple's process HUD, notifications and Android's toast.
 
-# ScreenShots
-
-## Portrait
-
-| Style	| Light	| Dark	|
-|:-------------:|:-------------:|:-------------:|
-| Notification | <img src="/ScreenShots/Portriat/notification_L_P.jpg" width="300"/> | <img src="/ScreenShots/Portriat/notification_D_P.jpg" width="300"/> |
-| Progress | <img src="/ScreenShots/Portriat/progress_L_P.jpg" width="300"/> | <img src="/ScreenShots/Portriat/progress_D_P.jpg" width="300"/> |
-| Toast | <img src="/ScreenShots/Portriat/toast_L_P.jpg" width="300"/> | <img src="/ScreenShots/Portriat/toast_D_P.jpg" width="300"/> |
-
-## Landscape
-
-| Style	| Light	| Dark	|
-|:-------------:|:-------------:|:-------------:|
-| Notification | <img src="/ScreenShots/Landscape/notification_L_L.jpg" width="300"/> | <img src="/ScreenShots/Landscape/notification_D_L.jpg" width="300"/> |
-| Progress | <img src="/ScreenShots/Landscape/progress_L_L.jpg" width="300"/> | <img src="/ScreenShots/Landscape/progress_D_L.jpg" width="300"/> |
-| Toast | <img src="/ScreenShots/Landscape/toast_L_L.jpg" width="300"/> | <img src="/ScreenShots/Landscape/toast_D_L.jpg" width="300"/> |
 
 # 3 IN 1
 
  * If you want use all three of the indicators, use `FTIndicator` .
  * Also, `FTNotificationIndicator`, `FTProgressIndicator` and `FTToastIndicator` are able to work separately. Use them all your will.
 
+---
+
+> `FTIndicator`
+>> `FTNotificationIndicator`
+>> `FTProgressIndicator`
+>> `FTToastIndicator`
 
 ---
- 
-* FTIndicator
-	* FTNotificationIndicator
-	* FTProgressIndicator
-	* FTToastIndicator
 
----
+
+
+# ScreenShots
+
+## Portrait
+
+| Style	| Light	| Dark	|
+|:-------------:|:-------------:|:-------------:|
+| Notification | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/notification_L_P.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/notification_D_P.jpg" width="300"/> |
+| Progress | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/progress_L_P.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/progress_D_P.jpg" width="300"/> |
+| Toast | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/toast_L_P.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Portriat/toast_D_P.jpg" width="300"/> |
+
+## Landscape
+
+| Style	| Light	| Dark	|
+|:-------------:|:-------------:|:-------------:|
+| Notification | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/notification_L_L.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/notification_D_L.jpg" width="300"/> |
+| Progress | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/progress_L_L.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/progress_D_L.jpg" width="300"/> |
+| Toast | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/toast_L_L.jpg" width="300"/> | <img src="https://raw.githubusercontent.com/liufengting/FTResourceRepo/master/Resource/FTIndicator/ScreenShots/Landscape/toast_D_L.jpg" width="300"/> |
+
+
  
 
 # Installation
@@ -61,6 +65,25 @@ A light wight UI package contains local notification, progress HUD, toast, with 
 
 `FTIndicator` is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
+
+⚠️ Notice：
+
+Syntax error fix in 1.2.2: Syntax error fixed. May cause error to your projects, update it carefully.
+
+
+⚠️ Notice：
+
+major fix in 1.2.0: progress HUD doesn't show when app starts
+
+`FTNotificationIndicator`, `FTProgressIndicator` and `FTToastIndicator` podfile stopped updating after v1.1.5. If you wanna use them separately, you should use them like this in your Podfile as a subPod:
+
+```ruby
+    pod 'FTIndicator/FTNotificationIndicator'
+    pod 'FTIndicator/FTProgressIndicator'
+    pod 'FTIndicator/FTToastIndicator'
+```
+
+
 ### Use FTIndicator, all three of them 
 
 * FTIndicator, 3 in 1 
@@ -73,15 +96,11 @@ pod 'FTIndicator'
 
 * FTNotificationIndicator
 
-```ruby
-
-pod 'FTNotificationIndicator'
-
-```
+~~pod 'FTNotificationIndicator~~ is not available anymore, use this:
 
 ```ruby
 
-# or use as a subPod
+# use as a subPod
 
 pod 'FTIndicator/FTNotificationIndicator'
 
@@ -89,15 +108,12 @@ pod 'FTIndicator/FTNotificationIndicator'
 
 * FTProgressIndicator
 
-```ruby
+~~pod "FTProgressIndicator"~~ is not available anymore, use this:
 
-pod 'FTProgressIndicator'
-
-```
 
 ```ruby
 
-# or use as a subPod
+# use as a subPod
 
 pod 'FTIndicator/FTProgressIndicator'
 
@@ -105,15 +121,11 @@ pod 'FTIndicator/FTProgressIndicator'
 
 * FTToastIndicator
 
-```ruby
-
-pod 'FTToastIndicator'
-
-```
+~~pod 'FTToastIndicator'~~ is not available anymore, use this:
 
 ```ruby
 
-# or use as a subPod
+# use as a subPod
 
 pod 'FTIndicator/FTToastIndicator'
 
@@ -166,7 +178,7 @@ pod 'FTIndicator/FTToastIndicator'
 
 ```objective-c
 
-[FTIndicator showProgressWithmessage:@"Here is a progress message."];  
+[FTIndicator showProgressWithMessage:@"Here is a progress message."];  
 
 ```
 
@@ -174,7 +186,7 @@ pod 'FTIndicator/FTToastIndicator'
 
 // or disable user interactions
 
-[FTIndicator showProgressWithmessage:@"Here is a progress message." userInteractionEnable:NO]; 
+[FTIndicator showProgressWithMessage:@"Here is a progress message." userInteractionEnable:NO]; 
 
 ```
 
@@ -344,9 +356,7 @@ pod 'FTIndicator/FTToastIndicator'
 
 # License
 
-* `FTIndicator` is available under the MIT license. See the LICENSE file for more info. 
-* `FTNotificationIndicator` is available under the MIT license. See the LICENSE file for more info. 
-* `FTProgressIndicator` is available under the MIT license. See the LICENSE file for more info. 
-* `FTToastIndicator` is available under the MIT license. See the LICENSE file for more info. 
+`FTIndicator` is available under the MIT license. See the LICENSE file for more info. 
+
 
 

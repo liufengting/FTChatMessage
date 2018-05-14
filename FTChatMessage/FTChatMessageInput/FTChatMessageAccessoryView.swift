@@ -105,7 +105,7 @@ class FTChatMessageAccessoryView: UIView, UIScrollViewDelegate{
 
     
     //MARK: - buttonItemTapped
-    func buttonItemTapped(_ sender : UIButton) {
+    @objc func buttonItemTapped(_ sender : UIButton) {
         if (accessoryDelegate != nil) {
             accessoryDelegate.ftChatMessageAccessoryViewDidTappedOnItemAtIndex(sender.tag)
         }

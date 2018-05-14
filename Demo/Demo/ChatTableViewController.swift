@@ -29,7 +29,7 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
 
     //MARK: - addNewIncomingMessage
     
-    func addNewIncomingMessage() {
+    @objc func addNewIncomingMessage() {
         
         let message8 = FTChatMessageModel(data: "New Message added, try something else.", time: "4.12 22:42", from: sender1, type: .text)
         self.addNewMessage(message8)
@@ -107,7 +107,7 @@ class ChatTableViewController: FTChatMessageTableViewController,FTChatMessageAcc
     
     func ft_chatMessageRecordViewDidStartRecording(){
         print("Start recording...")
-        FTIndicator.showProgressWithmessage("Recording...")
+        FTIndicator.showProgress(withMessage: "Recording...")
     }
     func ft_chatMessageRecordViewDidCancelRecording(){
         print("Recording canceled.")

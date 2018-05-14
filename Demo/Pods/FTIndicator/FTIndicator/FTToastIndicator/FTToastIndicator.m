@@ -28,6 +28,7 @@
 
 @interface FTToastIndicator ()
 
+@property (nonatomic, strong)UIWindow *backgroundWindow;
 @property (nonatomic, strong)FTToastIndicatorView *toastView;
 @property (nonatomic, assign)UIBlurEffectStyle indicatorStyle;
 @property (nonatomic, strong)NSString *toastMessage;
@@ -41,7 +42,7 @@
 
 #pragma mark - class methods
 
-+(FTToastIndicator *)sharedInstance
++ (FTToastIndicator *)sharedInstance
 {
     static FTToastIndicator *shared;
     static dispatch_once_t onceToken;
@@ -51,22 +52,22 @@
     return shared;
 }
 
-+(void)setToastIndicatorStyleToDefaultStyle
++ (void)setToastIndicatorStyleToDefaultStyle
 {
     [self sharedInstance].indicatorStyle = UIBlurEffectStyleLight;
 }
 
-+(void)setToastIndicatorStyle:(UIBlurEffectStyle)style
++ (void)setToastIndicatorStyle:(UIBlurEffectStyle)style
 {
     [self sharedInstance].indicatorStyle = style;
 }
 
-+(void)showToastMessage:(NSString *)toastMessage
++ (void)showToastMessage:(NSString *)toastMessage
 {
     [[self sharedInstance] showToastMessage:toastMessage];
 }
 
-+(void)dismiss
++ (void)dismiss
 {
     [[self sharedInstance] dismiss];
 }
@@ -89,7 +90,17 @@
     return self;
 }
 
--(FTToastIndicatorView *)toastView
+- (UIWindow *)backgroundWindow
+{
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    id<UIApplicationDelegate> delegate = [[UIApplication sharedApplication] delegate];
+    if (window == nil && [delegate respondsToSelector:@selector(window)]){
+        window = [delegate performSelector:@selector(window)];
+    }
+    return window;
+}
+
+- (FTToastIndicatorView *)toastView
 {
     if (!_toastView) {
         _toastView = [[FTToastIndicatorView alloc] initWithFrame:CGRectZero];
@@ -97,51 +108,55 @@
     return _toastView;
 }
 
--(void)showToastMessage:(NSString *)toastMessage
+- (void)showToastMessage:(NSString *)toastMessage
 {
-    self.toastMessage = toastMessage;
-    self.isCurrentlyOnScreen = NO;
-
-    if (self.isDuringAnimation) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kFTToastDefaultAnimationDuration * 2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.toastMessage = toastMessage;
+        self.isCurrentlyOnScreen = NO;
+        
+        [self stopDismissTimer];
+        
+        if (self.isDuringAnimation) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kFTToastDefaultAnimationDuration * 2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self adjustIndicatorFrame];
+            });
+        }else{
             [self adjustIndicatorFrame];
-        });
-    }else{
-        [self adjustIndicatorFrame];
-    }
+        }
+    });
 }
 
--(void)dismiss
+- (void)dismiss
 {
     [self stopDismissTimer];
     [self dismissingToastView];
 }
 
--(void)adjustIndicatorFrame
+- (void)adjustIndicatorFrame
 {
     self.toastView.alpha = 1;
     self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
-
+    
     CGSize toastSize = [self.toastView getFrameForToastViewWithMessage:self.toastMessage];
     
     [self.toastView setFrame:CGRectMake((kFTScreenWidth - toastSize.width)/2, kFTScreenHeight - [self keyboardHeight] - kFTToastToBottom - toastSize.height, toastSize.width, toastSize.height)];
     [self.toastView showToastMessage:self.toastMessage withStyle:self.indicatorStyle];
     
-    [[[UIApplication sharedApplication] keyWindow] addSubview:self.toastView];
+    [self.backgroundWindow addSubview:self.toastView];
     
-    self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4);
+    self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.2, 0.2);
     
     [self startShowingToastView];
 }
 
--(void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
+- (void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
 {
     if (self.isCurrentlyOnScreen) {
         [self adjustIndicatorFrame];
     }
 }
 
--(void)onKeyboardWillChangeFrame:(NSNotification *)notification
+- (void)onKeyboardWillChangeFrame:(NSNotification *)notification
 {
     NSDictionary *userInfo = [notification userInfo];
     CGRect keyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -180,7 +195,7 @@
 }
 
 
--(void)startDismissTimer
+- (void)startDismissTimer
 {
     [self stopDismissTimer];
     
@@ -192,7 +207,7 @@
                                                     repeats:NO];
 }
 
--(void)stopDismissTimer
+- (void)stopDismissTimer
 {
     if (_dismissTimer) {
         [_dismissTimer invalidate];
@@ -200,46 +215,51 @@
     }
 }
 
--(void)startShowingToastView
+- (void)startShowingToastView
 {
     self.isDuringAnimation = YES;
-    self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4);
+    self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.2, 0.2);
+//    [UIView animateWithDuration:kFTToastDefaultAnimationDuration
+//                          delay:0
+//         usingSpringWithDamping:0.5
+//          initialSpringVelocity:0
+//                        options:UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+//                     } completion:^(BOOL finished) {
+//                         self.isDuringAnimation = NO;
+//                         if (!self.isCurrentlyOnScreen) {
+//                             [self startDismissTimer];
+//                         }
+//                         self.isCurrentlyOnScreen = YES;
+//                     }];
     [UIView animateWithDuration:kFTToastDefaultAnimationDuration
                           delay:0
-         usingSpringWithDamping:0.6
-          initialSpringVelocity:0.5
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         
                          self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
-                         
                      } completion:^(BOOL finished) {
-                         if (finished) {
-                             self.isDuringAnimation = NO;
-                             if (!self.isCurrentlyOnScreen) {
-                                 [self startDismissTimer];
-                             }
-                             self.isCurrentlyOnScreen = YES;
+                         self.isDuringAnimation = NO;
+                         if (!self.isCurrentlyOnScreen) {
+                             [self startDismissTimer];
                          }
+                         self.isCurrentlyOnScreen = YES;
                      }];
 }
 
--(void)dismissingToastView
+- (void)dismissingToastView
 {
+    [self.toastView.layer removeAllAnimations];
     self.isDuringAnimation = YES;
     [UIView animateWithDuration:kFTToastDefaultAnimationDuration
                           delay:0
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:(UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction)
                      animations:^{
-                         
-                         self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4);
-                         
+                         self.toastView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.2, 0.2);
                      } completion:^(BOOL finished) {
-                         if(finished){
-                             self.isDuringAnimation = NO;
-                             self.isCurrentlyOnScreen = NO;
-                             [self.toastView removeFromSuperview];
-                         }
+                         self.isDuringAnimation = NO;
+                         self.isCurrentlyOnScreen = NO;
+                         [self.toastView removeFromSuperview];
                      }];
 }
 
@@ -269,7 +289,7 @@
 
 #pragma mark - getters
 
--(UILabel *)messageLabel
+- (UILabel *)messageLabel
 {
     if (!_messageLabel) {
         _messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -282,7 +302,7 @@
     return _messageLabel;
 }
 
--(UIColor *)getTextColorWithStyle:(UIBlurEffectStyle)style
+- (UIColor *)getTextColorWithStyle:(UIBlurEffectStyle)style
 {
     switch (style) {
         case UIBlurEffectStyleDark:
@@ -296,14 +316,14 @@
 
 #pragma mark - main methods
 
--(void)showToastMessage:(NSString *)toastMessage withStyle:(UIBlurEffectStyle)style
+- (void)showToastMessage:(NSString *)toastMessage withStyle:(UIBlurEffectStyle)style
 {
     self.effect = [UIBlurEffect effectWithStyle:style];
     
     self.message = toastMessage;
     self.messageLabel.textColor = [self getTextColorWithStyle:style];
     self.messageLabel.text = toastMessage;
-
+    
     CGSize labelSize = [self getFrameForToastLabelWithMessage:toastMessage];
     CGSize viewSize = [self getFrameForToastViewWithMessage:toastMessage];
     CGRect rect = CGRectMake((viewSize.width - labelSize.width)/2, (viewSize.height - labelSize.height)/2, labelSize.width, labelSize.height);
@@ -312,7 +332,7 @@
 
 #pragma mark - getFrameForToastLabelWithMessage
 
--(CGSize )getFrameForToastLabelWithMessage:(NSString *)toastMessage
+- (CGSize )getFrameForToastLabelWithMessage:(NSString *)toastMessage
 {
     CGRect textSize = [toastMessage boundingRectWithSize:CGSizeMake(kFTToastMaxWidth - kFTToastMargin_X*2, MAXFLOAT)
                                                  options:(NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin)
@@ -324,7 +344,7 @@
 
 #pragma mark - getFrameForToastViewWithMessage
 
--(CGSize )getFrameForToastViewWithMessage:(NSString *)toastMessage
+- (CGSize )getFrameForToastViewWithMessage:(NSString *)toastMessage
 {
     CGSize textSize = [self getFrameForToastLabelWithMessage:toastMessage];
     CGSize size = CGSizeMake(MIN(textSize.width + kFTToastMargin_X*2 , kFTToastMaxWidth), MIN(textSize.height + kFTToastMargin_Y*2 ,kFTToastMaxHeight));

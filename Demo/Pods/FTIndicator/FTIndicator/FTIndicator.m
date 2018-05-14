@@ -14,30 +14,28 @@
 
 @implementation FTIndicator
 
-+(void)setIndicatorStyleToDefaultStyle
++ (void)setIndicatorStyleToDefaultStyle
 {
     [self setIndicatorStyle:UIBlurEffectStyleLight];
 }
 
-+(void)setIndicatorStyle:(UIBlurEffectStyle)style
++ (void)setIndicatorStyle:(UIBlurEffectStyle)style
 {
     [FTToastIndicator setToastIndicatorStyle:style];
     [FTProgressIndicator setProgressIndicatorStyle:style];
     [FTNotificationIndicator setNotificationIndicatorStyle:style];
 }
 
-
-
 #pragma mark - FTToastIndicator
 /**
  *  FTToastIndicator
  */
-+(void)showToastMessage:(NSString *)toastMessage
++ (void)showToastMessage:(NSString *)toastMessage
 {
     [FTToastIndicator showToastMessage:toastMessage];
 }
 
-+(void)dismissToast
++ (void)dismissToast
 {
     [FTToastIndicator dismiss];
 }
@@ -47,39 +45,59 @@
 /**
  *  FTProgressIndicator
  */
-+(void)showProgressWithmessage:(NSString *)message
++ (void)showProgressWithMessage:(NSString *)message
 {
-    [FTProgressIndicator showProgressWithmessage:message userInteractionEnable:YES];
+    [self showProgressWithMessage:message userInteractionEnable:YES];
 }
-+(void)showProgressWithmessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
++ (void)showProgressWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
 {
-    [FTProgressIndicator showProgressWithmessage:message userInteractionEnable:userInteractionEnable];
+    [FTProgressIndicator showProgressWithMessage:message userInteractionEnable:userInteractionEnable];
 }
-+(void)showInfoWithMessage:(NSString *)message
+
+
++ (void)showInfoWithMessage:(NSString *)message
 {
-    [FTProgressIndicator showInfoWithMessage:message userInteractionEnable:YES];
+    [self showInfoWithMessage:message image:nil userInteractionEnable:YES];
 }
-+(void)showInfoWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
++ (void)showInfoWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
 {
-    [FTProgressIndicator showInfoWithMessage:message userInteractionEnable:userInteractionEnable];
+    [self showInfoWithMessage:message image:nil userInteractionEnable:userInteractionEnable];
 }
-+(void)showSuccessWithMessage:(NSString *)message
++ (void)showInfoWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable
 {
-    [FTProgressIndicator showSuccessWithMessage:message userInteractionEnable:YES];
+    [FTProgressIndicator showInfoWithMessage:message image:image userInteractionEnable:userInteractionEnable];
 }
-+(void)showSuccessWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
+
+
++ (void)showSuccessWithMessage:(NSString *)message
 {
-    [FTProgressIndicator showSuccessWithMessage:message userInteractionEnable:userInteractionEnable];
+    [self showSuccessWithMessage:message image:nil userInteractionEnable:YES];
 }
-+(void)showErrorWithMessage:(NSString *)message
++ (void)showSuccessWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
 {
-    [FTProgressIndicator showErrorWithMessage:message userInteractionEnable:YES];
+    [self showSuccessWithMessage:message image:nil userInteractionEnable:userInteractionEnable];
 }
-+(void)showErrorWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
++ (void)showSuccessWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable
 {
-    [FTProgressIndicator showErrorWithMessage:message userInteractionEnable:userInteractionEnable];
+    [FTProgressIndicator showSuccessWithMessage:message image:image userInteractionEnable:userInteractionEnable];
 }
-+(void)dismissProgress
+
+
++ (void)showErrorWithMessage:(NSString *)message
+{
+    [self showErrorWithMessage:message image:nil userInteractionEnable:YES];
+}
++ (void)showErrorWithMessage:(NSString *)message userInteractionEnable:(BOOL)userInteractionEnable
+{
+    [self showErrorWithMessage:message image:nil userInteractionEnable:userInteractionEnable];
+}
++ (void)showErrorWithMessage:(NSString *)message image:(UIImage *)image userInteractionEnable:(BOOL)userInteractionEnable
+{
+    [FTProgressIndicator showErrorWithMessage:message image:image userInteractionEnable:userInteractionEnable];
+}
+
+
++ (void)dismissProgress
 {
     [FTProgressIndicator dismiss];
 }
@@ -88,37 +106,42 @@
 /**
  *  FTNotificationIndicator
  */
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message
 {
-    [FTNotificationIndicator showNotificationWithTitle:title message:message];
+    [self showNotificationWithImage:nil title:title message:message autoDismiss:YES tapHandler:nil completion:nil];
 }
 
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
 {
-    [FTNotificationIndicator showNotificationWithTitle:title message:message tapHandler:tapHandler];
+    [self showNotificationWithImage:nil title:title message:message autoDismiss:YES tapHandler:tapHandler completion:nil];
 }
 
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
 {
-    [FTNotificationIndicator showNotificationWithTitle:title message:message tapHandler:tapHandler completion:completion];
+    [self showNotificationWithImage:nil title:title message:message autoDismiss:YES tapHandler:tapHandler completion:completion];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message
 {
-    [FTNotificationIndicator showNotificationWithImage:image title:title message:message];
+    [self showNotificationWithImage:image title:title message:message autoDismiss:YES tapHandler:nil completion:nil];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
 {
-    [FTNotificationIndicator showNotificationWithImage:image title:title message:message tapHandler:tapHandler];
+    [self showNotificationWithImage:image title:title message:message autoDismiss:YES tapHandler:tapHandler completion:nil];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
 {
-    [FTNotificationIndicator showNotificationWithImage:image title:title message:message tapHandler:tapHandler completion:completion];
+    [self showNotificationWithImage:image title:title message:message autoDismiss:YES tapHandler:tapHandler completion:completion];
 }
 
-+(void)dismissNotification
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message autoDismiss:(BOOL)autoDismiss tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
+{
+    [FTNotificationIndicator showNotificationWithImage:image title:title message:message autoDismiss:autoDismiss tapHandler:tapHandler completion:completion];
+}
+
++ (void)dismissNotification
 {
     [FTNotificationIndicator dismiss];
 }

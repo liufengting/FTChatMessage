@@ -94,7 +94,7 @@ extension FTChatMessageBubbleItem {
             let att = NSString(string: aMessage.messageText)
             let rect = att.boundingRect(with: CGSize(width: FTDefaultMessageBubbleTextInViewMaxWidth,height: CGFloat(MAXFLOAT)),
                                                 options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
+                                                attributes: [NSAttributedStringKey.font:FTDefaultFontSize,NSAttributedStringKey.paragraphStyle: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
                                                 context: nil)
             bubbleWidth = rect.width + FTDefaultTextLeftMargin*2 + FTDefaultMessageBubbleAngleWidth
         case .image:
@@ -130,7 +130,7 @@ extension FTChatMessageBubbleItem {
             let att = NSString(string: aMessage.messageText)
             let textRect = att.boundingRect(with: CGSize(width: FTDefaultMessageBubbleTextInViewMaxWidth,height: CGFloat(MAXFLOAT)),
                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                    attributes: [NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
+                                                    attributes: [NSAttributedStringKey.font:FTDefaultFontSize,NSAttributedStringKey.paragraphStyle: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()],
                                                     context: nil)
             bubbleHeight = max(textRect.height + FTDefaultTextTopMargin*2, FTDefaultMessageRoundCorner*2)
         case .image:

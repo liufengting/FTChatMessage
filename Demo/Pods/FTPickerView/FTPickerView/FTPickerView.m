@@ -2,7 +2,7 @@
 //  FTPickerView.m
 //  FTPickerView
 //
-//  Created by liufengting on 15/12/3.
+//  Created by liufengting https://github.com/liufengting on 15/12/3.
 //  Copyright © 2015年 liufengting. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 #define KSCREEN_WIDTH            [[UIScreen mainScreen] bounds].size.width
 #define KSCREEN_HEIGHT           [[UIScreen mainScreen] bounds].size.height
-#define PickerHeight             216
-#define BackgroundColor          [[UIColor blackColor] colorWithAlphaComponent:0.2]
-#define LineHeight               0.6
+#define PickerHeight             216.f
+#define BackgroundColor          [[UIColor blackColor] colorWithAlphaComponent:0.2f]
+#define LineHeight               0.6f
 
 #pragma mark -
 #pragma mark - FTPickerTitleView
@@ -176,12 +176,12 @@
 {
     [UIView animateWithDuration:0.3
                      animations:^{
-                         [_backgroundView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
+                         [self.backgroundView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
                      }
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.1
                                           animations:^{
-                                              _backgroundView.backgroundColor = BackgroundColor;
+                                              self.backgroundView.backgroundColor = BackgroundColor;
                                           }];
                      }];
 }
@@ -190,12 +190,12 @@
 {
     [UIView animateWithDuration:0.1
                      animations:^{
-                         _backgroundView.backgroundColor = [UIColor clearColor];
+                         self.backgroundView.backgroundColor = [UIColor clearColor];
                      }
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.3
                                           animations:^{
-                                              [_backgroundView setFrame:CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
+                                              [self.backgroundView setFrame:CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
                                           }];
                      }];
 }
@@ -352,12 +352,12 @@
 {
     [UIView animateWithDuration:0.3
                      animations:^{
-                         [_backgroundView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
+                         [self.backgroundView setFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
                      }
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.1
                                           animations:^{
-                                              _backgroundView.backgroundColor = BackgroundColor;
+                                              self.backgroundView.backgroundColor = BackgroundColor;
                                           }];
                      }];
 }
@@ -365,15 +365,15 @@
 {
     [UIView animateWithDuration:0.1
                      animations:^{
-                         _backgroundView.backgroundColor = [UIColor clearColor];
+                         self.backgroundView.backgroundColor = [UIColor clearColor];
                      }
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.3
                                           animations:^{
-                                              [_backgroundView setFrame:CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
+                                              [self.backgroundView setFrame:CGRectMake(0, KSCREEN_HEIGHT, KSCREEN_WIDTH, KSCREEN_HEIGHT)];
                                           }completion:^(BOOL finished) {
-                                              if (_selectedDate) {
-                                                  self.doneBlock(_selectedDate);
+                                              if (self.selectedDate) {
+                                                  self.doneBlock(self.selectedDate);
                                               }else{
                                                   self.cancelBlock();
                                               }

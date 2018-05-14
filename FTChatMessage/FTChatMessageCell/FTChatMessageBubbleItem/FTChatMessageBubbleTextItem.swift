@@ -30,7 +30,7 @@ class FTChatMessageBubbleTextItem: FTChatMessageBubbleItem {
         messageLabel.font = FTDefaultFontSize
         self.addSubview(messageLabel)
         let attributeString = NSMutableAttributedString(attributedString: messageLabel.attributedText!)
-        attributeString.addAttributes([NSFontAttributeName:FTDefaultFontSize,NSParagraphStyleAttributeName: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], range: NSMakeRange(0, (messageLabel.text! as NSString).length))
+        attributeString.addAttributes([NSAttributedStringKey.font:FTDefaultFontSize,NSAttributedStringKey.paragraphStyle: FTChatMessagePublicMethods.getFTDefaultMessageParagraphStyle()], range: NSMakeRange(0, (messageLabel.text! as NSString).length))
         messageLabel.attributedText = attributeString
         
     }

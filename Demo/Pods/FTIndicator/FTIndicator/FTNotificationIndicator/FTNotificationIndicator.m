@@ -21,6 +21,7 @@
 #define kFTNotificationDefaultMessageFont               [UIFont systemFontOfSize:13]
 #define kFTNotificationDefaultTextColor                 [UIColor blackColor]
 #define kFTNotificationDefaultTextColor_ForDarkStyle    [UIColor whiteColor]
+#define kFTNotificationDefaultDismissTime				(2.0f)
 
 #define kFTScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define kFTScreenHeight   [UIScreen mainScreen].bounds.size.height
@@ -29,6 +30,7 @@
 
 @interface FTNotificationIndicator ()
 
+@property (nonatomic, strong)UIWindow *backgroundWindow;
 @property (nonatomic, strong)FTNotificationIndicatorView *notificationView;
 @property (nonatomic, assign)UIBlurEffectStyle indicatorStyle;
 @property (nonatomic, strong)UIImage *notificationImage;
@@ -36,8 +38,10 @@
 @property (nonatomic, strong)NSString *notificationMessage;
 @property (nonatomic, strong)NSTimer *dismissTimer;
 @property (nonatomic, assign)BOOL isCurrentlyOnScreen;
+@property (nonatomic, assign)BOOL shouldAutoDismiss;
 @property (nonatomic, copy, nullable) FTNotificationTapHandler tapHandler;
 @property (nonatomic, copy, nullable) FTNotificationCompletion completion;
+@property (nonatomic, assign)NSTimeInterval dismissTime;
 
 @end
 
@@ -45,7 +49,7 @@
 
 #pragma mark - class methods
 
-+(FTNotificationIndicator *)sharedInstance
++ (FTNotificationIndicator *)sharedInstance
 {
     static FTNotificationIndicator *shared;
     static dispatch_once_t onceToken;
@@ -55,50 +59,67 @@
     return shared;
 }
 
-+(void)setNotificationIndicatorStyleToDefaultStyle
++ (void)setNotificationIndicatorStyleToDefaultStyle
 {
     [self sharedInstance].indicatorStyle = UIBlurEffectStyleLight;
-
 }
 
-+(void)setNotificationIndicatorStyle:(UIBlurEffectStyle)style
++ (void)setNotificationIndicatorStyle:(UIBlurEffectStyle)style
 {
     [self sharedInstance].indicatorStyle = style;
 }
 
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message
 {
     [self showNotificationWithImage:nil title:title message:message tapHandler:nil completion:nil];
 }
 
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
 {
     [self showNotificationWithImage:nil title:title message:message tapHandler:tapHandler completion:nil];
 }
 
-+(void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
 {
     [self showNotificationWithImage:nil title:title message:message tapHandler:tapHandler completion:completion];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message
 {
     [self showNotificationWithImage:image title:title message:message tapHandler:nil completion:nil];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler
 {
     [self showNotificationWithImage:image title:title message:message tapHandler:tapHandler completion:nil];
 }
 
-+(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
 {
-    [[self sharedInstance] showNotificationWithImage:image title:title message:message tapHandler:tapHandler completion:completion];
+    [[self sharedInstance] showNotificationWithImage:image title:title message:message autoDismiss:YES tapHandler:tapHandler completion:completion];
 }
 
-+(void)dismiss
+
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message autoDismiss:(BOOL)autoDismiss tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
+{
+    [[self sharedInstance] showNotificationWithImage:image title:title message:message autoDismiss:autoDismiss tapHandler:tapHandler completion:completion];
+}
+
++ (void)dismiss
 {
     [[self sharedInstance] dismiss];
+}
+
+#pragma mark - Timer
+
++ (void)setDefaultDismissTime:(NSTimeInterval)time
+{
+	[[self sharedInstance] setDismissTime: time];
+}
+
++ (NSTimeInterval)defaultDismissTime
+{
+	return [[self sharedInstance] dismissTime];
 }
 
 #pragma mark - instance methods
@@ -111,11 +132,22 @@
                                                  selector:@selector(onChangeStatusBarOrientationNotification:)
                                                      name:UIApplicationDidChangeStatusBarOrientationNotification
                                                    object:nil];
+		self.dismissTime = kFTNotificationDefaultDismissTime;
     }
     return self;
 }
 
--(FTNotificationIndicatorView *)notificationView
+- (UIWindow *)backgroundWindow
+{
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    id<UIApplicationDelegate> delegate = [[UIApplication sharedApplication] delegate];
+    if (window == nil && [delegate respondsToSelector:@selector(window)]){
+        window = [delegate performSelector:@selector(window)];
+    }
+    return window;
+}
+
+- (FTNotificationIndicatorView *)notificationView
 {
     if (!_notificationView) {
         _notificationView = [[FTNotificationIndicatorView alloc] initWithFrame:CGRectZero];
@@ -127,7 +159,7 @@
     return _notificationView;
 }
 
--(void)onPanGuestureRecognized:(UIPanGestureRecognizer *)sender
+- (void)onPanGuestureRecognized:(UIPanGestureRecognizer *)sender
 {
     if (self.isCurrentlyOnScreen) {
         CGPoint translation = [sender translationInView:[[UIApplication sharedApplication] keyWindow]];
@@ -146,7 +178,7 @@
     }
 }
 
--(void)onTapGestureRecognized:(UITapGestureRecognizer*)sender{
+- (void)onTapGestureRecognized:(UITapGestureRecognizer*)sender{
     if(self.isCurrentlyOnScreen){
         switch (sender.state) {
             case UIGestureRecognizerStateEnded:
@@ -161,43 +193,46 @@
     }
 }
 
--(void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
+- (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message autoDismiss:(BOOL)autoDismiss tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion
 {
-    self.notificationImage = image;
-    self.notificationTitle = title;
-    self.notificationMessage = message;
-    self.isCurrentlyOnScreen = NO;
-    self.tapHandler = tapHandler;
-    self.completion = completion;
-
-    [self adjustIndicatorFrame];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.notificationImage = image;
+        self.notificationTitle = title;
+        self.notificationMessage = message;
+        self.isCurrentlyOnScreen = NO;
+        self.shouldAutoDismiss = autoDismiss;
+        self.tapHandler = tapHandler;
+        self.completion = completion;
+        
+        [self stopDismissTimer];
+        [self adjustIndicatorFrame];
+    });
 }
 
--(void)dismiss{
+- (void)dismiss{
     [self dismissOnTapped:NO];
 }
 
--(void)dismissOnTapped:(BOOL)tapped
+- (void)dismissOnTapped:(BOOL)tapped
 {
     [self stopDismissTimer];
     [self dismissingNotificationtViewByTap:tapped];
 }
 
--(void)adjustIndicatorFrame
+- (void)adjustIndicatorFrame
 {
     CGSize notificationSize = [self.notificationView getFrameForNotificationViewWithImage:self.notificationImage message:self.notificationMessage];
     
-    [self.notificationView setFrame:CGRectMake(0,-(notificationSize.height),kFTScreenWidth,notificationSize.height)];
+    [self.notificationView setFrame:CGRectMake(0,- (notificationSize.height),kFTScreenWidth,notificationSize.height)];
     
     [self.notificationView showWithImage:self.notificationImage title:self.notificationTitle message:self.notificationMessage style:self.indicatorStyle];
     
-    [[[UIApplication sharedApplication] keyWindow] addSubview:self.notificationView];
+    [self.backgroundWindow addSubview:self.notificationView];
     
     [self startShowingNotificationView];
 }
 
--(void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
+- (void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self.isCurrentlyOnScreen) {
@@ -206,11 +241,13 @@
     });
 }
 
--(void)startDismissTimer
+- (void)startDismissTimer
 {
     [self stopDismissTimer];
-    CGFloat timeInterval = MAX(self.notificationMessage.length * 0.04 + 0.5, 2.0);
-    
+    if (!self.shouldAutoDismiss) {
+        return;
+    }
+    CGFloat timeInterval = MAX(self.notificationMessage.length * 0.04 + 0.5, _dismissTime);
     _dismissTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval
                                                      target:self
                                                    selector:@selector(dismissingNotificationtView)
@@ -218,7 +255,7 @@
                                                     repeats:NO];
 }
 
--(void)stopDismissTimer
+- (void)stopDismissTimer
 {
     if (_dismissTimer) {
         [_dismissTimer invalidate];
@@ -226,47 +263,51 @@
     }
 }
 
--(void)startShowingNotificationView
+- (void)startShowingNotificationView
 {
+//    [UIView animateWithDuration:kFTNotificationDefaultAnimationDuration
+//                          delay:0
+//         usingSpringWithDamping:0.5
+//          initialSpringVelocity:0
+//                        options:UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         [self.notificationView setFrame:CGRectMake(0,0,kFTScreenWidth,self.notificationView.frame.size.height)];
+//                     } completion:^(BOOL finished) {
+//                         if (!self.isCurrentlyOnScreen) {
+//                             [self startDismissTimer];
+//                         }
+//                         self.isCurrentlyOnScreen = YES;
+//                     }];
     [UIView animateWithDuration:kFTNotificationDefaultAnimationDuration
                           delay:0
-         usingSpringWithDamping:0.6
-          initialSpringVelocity:0.8
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         
                          [self.notificationView setFrame:CGRectMake(0,0,kFTScreenWidth,self.notificationView.frame.size.height)];
-                         
                      } completion:^(BOOL finished) {
-                         if (finished) {
-                             if (!self.isCurrentlyOnScreen) {
-                                 [self startDismissTimer];
-                             }
-                             self.isCurrentlyOnScreen = YES;
+                         if (!self.isCurrentlyOnScreen) {
+                             [self startDismissTimer];
                          }
+                         self.isCurrentlyOnScreen = YES;
                      }];
 }
 
--(void)dismissingNotificationtView{
+- (void)dismissingNotificationtView{
     [self dismissingNotificationtViewByTap:NO];
 }
 
--(void)dismissingNotificationtViewByTap:(BOOL)tap
+- (void)dismissingNotificationtViewByTap:(BOOL)tap
 {
+    [self.notificationView.layer removeAllAnimations];
     [UIView animateWithDuration:kFTNotificationDefaultAnimationDuration
                           delay:0
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:(UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction)
                      animations:^{
-                         
-                         [self.notificationView setFrame:CGRectMake(0,-(self.notificationView.frame.size.height),kFTScreenWidth,(self.notificationView.frame.size.height))];
-                         
+                         [self.notificationView setFrame:CGRectMake(0,- (self.notificationView.frame.size.height),kFTScreenWidth,(self.notificationView.frame.size.height))];
                      } completion:^(BOOL finished) {
-                         if(finished){
-                             self.isCurrentlyOnScreen = NO;
-                             [self.notificationView removeFromSuperview];
-                             if(self.completion && !tap){
-                                 self.completion();
-                             }
+                         self.isCurrentlyOnScreen = NO;
+                         [self.notificationView removeFromSuperview];
+                         if(self.completion && !tap){
+                             self.completion();
                          }
                      }];
 }
@@ -298,7 +339,7 @@
 
 #pragma mark - getters
 
--(UIImageView *)iconImageView
+- (UIImageView *)iconImageView
 {
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kFTNotificationMargin_X, kFTNotificationStatusBarHeight + kFTNotificationMargin_Y, kFTNotificationImageSize, kFTNotificationImageSize)];
@@ -309,7 +350,7 @@
     return _iconImageView;
 }
 
--(UILabel *)titleLabel
+- (UILabel *)titleLabel
 {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kFTNotificationMargin_X*2 + kFTNotificationImageSize, kFTNotificationStatusBarHeight, kFTScreenWidth - kFTNotificationMargin_X*2 - kFTNotificationImageSize,  kFTNotificationTitleHeight)];
@@ -320,7 +361,7 @@
     return _titleLabel;
 }
 
--(UILabel *)messageLabel
+- (UILabel *)messageLabel
 {
     if (!_messageLabel) {
         _messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(kFTNotificationMargin_X*2 + kFTNotificationImageSize, kFTNotificationStatusBarHeight+kFTNotificationTitleHeight, kFTScreenWidth - kFTNotificationMargin_X*2 - kFTNotificationImageSize, 40)];
@@ -332,7 +373,7 @@
     return _messageLabel;
 }
 
--(UIColor *)getTextColorWithStyle:(UIBlurEffectStyle)style
+- (UIColor *)getTextColorWithStyle:(UIBlurEffectStyle)style
 {
     switch (style) {
         case UIBlurEffectStyleDark:
@@ -346,7 +387,7 @@
 
 #pragma mark - main methods
 
--(void)showWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message style:(UIBlurEffectStyle)style
+- (void)showWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message style:(UIBlurEffectStyle)style
 {
     self.effect = [UIBlurEffect effectWithStyle:style];
 
@@ -372,7 +413,7 @@
 
 #pragma mark - getFrameForNotificationMessageLabelWithImage
 
--(CGSize )getFrameForNotificationMessageLabelWithImage:(UIImage *)image message:(NSString *)notificationMessage
+- (CGSize )getFrameForNotificationMessageLabelWithImage:(UIImage *)image message:(NSString *)notificationMessage
 {
     CGFloat textWidth = image ? (kFTScreenWidth - kFTNotificationMargin_X*3 - kFTNotificationImageSize) : (kFTScreenWidth - kFTNotificationMargin_X*2);
     CGRect textSize = [notificationMessage boundingRectWithSize:CGSizeMake(textWidth, MAXFLOAT)
@@ -385,7 +426,7 @@
 
 #pragma mark - getFrameForNotificationViewWithImage
 
--(CGSize )getFrameForNotificationViewWithImage:(UIImage *)image message:(NSString *)notificationMessage
+- (CGSize )getFrameForNotificationViewWithImage:(UIImage *)image message:(NSString *)notificationMessage
 {
     CGSize textSize = [self getFrameForNotificationMessageLabelWithImage:image message:notificationMessage];
     CGSize size = CGSizeMake(kFTScreenWidth, MAX(MIN(textSize.height + kFTNotificationMargin_Y + kFTNotificationTitleHeight + kFTNotificationStatusBarHeight,kFTNotificationMaxHeight), kFTNotificationStatusBarHeight + kFTNotificationMargin_Y*2 + kFTNotificationImageSize));

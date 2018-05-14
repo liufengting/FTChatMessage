@@ -2,16 +2,16 @@
 //  FTPickerView.h
 //  FTPickerView
 //
-//  Created by liufengting on 15/12/3.
+//  Created by liufengting https://github.com/liufengting on 15/12/3.
 //  Copyright © 2015年 liufengting. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-typedef void (^ FTPickerDoneBlock )(NSInteger);
-typedef void (^ FTPickerCancelBlock )();
-typedef void (^ FTDatePickerDoneBlock )(NSDate *);
-typedef void (^ FTDatePickerCancelBlock )();
+typedef void (^ FTPickerDoneBlock )(NSInteger selectedIndex);
+typedef void (^ FTPickerCancelBlock )(void);
+typedef void (^ FTDatePickerDoneBlock )(NSDate *selectedDate);
+typedef void (^ FTDatePickerCancelBlock )(void);
 
 /**
  *  FTPickerTitleView
