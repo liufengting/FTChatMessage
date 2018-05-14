@@ -17,7 +17,7 @@ class FTChatMessageHeader: UILabel {
     var iconButton : UIButton!
     var messageSenderModel : FTChatMessageUserModel!
     var headerViewDelegate : FTChatMessageHeaderDelegate?
-
+    
     lazy var messageSenderNameLabel: UILabel! = {
         let label = UILabel(frame: CGRect.zero)
         label.font = FTDefaultTimeLabelFont
@@ -25,12 +25,12 @@ class FTChatMessageHeader: UILabel {
         label.textColor = UIColor.lightGray
         return label
     }()
-
-
+    
+    
     
     convenience init(frame: CGRect, senderModel: FTChatMessageUserModel ) {
         self.init(frame : frame)
-
+        
         
         messageSenderModel = senderModel;
         self.setupHeader( senderModel, isSender: senderModel.isUserSelf)
@@ -51,28 +51,35 @@ class FTChatMessageHeader: UILabel {
         self.addSubview(iconButton)
         
         if (user.senderIconUrl != nil) {
-//            iconButton.kf.setBackgroundImage(with: URL(string : user.senderIconUrl!), for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            //            iconButton.kf.setBackgroundImage(with: URL(string : user.senderIconUrl!), for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
         
         
-//        var nameLabelRect = CGRect( x: 0, y: 0 , width: FTScreenWidth - (FTDefaultMargin*2 + FTDefaultIconSize), height: FTDefaultSectionHeight)
-//        var nameLabelTextAlignment : NSTextAlignment = .right
-//        
-//        if isSender == false {
-//            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMargin
-//            nameLabelTextAlignment =  .left
-//        }
-//        
-//        messageSenderNameLabel.frame = nameLabelRect
-//        messageSenderNameLabel.text = user.senderName
-//        messageSenderNameLabel.textAlignment = nameLabelTextAlignment
-//        self.addSubview(messageSenderNameLabel)
-
+        //        var nameLabelRect = CGRect( x: 0, y: 0 , width: FTScreenWidth - (FTDefaultMargin*2 + FTDefaultIconSize), height: FTDefaultSectionHeight)
+        //        var nameLabelTextAlignment : NSTextAlignment = .right
+        //
+        //        if isSender == false {
+        //            nameLabelRect.origin.x = FTDefaultMargin + FTDefaultIconSize + FTDefaultMargin
+        //            nameLabelTextAlignment =  .left
+        //        }
+        //
+        //        messageSenderNameLabel.frame = nameLabelRect
+        //        messageSenderNameLabel.text = user.senderName
+        //        messageSenderNameLabel.textAlignment = nameLabelTextAlignment
+        //        self.addSubview(messageSenderNameLabel)
+        
         
         
     }
-
-
+    
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if self.iconButton.frame.contains(point) {
+            return self.iconButton
+        }
+        return nil
+    }
+    
     
     
     @objc func iconTapped() {

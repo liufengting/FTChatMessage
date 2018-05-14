@@ -25,7 +25,7 @@ protocol FTChatMessageInputViewDelegate {
 }
 
 class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
-
+    
     var inputDelegate : FTChatMessageInputViewDelegate?
     
     @IBOutlet weak var recordButton: UIButton!
@@ -41,8 +41,8 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
             self.layoutIfNeeded()
         }
     }
-
-
+    
+    
     //MARK: - awakeFromNib -
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,7 +52,10 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
         inputTextView.layer.borderWidth = 0.5
         inputTextView.textContainerInset = FTDefaultInputTextViewEdgeInset
         inputTextView.delegate = self
-
+        
+        self.bringSubview(toFront: self.inputTextView);
+        self.bringSubview(toFront: self.recordButton);
+        self.bringSubview(toFront: self.accessoryButton);
     }
     
     //MARK: - layoutSubviews -
@@ -84,7 +87,7 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
             inputDelegate!.ft_chatMessageInputViewShouldUpdateHeight(FTDefaultInputViewHeight)
         }
     }
-
+    
     //MARK: - UITextViewDelegate -
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if (inputDelegate != nil) {
@@ -102,7 +105,7 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         if let text : NSAttributedString = textView.attributedText {
             let textRect = text.boundingRect(with: CGSize(width: textView.bounds.width - textView.textContainerInset.left - textView.textContainerInset.right, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin , .usesFontLeading, .truncatesLastVisibleLine], context: nil);
-
+            
             if (inputDelegate != nil) {
                 inputDelegate!.ft_chatMessageInputViewShouldUpdateHeight(min(max(textRect.height + inputTextViewTopMargin.constant + inputTextViewBottomMargin.constant + textView.textContainerInset.top + textView.textContainerInset.bottom, FTDefaultInputViewHeight), FTDefaultInputViewMaxHeight))
             }
@@ -121,6 +124,7 @@ class FTChatMessageInputView: UIToolbar, UITextViewDelegate{
         }
         return true
     }
-
+    
     
 }
+

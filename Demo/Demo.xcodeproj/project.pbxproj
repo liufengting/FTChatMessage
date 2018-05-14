@@ -202,12 +202,12 @@
 		2A54C4FE1D9402B800D0B904 /* FTChatMessageInput */ = {
 			isa = PBXGroup;
 			children = (
+				2A54C5031D9402B800D0B904 /* FTChatMessageInputView.swift */,
+				2A54C5041D9402B800D0B904 /* FTChatMessageInputView.xib */,
 				2A54C4FF1D9402B800D0B904 /* FTChatMessageAccessoryItem.swift */,
 				2A54C5001D9402B800D0B904 /* FTChatMessageAccessoryItem.xib */,
 				2A54C5011D9402B800D0B904 /* FTChatMessageAccessoryView.swift */,
 				2A54C5021D9402B800D0B904 /* FTChatMessageAccessoryView.xib */,
-				2A54C5031D9402B800D0B904 /* FTChatMessageInputView.swift */,
-				2A54C5041D9402B800D0B904 /* FTChatMessageInputView.xib */,
 				2A54C5051D9402B800D0B904 /* FTChatMessageRecorderView.swift */,
 				2A54C5061D9402B800D0B904 /* FTChatMessageRecorderView.xib */,
 			);
@@ -290,8 +290,9 @@
 				TargetAttributes = {
 					2A54C4CE1D94024B00D0B904 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E83AC9WR2F;
 						LastSwiftMigration = 0930;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -569,11 +570,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTChatMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +584,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -592,11 +595,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTChatMessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -604,6 +608,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Demo/Demo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
